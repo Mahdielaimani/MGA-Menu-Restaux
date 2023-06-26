@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+part of '../packages_screens.dart';
 
 class MenuPage extends StatelessWidget {
   const MenuPage({super.key});
@@ -6,17 +6,24 @@ class MenuPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          Text(
-            'Hello',
-            style: TextStyle(
-              fontSize: 20,
-              color: Colors.deepPurple,
-            ),
-          )
-        ],
+      body: Ink(
+        width: getSizeApp(context).width,
+        height: getSizeApp(context).height,
+        color: Colors.white,
+        child: SingleChildScrollView(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Text(
+                'Hello',
+                style: TextStyle(
+                  fontSize: 20,
+                  color: Colors.deepPurple,
+                ),
+              )
+            ],
+          ),
+        ),
       ),
     );
   }

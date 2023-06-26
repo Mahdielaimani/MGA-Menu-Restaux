@@ -4,4 +4,6 @@ import '../../core/function/functions.dart';
 import '../components/login_field.dart';
 import '../customs/custom_botton.dart';
 import '../customs/social_button.dart';
+
 part 'loginscreen.dart';
+part 'home/menu.dart';

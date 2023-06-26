@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:menu_restaux/routes.dart';
 import 'package:responsive_framework/responsive_framework.dart';
-
-import 'view/screens/pack_screens.dart';
 
 void main() {
   runApp(const MyApp());
@@ -12,8 +11,9 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return MaterialApp.router(
       debugShowCheckedModeBanner: false,
+      routerConfig: router,
       builder: (context, child) => ResponsiveWrapper.builder(
         BouncingScrollWrapper.builder(context, child!),
         maxWidth: 1200,
@@ -25,7 +25,6 @@ class MyApp extends StatelessWidget {
           const ResponsiveBreakpoint.resize(1000, name: DESKTOP),
         ],
       ),
-      home: LoginScreen(),
     );
   }
 }

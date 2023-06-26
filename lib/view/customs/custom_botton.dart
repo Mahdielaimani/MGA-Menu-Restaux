@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
-import '../screens/home/menu.dart';
+import '../../routes.dart';
 
 class CustomBotton extends StatelessWidget {
   const CustomBotton({super.key});
@@ -17,7 +17,7 @@ class CustomBotton extends StatelessWidget {
             padding:
                 MaterialStatePropertyAll(EdgeInsets.fromLTRB(180, 0, 180, 0))),
         onPressed: () {
-          GoRoute(path: 'path', builder: (context, state) => const MenuPage());
+          router.pushNamed('menuscreen');
         },
         child: const Text('Login',
             style: TextStyle(
