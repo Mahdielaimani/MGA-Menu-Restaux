@@ -17,7 +17,7 @@ class CustomBotton extends StatelessWidget {
             padding:
                 MaterialStatePropertyAll(EdgeInsets.fromLTRB(180, 0, 180, 0))),
         onPressed: () {
-          router.pushNamed('menuscreen');
+          router.pushNamed('dashboardscreen');
         },
         child: const Text('Login',
             style: TextStyle(
