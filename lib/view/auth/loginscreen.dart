@@ -1,18 +1,21 @@
 part of '../screens/packages_screens.dart';
 
 class LoginScreen extends StatelessWidget {
-  const LoginScreen({Key? key}) : super(key: key);
+  LoginScreen({Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
-    bool? isCheked = true;
+    bool? isCheked = false;
 
     MediaQuery.of(context).size.width;
+    MediaQuery.of(context).size.height;
+
     String val = 'one';
     return Scaffold(
       body: Ink(
         width: getSizeApp(context).width,
         height: getSizeApp(context).height,
         color: Colors.white,
+        // color: Color.fromARGB(250, 250, 250, 250),
         child: SingleChildScrollView(
           child: Column(children: [
             const SizedBox(
@@ -21,12 +24,19 @@ class LoginScreen extends StatelessWidget {
             Row(
               children: [
                 Container(
-                  alignment: Alignment.center,
-                  // child: Image.asset('assets/images/logo.jpg'),
+                  child: Image.asset('assets/images/logo.jpeg'),
+                  width: 70,
+                  height: 60,
                 ),
-                const Text(
-                  'MGA Restaux',
-                  style: TextStyle(fontSize: 17, color: Colors.red),
+                SizedBox(
+                  width: 20,
+                ),
+                Text(
+                  'Restaux',
+                  style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                      fontSize: 17,
+                      color: Colors.red),
                 ),
                 const Spacer(
                   flex: 2,
@@ -66,18 +76,18 @@ class LoginScreen extends StatelessWidget {
                       const Text(
                         'Log in to your account',
                         style: TextStyle(
-                          fontWeight: FontWeight.w500,
+                          fontWeight: FontWeight.w400,
                           fontSize: 25,
                         ),
                       ),
-                      const SizedBox(height: 50),
+                      const SizedBox(height: 20),
                       SocialButton(
-                        iconSocial: const Icon(
+                        iconButtonS: const Icon(
                           FontAwesomeIcons.google,
                           color: Colors.black,
                           size: 15,
                         ),
-                        labelSocial: const Text(
+                        labelButtonS: const Text(
                           'Log in with Google',
                           style: TextStyle(
                             fontSize: 16,
@@ -85,15 +95,16 @@ class LoginScreen extends StatelessWidget {
                             fontWeight: FontWeight.w400,
                           ),
                         ),
+                        paddingButtonS: EdgeInsets.fromLTRB(145, 18, 145, 18),
                       ),
                       const SizedBox(height: 10),
                       SocialButton(
-                        iconSocial: const Icon(
+                        iconButtonS: const Icon(
                           FontAwesomeIcons.apple,
                           color: Colors.black,
                           size: 16,
                         ),
-                        labelSocial: const Text(
+                        labelButtonS: const Text(
                           'Log in with Apple',
                           style: TextStyle(
                             fontSize: 16,
@@ -101,6 +112,7 @@ class LoginScreen extends StatelessWidget {
                             fontWeight: FontWeight.w400,
                           ),
                         ),
+                        paddingButtonS: EdgeInsets.fromLTRB(150, 18, 150, 18),
                       ),
                       const SizedBox(height: 15),
                       const Divider(

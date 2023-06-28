@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:go_router/go_router.dart';
 
 import '../../routes.dart';
 
@@ -8,24 +7,28 @@ class CustomBotton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      margin: const EdgeInsets.only(left: 47, right: 47),
-      height: 35,
-      child: ElevatedButton(
-        style: const ButtonStyle(
-            backgroundColor: MaterialStatePropertyAll(Colors.deepPurple),
-            padding:
-                MaterialStatePropertyAll(EdgeInsets.fromLTRB(180, 0, 180, 0))),
-        onPressed: () {
-          router.pushNamed('dashboardscreen');
-        },
-        child: const Text('Login',
-            style: TextStyle(
-              // color: Colors.gre,
-              fontSize: 15,
-              fontWeight: FontWeight.w400,
-            )),
-      ),
+    return ElevatedButton(
+      style: ButtonStyle(
+          shape: MaterialStateProperty.all(
+            RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(10.0),
+            ),
+          ),
+          backgroundColor: MaterialStatePropertyAll(
+            Color(0xF5F5F5F5),
+          ),
+          padding:
+              MaterialStatePropertyAll(EdgeInsets.fromLTRB(210, 19, 210, 19))),
+      onPressed: () {
+        router.pushNamed('dashboardscreen');
+      },
+      child: const Text('Login',
+          style: TextStyle(
+            color: Color.fromARGB(255, 199, 197, 197),
+            // color: Colors.gre,
+            fontSize: 15,
+            fontWeight: FontWeight.w400,
+          )),
     );
   }
 }

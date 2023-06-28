@@ -1,26 +1,34 @@
-// ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class SocialButton extends StatelessWidget {
-  Icon iconSocial;
-  Widget labelSocial;
+  final Icon iconButtonS;
+  final Widget labelButtonS;
+  final EdgeInsetsGeometry? paddingButtonS;
+
   SocialButton({
     Key? key,
-    required this.iconSocial,
-    required this.labelSocial,
+    required this.iconButtonS,
+    required this.labelButtonS,
+    required this.paddingButtonS,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return OutlinedButton.icon(
-        onPressed: () {},
-        style: const ButtonStyle(
-            backgroundColor: MaterialStatePropertyAll(Colors.white),
-            padding: MaterialStatePropertyAll(
-                EdgeInsets.fromLTRB(150, 17, 150, 17))),
-        // Icon(Icons.person_pin_circle),
-        icon: iconSocial,
-        label: labelSocial);
+      onPressed: () {},
+      style: ButtonStyle(
+        backgroundColor: MaterialStateProperty.all(Colors.white),
+        shape: MaterialStateProperty.all(
+          RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(10.0),
+          ),
+        ),
+        padding: MaterialStateProperty.all(
+          paddingButtonS,
+        ),
+      ),
+      icon: iconButtonS,
+      label: labelButtonS,
+    );
   }
 }

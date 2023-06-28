@@ -11,3 +11,4 @@ import '../widgets/side_menubar.dart';
 part '../auth/loginscreen.dart';
 part 'home/menu.dart';
 part 'home/orders.dart';
+part 'home/dashboard.dart';

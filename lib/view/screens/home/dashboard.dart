@@ -1,7 +1,4 @@
-import 'package:flutter/material.dart';
-import 'package:sidebarx/sidebarx.dart';
-
-import '../../widgets/side_menubar.dart';
+part of '../packages_screens.dart';
 
 class DashboardPage extends StatefulWidget {
   const DashboardPage({Key? key}) : super(key: key);
@@ -25,7 +22,10 @@ class _DashboardPageState extends State<DashboardPage> {
             key: _key,
             appBar: isSmallScreen
                 ? AppBar(
-                    title: Text(''),
+                    title: Text(
+                      'Hello',
+                      style: TextStyle(fontFamily: 'NunitoSans'),
+                    ),
                     leading: IconButton(
                       onPressed: () {
                         _key.currentState?.openDrawer();
@@ -37,64 +37,69 @@ class _DashboardPageState extends State<DashboardPage> {
             drawer: SideMenuBar(
               controller: _controller,
             ),
-            body: Row(
-              children: [
-                if (!isSmallScreen) SideMenuBar(controller: _controller),
-                Expanded(
-                    child: Center(
-                  child: AnimatedBuilder(
-                    animation: _controller,
-                    builder: (context, child) {
-                      switch (_controller.selectedIndex) {
-                        case 0:
-                          _key.currentState?.closeDrawer();
-                          return const Center(
-                            child: Text(
-                              'Home',
-                              style:
-                                  TextStyle(color: Colors.orange, fontSize: 40),
-                            ),
-                          );
-                        case 1:
-                          _key.currentState?.closeDrawer();
-                          return const Center(
-                            child: Text(
-                              'Search',
-                              style: TextStyle(
-                                  color: Colors.deepPurple, fontSize: 40),
-                            ),
-                          );
-                        case 2:
-                          _key.currentState?.closeDrawer();
-                          return const Center(
-                            child: Text(
-                              'Settings',
-                              style:
-                                  TextStyle(color: Colors.pink, fontSize: 40),
-                            ),
-                          );
-                        case 3:
-                          _key.currentState?.closeDrawer();
-                          return Center(
-                            child: Text(
-                              'Theme',
-                              style:
-                                  TextStyle(color: Colors.black, fontSize: 40),
-                            ),
-                          );
-                        default:
-                          return Center(
-                            child: Text(
-                              'Home',
-                              style:
-                                  TextStyle(color: Colors.orange, fontSize: 40),
-                            ),
-                          );
-                      }
-                    },
-                  ),
-                ))
-              ],
+            body: Ink(
+              width: getSizeApp(context).width,
+              height: getSizeApp(context).height,
+              color: Colors.white,
+              child: Row(
+                children: [
+                  if (!isSmallScreen) SideMenuBar(controller: _controller),
+                  Expanded(
+                      child: Center(
+                    child: AnimatedBuilder(
+                      animation: _controller,
+                      builder: (context, child) {
+                        switch (_controller.selectedIndex) {
+                          case 0:
+                            _key.currentState?.closeDrawer();
+                            return const Center(
+                              child: Text(
+                                'Home',
+                                style: TextStyle(
+                                    color: Colors.orange, fontSize: 40),
+                              ),
+                            );
+                          case 1:
+                            _key.currentState?.closeDrawer();
+                            return const Center(
+                              child: Text(
+                                'Search',
+                                style: TextStyle(
+                                    color: Colors.deepPurple, fontSize: 40),
+                              ),
+                            );
+                          case 2:
+                            _key.currentState?.closeDrawer();
+                            return const Center(
+                              child: Text(
+                                'Settings',
+                                style:
+                                    TextStyle(color: Colors.pink, fontSize: 40),
+                              ),
+                            );
+                          case 3:
+                            _key.currentState?.closeDrawer();
+                            return Center(
+                              child: Text(
+                                'Theme',
+                                style: TextStyle(
+                                    color: Colors.black, fontSize: 40),
+                              ),
+                            );
+                          default:
+                            return Center(
+                              child: Text(
+                                'Home',
+                                style: TextStyle(
+                                    color: Colors.orange, fontSize: 40),
+                              ),
+                            );
+                        }
+                      },
+                    ),
+                  ))
+                ],
+              ),
             ));
       }),
     );

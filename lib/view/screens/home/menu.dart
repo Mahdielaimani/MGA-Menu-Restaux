@@ -9,8 +9,8 @@ class MenuPage extends StatelessWidget {
       body: Ink(
         width: getSizeApp(context).width,
         height: getSizeApp(context).height,
-        color: Colors.white,
-        child: SingleChildScrollView(
+        color: AppColors.WhiteColor,
+        child: const SingleChildScrollView(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
