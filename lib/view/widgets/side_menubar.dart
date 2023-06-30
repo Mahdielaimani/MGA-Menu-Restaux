@@ -13,6 +13,7 @@ class SideMenuBar extends StatelessWidget {
     return SidebarX(
       controller: _controller,
       theme: const SidebarXTheme(
+        margin: EdgeInsets.zero,
         decoration: BoxDecoration(
             color: Color.fromARGB(255, 228, 218, 255),
             borderRadius: BorderRadius.only(
@@ -37,24 +38,26 @@ class SideMenuBar extends StatelessWidget {
       // },
       items: const [
         SidebarXItem(
-          icon: Icons.home,
+          icon: Icons.dashboard,
           label: 'Dashboard',
         ),
-        SidebarXItem(icon: Icons.search, label: 'Reports'),
-        SidebarXItem(icon: Icons.settings, label: 'Recommendations'),
-        SidebarXItem(icon: Icons.dark_mode, label: 'Orders'),
-        SidebarXItem(icon: Icons.search, label: 'Customers'),
-        SidebarXItem(icon: Icons.settings, label: 'Menu Management'),
-        SidebarXItem(icon: Icons.dark_mode, label: 'Feedbacks'),
+        SidebarXItem(icon: Icons.chat_sharp, label: 'Reports'),
+        SidebarXItem(icon: Icons.table_chart, label: 'Recommendations'),
+        SidebarXItem(icon: Icons.fastfood, label: 'Orders'),
+        SidebarXItem(icon: Icons.supervisor_account, label: 'Customers'),
+        SidebarXItem(icon: Icons.restaurant, label: 'Menu Management'),
+        SidebarXItem(icon: Icons.feedback_outlined, label: 'Feedbacks'),
         SidebarXItem(
-          icon: Icons.home,
+          icon: Icons.translate,
           label: 'Translation Center',
         ),
-        SidebarXItem(icon: Icons.search, label: 'Venue Settings'),
-        SidebarXItem(icon: Icons.settings, label: 'Integrations'),
-        SidebarXItem(icon: Icons.dark_mode, label: 'Dine-In QR Menu'),
-        SidebarXItem(icon: Icons.dark_mode, label: 'Delivery / Pick Up'),
-        SidebarXItem(icon: Icons.dark_mode, label: 'Tablet Menu'),
+        SidebarXItem(icon: Icons.settings, label: 'Venue Settings'),
+        SidebarXItem(
+            icon: Icons.integration_instructions, label: 'Integrations'),
+        SidebarXItem(icon: Icons.qr_code, label: 'Dine-In QR Menu'),
+        SidebarXItem(
+            icon: Icons.delivery_dining_outlined, label: 'Delivery / Pick Up'),
+        SidebarXItem(icon: Icons.menu, label: 'Tablet Menu'),
       ],
     );
   }

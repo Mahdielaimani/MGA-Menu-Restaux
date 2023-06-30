@@ -3,8 +3,8 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 import '../../core/function/functions.dart';
 
-class BarWelcomeOffer extends StatelessWidget {
-  const BarWelcomeOffer({Key? key}) : super(key: key);
+class AppBarWelcome extends StatelessWidget {
+  const AppBarWelcome({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -41,17 +41,7 @@ class BarWelcomeOffer extends StatelessWidget {
                 child: Text(
                   "UPGRADE",
                   style: TextStyle(color: Colors.white, fontSize: 12),
-                )
-
-                // textStyle: const TextStyle(
-                //   fontSize: 11,
-                // ),,
-                // color: kPrimaryColorDark,
-                // text: "UPGRADE",
-                // textStyle: const TextStyle(
-                //   fontSize: 11,
-                // ),
-                ),
+                )),
           ),
         ],
       ),

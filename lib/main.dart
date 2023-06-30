@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:menu_restaux/routes.dart';
 import 'package:responsive_framework/responsive_framework.dart';
 
@@ -14,7 +15,11 @@ class MyApp extends StatelessWidget {
     return MaterialApp.router(
       debugShowCheckedModeBanner: false,
       routerConfig: router,
-      theme: ThemeData(fontFamily: 'NunitoSans-VariableFont'),
+      theme: ThemeData(
+        textTheme: GoogleFonts.nunitoSansTextTheme(
+          Theme.of(context).textTheme,
+        ),
+      ),
       builder: (context, child) => ResponsiveWrapper.builder(
         BouncingScrollWrapper.builder(context, child!),
         maxWidth: 1200,

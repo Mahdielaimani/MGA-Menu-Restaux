@@ -7,6 +7,8 @@ import '../components/login_field.dart';
 import '../customs/custom_botton.dart';
 import '../customs/social_button.dart';
 import '../widgets/appbar.dart';
+import '../widgets/card.dart';
+import '../widgets/overview_card.dart';
 import '../widgets/side_menubar.dart';
 
 part '../auth/loginscreen.dart';
