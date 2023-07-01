@@ -1,7 +1,4 @@
-import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-
-import '../../core/function/functions.dart';
+part of 'pack_widgets.dart';
 
 class AppBarWelcome extends StatelessWidget {
   const AppBarWelcome({Key? key}) : super(key: key);

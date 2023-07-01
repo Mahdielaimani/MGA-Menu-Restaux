@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+part of 'pack_widgets.dart';
 
 class OverviewCardsScreen extends StatelessWidget {
   @override

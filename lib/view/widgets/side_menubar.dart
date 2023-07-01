@@ -1,5 +1,4 @@
-import 'package:flutter/material.dart';
-import 'package:sidebarx/sidebarx.dart';
+part of 'pack_widgets.dart';
 
 class SideMenuBar extends StatelessWidget {
   const SideMenuBar({Key? key, required SidebarXController controller})
@@ -26,19 +25,9 @@ class SideMenuBar extends StatelessWidget {
       ),
       extendedTheme: const SidebarXTheme(width: 250),
       footerDivider: Divider(color: Colors.white.withOpacity(0.8), height: 1),
-      // headerBuilder: (context, extended) {
-      //   return const SizedBox(
-      //     height: 100,
-      //     child: Icon(
-      //       Icons.person,
-      //       size: 60,
-      //       color: Colors.black,
-      //     ),
-      //   );
-      // },
       items: const [
         SidebarXItem(
-          icon: Icons.dashboard,
+          icon: Icons.speed,
           label: 'Dashboard',
         ),
         SidebarXItem(icon: Icons.chat_sharp, label: 'Reports'),

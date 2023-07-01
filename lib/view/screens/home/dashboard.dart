@@ -34,8 +34,15 @@ class _DashboardPageState extends State<DashboardPage> {
                     child: Column(
                       children: [
                         const AppBarWelcome(),
+                        CustomTopCard(),
                         CardWidget(),
-                        OverviewCardsScreen(),
+                        CustomCard(
+                          title: 'Welcome!',
+                          subtitle: 'MGA',
+                          description: 'Test Card',
+                        ),
+
+                        // OverviewCardsScreen(),
                       ],
                     ),
                   ),
