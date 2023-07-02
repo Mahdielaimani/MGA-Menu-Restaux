@@ -6,7 +6,7 @@ class CustomButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ElevatedButton(
+    return OutlinedButton(
       style: ButtonStyle(
           shape: MaterialStateProperty.all(
             RoundedRectangleBorder(

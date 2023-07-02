@@ -10,8 +10,6 @@ class LoginScreen extends StatelessWidget {
     String val = 'one';
     return Scaffold(
       body: Ink(
-        height: getSizeApp(context).height,
-        width: getSizeApp(context).width,
         color: Colors.white,
         child: SingleChildScrollView(
           child: Column(
@@ -109,7 +107,7 @@ class LoginScreen extends StatelessWidget {
                           paddingButtonS: EdgeInsets.fromLTRB(150, 18, 150, 18),
                         ),
                         const SizedBox(height: 15),
-                        Row(
+                        const Row(
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
                             Expanded(
@@ -138,7 +136,7 @@ class LoginScreen extends StatelessWidget {
                           hintText: 'E-mail',
                         ),
                         const SizedBox(height: 15),
-                        const LoginField(hintText: 'Password '),
+                        LoginField(hintText: 'Password '),
                         const SizedBox(height: 20),
                         Row(
                           mainAxisAlignment: MainAxisAlignment.center,

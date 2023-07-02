@@ -39,7 +39,7 @@ class _DashboardPageState extends State<DashboardPage> {
                         CustomCard(
                           title: 'Welcome!',
                           subtitle: 'MGA',
-                          description: 'Test Card',
+                          description: 'Orders',
                         ),
 
                         // OverviewCardsScreen(),

@@ -11,20 +11,51 @@ class SideMenuBar extends StatelessWidget {
   Widget build(BuildContext context) {
     return SidebarX(
       controller: _controller,
+      // headerBuilder: (context, extended) => Icon(Icons.person_add_alt_1_outlined),
+
       theme: const SidebarXTheme(
         margin: EdgeInsets.zero,
-        decoration: BoxDecoration(
-            color: Color.fromARGB(255, 228, 218, 255),
-            borderRadius: BorderRadius.only(
-                topRight: Radius.circular(20),
-                bottomRight: Radius.circular(20))),
-        iconTheme: IconThemeData(
+        decoration: const BoxDecoration(
           color: Colors.white,
         ),
-        selectedTextStyle: const TextStyle(color: Colors.white),
+        textStyle: const TextStyle(color: Colors.black),
+        selectedTextStyle: const TextStyle(color: Colors.deepPurple),
+        itemTextPadding: const EdgeInsets.only(left: 30),
+        selectedItemTextPadding: const EdgeInsets.only(left: 30),
+        itemMargin: EdgeInsets.zero,
+        selectedItemMargin: EdgeInsets.zero,
+        padding: EdgeInsets.zero,
+        itemPadding: const EdgeInsets.symmetric(
+          vertical: 13,
+          horizontal: 10,
+        ),
+        selectedItemPadding: const EdgeInsets.symmetric(
+          vertical: 13,
+          horizontal: 10,
+        ),
+        itemDecoration: const BoxDecoration(),
+        selectedItemDecoration: BoxDecoration(
+          border: const Border(
+            right: BorderSide(
+              color: Colors.grey,
+              width: 3,
+            ),
+          ),
+        ),
+        iconTheme: const IconThemeData(
+          color: Colors.black,
+          size: 18,
+        ),
+        selectedIconTheme: const IconThemeData(
+          color: Colors.deepPurple,
+          size: 18,
+        ),
       ),
-      extendedTheme: const SidebarXTheme(width: 250),
-      footerDivider: Divider(color: Colors.white.withOpacity(0.8), height: 1),
+      extendedTheme: const SidebarXTheme(
+        hoverColor: Colors.deepPurple,
+        width: 200,
+        decoration: BoxDecoration(),
+      ),
       items: const [
         SidebarXItem(
           icon: Icons.speed,

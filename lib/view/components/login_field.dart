@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
+
+import '../../core/constant/appiconns.dart';
 
 class LoginField extends StatelessWidget {
   final String hintText;
@@ -24,10 +27,18 @@ class LoginField extends StatelessWidget {
                   borderRadius: BorderRadius.circular(10)),
               // contentPadding: const EdgeInsets.only(left: 200, right: 200),
               focusedBorder: OutlineInputBorder(
-                  borderSide: const BorderSide(
-                      color: Color.fromARGB(255, 131, 68, 248)),
+                  borderSide:
+                      BorderSide(color: Color.fromARGB(255, 131, 68, 248)),
                   borderRadius: BorderRadius.circular(10)),
               hintText: hintText,
+              // suffixIcon: IconButton(
+              //   onPressed: () {},
+              //   icon: SvgPicture.asset(AppIcons.eyeIcon),
+              // ),
+              // prefixIcon: IconButton(
+              //   onPressed: () {},
+              //   icon: SvgPicture.asset(AppIcons.lockIcon),
+              // ),
             )),
       ),
     );
