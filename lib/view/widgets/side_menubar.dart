@@ -20,8 +20,8 @@ class SideMenuBar extends StatelessWidget {
         ),
         textStyle: const TextStyle(color: Colors.black),
         selectedTextStyle: const TextStyle(color: Colors.deepPurple),
-        itemTextPadding: const EdgeInsets.only(left: 30),
-        selectedItemTextPadding: const EdgeInsets.only(left: 30),
+        itemTextPadding: const EdgeInsets.only(left: 10),
+        selectedItemTextPadding: const EdgeInsets.only(left: 10),
         itemMargin: EdgeInsets.zero,
         selectedItemMargin: EdgeInsets.zero,
         padding: EdgeInsets.zero,
@@ -52,8 +52,8 @@ class SideMenuBar extends StatelessWidget {
         ),
       ),
       extendedTheme: const SidebarXTheme(
-        hoverColor: Colors.deepPurple,
-        width: 200,
+        // hoverColor: Colors.grey,
+        width: 150,
         decoration: BoxDecoration(),
       ),
       items: const [

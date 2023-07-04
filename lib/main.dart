@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:menu_restaux/routes.dart';
 import 'package:responsive_framework/responsive_framework.dart';
+import 'core/function/functions.dart';
 
 void main() {
   runApp(const MyApp());
@@ -22,13 +23,13 @@ class MyApp extends StatelessWidget {
       ),
       builder: (context, child) => ResponsiveWrapper.builder(
         BouncingScrollWrapper.builder(context, child!),
-        maxWidth: 1200,
-        minWidth: 450,
+        maxWidth: getSizeApp(context).width,
+        minWidth: 400,
         defaultScale: true,
         breakpoints: [
-          const ResponsiveBreakpoint.resize(450, name: MOBILE),
+          const ResponsiveBreakpoint.resize(400, name: MOBILE),
           const ResponsiveBreakpoint.resize(800, name: TABLET),
-          const ResponsiveBreakpoint.resize(1000, name: DESKTOP),
+          const ResponsiveBreakpoint.resize(1800, name: DESKTOP),
         ],
       ),
     );

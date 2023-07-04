@@ -6,65 +6,71 @@ class LoginScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     bool? isChecked = false;
-
     String val = 'one';
+
     return Scaffold(
-      body: Ink(
-        color: Colors.white,
+      backgroundColor: const Color.fromARGB(250, 250, 250, 250),
+      appBar: AppBar(
+        elevation: 0, // No elevation
+        backgroundColor: const Color.fromARGB(250, 250, 250, 250),
+        title: Row(
+          children: [
+            Container(
+              child: Image.asset('assets/images/logo.jpeg'),
+              width: 70,
+              height: 60,
+            ),
+            const Text(
+              'Restaux',
+              style: TextStyle(
+                fontWeight: FontWeight.w500,
+                fontSize: 18,
+                color: Colors.red,
+              ),
+            ),
+            const Spacer(
+              flex: 2,
+            ),
+            DropdownButton(
+              value: val,
+              items: const [
+                DropdownMenuItem(
+                  value: 'one',
+                  child: Text(
+                    'English',
+                    style: TextStyle(fontSize: 14, color: Colors.deepPurple),
+                  ),
+                ),
+                DropdownMenuItem(value: 'two', child: Text('عربي')),
+                DropdownMenuItem(value: 'threeo', child: Text('Deutsch')),
+                DropdownMenuItem(value: 'two', child: Text('Español')),
+                DropdownMenuItem(value: 'threeo', child: Text('Español')),
+              ],
+              onChanged: (String? newVal) {
+                // Handle dropdown value change
+                val = newVal!;
+              },
+            ),
+          ],
+        ),
+      ),
+      body: Center(
         child: SingleChildScrollView(
           child: Column(
             children: [
-              const SizedBox(height: 10),
-              Row(
-                children: [
-                  Container(
-                    child: Image.asset('assets/images/logo.jpeg'),
-                    width: 70,
-                    height: 60,
-                  ),
-                  SizedBox(width: 20),
-                  Text(
-                    'Restaux',
-                    style: TextStyle(
-                      fontWeight: FontWeight.bold,
-                      fontSize: 17,
-                      color: Colors.red,
-                    ),
-                  ),
-                  const Spacer(
-                    flex: 2,
-                  ),
-                  DropdownButton(
-                    value: val,
-                    items: const [
-                      DropdownMenuItem(
-                        value: 'one',
-                        child: Text(
-                          'English',
-                          style: TextStyle(fontSize: 14, color: Colors.blue),
-                        ),
-                      ),
-                      DropdownMenuItem(value: 'two', child: Text('عربي')),
-                      DropdownMenuItem(value: 'threeo', child: Text('Deutsch')),
-                      DropdownMenuItem(value: 'two', child: Text('Español')),
-                      DropdownMenuItem(value: 'threeo', child: Text('Español')),
-                    ],
-                    onChanged: (String? newVal) {
-                      // Handle dropdown value change
-                      val = newVal!;
-                    },
-                  ),
-                ],
-              ),
               const SizedBox(height: 20),
-              Center(
-                child: ConstrainedBox(
-                  constraints: BoxConstraints(maxWidth: 520),
-                  child: Card(
-                    elevation: 20,
+              // ConstrainedBox(
+              //   constraints: BoxConstraints(maxWidth: 500),
+              SingleChildScrollView(
+                child: Card(
+                  elevation: 12,
+                  margin: EdgeInsets.all(20),
+                  child: SizedBox(
+                    height: 461,
+                    width: 502,
                     child: Column(
                       children: [
-                        const SizedBox(height: 20),
+                        const SizedBox(height: 25),
                         const Text(
                           'Log in to your account',
                           style: TextStyle(
@@ -87,7 +93,7 @@ class LoginScreen extends StatelessWidget {
                               fontWeight: FontWeight.w400,
                             ),
                           ),
-                          paddingButtonS: EdgeInsets.fromLTRB(145, 18, 145, 18),
+                          paddingButtonS: EdgeInsets.fromLTRB(140, 18, 140, 18),
                         ),
                         const SizedBox(height: 10),
                         SocialButton(
@@ -104,7 +110,7 @@ class LoginScreen extends StatelessWidget {
                               fontWeight: FontWeight.w400,
                             ),
                           ),
-                          paddingButtonS: EdgeInsets.fromLTRB(150, 18, 150, 18),
+                          paddingButtonS: EdgeInsets.fromLTRB(145, 18, 145, 18),
                         ),
                         const SizedBox(height: 15),
                         const Row(
@@ -132,37 +138,42 @@ class LoginScreen extends StatelessWidget {
                           ],
                         ),
                         const SizedBox(height: 15),
-                        const LoginField(
-                          hintText: 'E-mail',
-                        ),
-                        const SizedBox(height: 15),
-                        LoginField(hintText: 'Password '),
+                        LoginFieldEmail(),
+                        const SizedBox(height: 20),
+                        LoginFieldPassword(),
                         const SizedBox(height: 20),
                         Row(
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
-                            Checkbox(
-                              value: isChecked,
-                              onChanged: (newBool) {},
+                            Container(
+                              child: Checkbox(
+                                side: const BorderSide(
+                                  width: 0.5,
+                                  color: Colors.grey,
+                                ),
+                                value: isChecked,
+                                onChanged: (newBool) {},
+                              ),
                             ),
-                            Text('Remember me'),
+                            const Text('Remember me'),
                             const SizedBox(width: 220),
-                            const InkWell(
+                            InkWell(
                               child: Text(
-                                'Forget Password?',
+                                'Forgot Password?',
                                 style: TextStyle(color: Colors.deepPurple),
                               ),
                             ),
                           ],
                         ),
-                        const SizedBox(height: 20.0),
-                        CustomButton(),
+                        const SizedBox(height: 25.0),
+                        const CustomButton(),
                         const SizedBox(height: 20.0),
                       ],
                     ),
                   ),
                 ),
               ),
+
               const SizedBox(height: 40.0),
               const Row(
                 mainAxisAlignment: MainAxisAlignment.center,

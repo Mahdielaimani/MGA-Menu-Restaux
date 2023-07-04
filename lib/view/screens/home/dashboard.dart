@@ -17,36 +17,38 @@ class _DashboardPageState extends State<DashboardPage> {
     return SafeArea(
       child: Builder(
         builder: (context) {
-          final isSmallScreen = MediaQuery.of(context).size.width < 600;
+          final isSmallScreen = MediaQuery.of(context).size.width < 400;
 
           return Scaffold(
             drawer: SideMenuBar(
               controller: _controller,
             ),
-            body: Ink(
-              width: getSizeApp(context).width,
-              height: getSizeApp(context).height,
-              color: Colors.white,
-              child: Row(
-                children: [
-                  if (!isSmallScreen) SideMenuBar(controller: _controller),
-                  Expanded(
-                    child: Column(
-                      children: [
-                        const AppBarWelcome(),
-                        CustomTopCard(),
-                        CardWidget(),
-                        CustomCard(
-                          title: 'Welcome!',
-                          subtitle: 'MGA',
-                          description: 'Orders',
-                        ),
+            body: SingleChildScrollView(
+              child: Ink(
+                width: getSizeApp(context).width,
+                height: getSizeApp(context).height,
+                color: Colors.white,
+                child: Row(
+                  children: [
+                    if (!isSmallScreen) SideMenuBar(controller: _controller),
+                    Expanded(
+                      child: Column(
+                        children: [
+                          const AppBarWelcome(),
+                          CustomTopCard(),
+                          MenuManagement(),
+                          // CustomCard(
+                          //   title: 'Welcome!',
+                          //   subtitle: 'MGA',
+                          //   description: 'Orders',
+                          // ),
 
-                        // OverviewCardsScreen(),
-                      ],
+                          // OverviewCardsScreen(),
+                        ],
+                      ),
                     ),
-                  ),
-                ],
+                  ],
+                ),
               ),
             ),
             floatingActionButton: FloatingActionButton(
