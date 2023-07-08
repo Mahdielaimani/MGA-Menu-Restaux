@@ -1,4 +1,15 @@
 import 'package:flutter/material.dart';
+import 'package:responsive_framework/responsive_framework.dart';
+
+const List<Condition> isDesktop = [Condition.largerThan(name: TABLET)];
+
+const List<Condition> isMobileTablet = [
+  Condition.smallerThan(name: DESKTOP, value: 100)
+];
+
+bool isSmallerThanDesktop(BuildContext context) {
+  return ResponsiveWrapper.of(context).isSmallerThan(DESKTOP);
+}
 
 class Responsive extends StatelessWidget {
   final Widget mobile;

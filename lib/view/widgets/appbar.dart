@@ -5,10 +5,10 @@ class AppBarWelcome extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Ink(
+    return Container(
       width: getSizeApp(context).width,
       height: 40,
-      color: Colors.yellow.shade50,
+      color: Color.fromARGB(255, 255, 229, 195),
       padding: const EdgeInsets.symmetric(vertical: 5),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.center,

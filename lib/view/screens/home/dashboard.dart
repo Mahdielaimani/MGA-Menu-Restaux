@@ -19,6 +19,7 @@ class _DashboardPageState extends State<DashboardPage> {
         builder: (context) {
           final isSmallScreen = MediaQuery.of(context).size.width < 400;
 
+          var $index;
           return Scaffold(
             drawer: SideMenuBar(
               controller: _controller,
@@ -32,19 +33,15 @@ class _DashboardPageState extends State<DashboardPage> {
                   children: [
                     if (!isSmallScreen) SideMenuBar(controller: _controller),
                     Expanded(
-                      child: Column(
-                        children: [
-                          const AppBarWelcome(),
-                          CustomTopCard(),
-                          MenuManagement(),
-                          // CustomCard(
-                          //   title: 'Welcome!',
-                          //   subtitle: 'MGA',
-                          //   description: 'Orders',
-                          // ),
-
-                          // OverviewCardsScreen(),
-                        ],
+                      child: Container(
+                        color: Color.fromARGB(245, 245, 245, 245),
+                        child: Column(
+                          children: [
+                            const AppBarWelcome(),
+                            TopCardIcons(),
+                            MenuManagement(),
+                          ],
+                        ),
                       ),
                     ),
                   ],

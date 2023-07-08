@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
 
-class CustomTopCard extends StatelessWidget {
+import '../../core/function/functions.dart';
+
+class TopCardIcons extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
       height: 48,
-      width: 1127,
+      width: getSizeApp(context).width,
       decoration: BoxDecoration(
         color: Colors.white,
         // borderRadius: BorderRadius.circular(8),
@@ -14,13 +16,21 @@ class CustomTopCard extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.end,
         children: [
           SizedBox(width: 10),
-          Icon(Icons.bolt),
+          Icon(
+            Icons.bolt_outlined,
+          ),
           SizedBox(width: 10),
-          Icon(Icons.contact_support),
+          Icon(
+            Icons.contact_support_outlined,
+          ),
           SizedBox(width: 10),
-          Icon(Icons.notifications),
+          Icon(
+            Icons.notifications_none,
+          ),
           SizedBox(width: 10),
-          Icon(Icons.local_fire_department),
+          Icon(
+            Icons.local_fire_department_outlined,
+          ),
           SizedBox(width: 10),
           Icon(Icons.person),
         ],

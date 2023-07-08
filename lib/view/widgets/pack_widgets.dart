@@ -5,5 +5,3 @@ import 'package:sidebarx/sidebarx.dart';
 
 part 'side_menubar.dart';
 part 'appbar.dart';
-part 'card.dart';
-part 'overview_card.dart';
