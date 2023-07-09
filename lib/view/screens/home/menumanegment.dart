@@ -6,7 +6,7 @@ class MenuManagement extends StatefulWidget {
 }
 
 class _MenuManagementState extends State<MenuManagement> {
-  List<Widget> cards = [];
+  List<Widget> cards = [TranslationCenter()];
 
   void showCreateMenuDialog(BuildContext context) {
     showDialog(
@@ -44,6 +44,7 @@ class _MenuManagementState extends State<MenuManagement> {
     return BlocProvider<MenuCardBloc>(
       create: (context) => MenuCardBloc(),
       child: SingleChildScrollView(
+        scrollDirection: Axis.vertical,
         child: Container(
           width: getSizeApp(context).width,
           child: Column(
@@ -107,6 +108,21 @@ class _MenuManagementState extends State<MenuManagement> {
                                 OutlinedButton(
                                   style: ButtonStyle(
                                       backgroundColor: MaterialStatePropertyAll(
+                                          Colors.white)),
+                                  onPressed: () {
+                                    showCreateMenuDialog(context);
+                                  },
+                                  child: Text(
+                                    'Improve Menu',
+                                    style: TextStyle(color: Colors.deepPurple),
+                                  ),
+                                ),
+                                SizedBox(
+                                  width: 5,
+                                ),
+                                OutlinedButton(
+                                  style: ButtonStyle(
+                                      backgroundColor: MaterialStatePropertyAll(
                                           Colors.deepPurple)),
                                   onPressed: () {
                                     showCreateMenuDialog(context);
@@ -125,11 +141,12 @@ class _MenuManagementState extends State<MenuManagement> {
                   ),
                 ),
               ),
-              Container(
+              SingleChildScrollView(
                 child: Column(
-                  children: cards, // list of cards
+                  children: cards,
                 ),
-              )
+                // list of cards
+              ),
             ],
           ),
         ),

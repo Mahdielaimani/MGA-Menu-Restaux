@@ -4,6 +4,7 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:sidebarx/sidebarx.dart';
 import '../../controller/bloc/menu_bloc.dart';
 import '../../core/function/functions.dart';
+import '../../localization/trasnslate.dart';
 import '../../routes.dart';
 import '../components/loginfield_email.dart';
 import '../components/loginfield_pass.dart';
