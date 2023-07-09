@@ -17,7 +17,7 @@ class CustomButton extends StatelessWidget {
             Color(0xF5F5F5F5),
           ),
           padding:
-              MaterialStatePropertyAll(EdgeInsets.fromLTRB(190, 19, 190, 19))),
+              MaterialStatePropertyAll(EdgeInsets.fromLTRB(210, 18, 210, 18))),
       onPressed: () {
         router.pushNamed('dashboardscreen');
       },

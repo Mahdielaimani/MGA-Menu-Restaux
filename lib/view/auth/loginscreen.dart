@@ -1,11 +1,16 @@
 part of '../screens/packages_screens.dart';
 
-class LoginScreen extends StatelessWidget {
+class LoginScreen extends StatefulWidget {
   LoginScreen({Key? key}) : super(key: key);
 
   @override
+  State<LoginScreen> createState() => _LoginScreenState();
+}
+
+class _LoginScreenState extends State<LoginScreen> {
+  @override
   Widget build(BuildContext context) {
-    bool? isChecked = false;
+    bool isChecked = true;
     String val = 'one';
 
     return Scaffold(
@@ -145,15 +150,17 @@ class LoginScreen extends StatelessWidget {
                         Row(
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
-                            Container(
-                              child: Checkbox(
-                                side: const BorderSide(
-                                  width: 0.5,
-                                  color: Colors.grey,
-                                ),
-                                value: isChecked,
-                                onChanged: (newBool) {},
+                            Checkbox(
+                              side: BorderSide(
+                                color: Colors.grey,
                               ),
+                              activeColor: Colors.deepPurple,
+                              value: isChecked,
+                              onChanged: (value) {
+                                setState(() {
+                                  isChecked = !isChecked;
+                                });
+                              },
                             ),
                             const Text('Remember me'),
                             const SizedBox(width: 220),

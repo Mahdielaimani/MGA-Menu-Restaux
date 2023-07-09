@@ -1,10 +1,4 @@
-import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:go_router/go_router.dart';
-import 'package:menu_restaux/core/function/functions.dart';
-import 'package:menu_restaux/view/widgets/menuitem_card.dart';
-import '../../../controller/bloc/menu_bloc.dart';
-import '../../../routes.dart';
+part of '../packages_screens.dart';
 
 class MenuManagement extends StatefulWidget {
   @override
@@ -31,9 +25,9 @@ class _MenuManagementState extends State<MenuManagement> {
                   title: Text('Create a sample menu'),
                   subtitle: Text('Start with a pre-built menu.'),
                   onTap: () {
-                    Navigator.pop(context); // Close the dialog
+                    Navigator.pop(context);
                     setState(() {
-                      cards.add(MenuItem()); // Add a new card to the list
+                      cards.add(MenuItem());
                     });
                   },
                 ),
@@ -83,35 +77,31 @@ class _MenuManagementState extends State<MenuManagement> {
                                 ),
                                 TextButton(
                                   onPressed: () {
-                                    // Navigate to Modifiers page
                                     router.pushNamed('modifersscreen');
                                   },
                                   child: Text('Modifiers'),
                                 ),
                                 TextButton(
                                   onPressed: () {
-                                    // Navigate to Archive page
                                     router.pushNamed('archivescreen');
                                   },
                                   child: Text('Archive'),
                                 ),
                                 TextButton(
                                   onPressed: () {
-                                    // Navigate to Promo Codes page
                                     router.pushNamed('promocodesscreen');
                                   },
                                   child: Text('Promo Codes'),
                                 ),
                                 TextButton(
                                   onPressed: () {
-                                    // Navigate to In-app Promotions page
                                     router.pushNamed('promotionsscreen');
                                   },
                                   child: Text('In-app Promotionsscreen'),
                                 ),
                               ],
                             ),
-                            SizedBox(width: 50), // Adjust the width as needed
+                            SizedBox(width: 50),
                             Row(
                               children: [
                                 OutlinedButton(
@@ -137,7 +127,7 @@ class _MenuManagementState extends State<MenuManagement> {
               ),
               Container(
                 child: Column(
-                  children: cards, // Render the list of cards
+                  children: cards, // list of cards
                 ),
               )
             ],
