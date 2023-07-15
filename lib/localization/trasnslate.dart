@@ -15,7 +15,7 @@ class TranslationCenter extends StatelessWidget {
         padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 15),
         margin: const EdgeInsets.symmetric(vertical: 15),
         decoration: BoxDecoration(
-          color: Color.fromARGB(255, 236, 228, 228).withOpacity(.3),
+          color: Color.fromARGB(255, 255, 241, 241).withOpacity(.3),
           border: Border.all(color: Colors.deepPurple, width: 1),
           borderRadius: BorderRadius.circular(10),
         ),

@@ -79,7 +79,7 @@ class _LoginScreenState extends State<LoginScreen> {
                         const Text(
                           'Log in to your account',
                           style: TextStyle(
-                            fontWeight: FontWeight.w700,
+                            fontWeight: FontWeight.w500,
                             fontSize: 24,
                           ),
                         ),
