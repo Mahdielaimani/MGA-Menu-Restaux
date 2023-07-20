@@ -1,20 +1,20 @@
 import 'package:flutter/material.dart';
 
-class PromoCodes extends StatefulWidget {
+class ListMenuItem extends StatefulWidget {
+  const ListMenuItem({super.key});
+
   @override
-  _PromoCodesState createState() => _PromoCodesState();
+  State<ListMenuItem> createState() => _ListMenuItemState();
 }
 
-class _PromoCodesState extends State<PromoCodes> {
+class _ListMenuItemState extends State<ListMenuItem> {
   @override
   Widget build(BuildContext context) {
     return Container(
       color: Colors.green,
-
-      // Modify the container properties as needed
       child: Center(
         child: Text(
-          'Promo Codes Screen',
+          'Screen',
           style: TextStyle(fontSize: 20),
         ),
       ),

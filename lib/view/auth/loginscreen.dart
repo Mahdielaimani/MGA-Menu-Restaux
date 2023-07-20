@@ -1,4 +1,4 @@
-part of '../screens/packages_screens.dart';
+part of '../../../packages/packages.dart';
 
 class LoginScreen extends StatefulWidget {
   LoginScreen({Key? key}) : super(key: key);
@@ -8,198 +8,175 @@ class LoginScreen extends StatefulWidget {
 }
 
 class _LoginScreenState extends State<LoginScreen> {
+  bool? isChecked = false;
+
   @override
   Widget build(BuildContext context) {
-    bool isChecked = false;
-    String val = 'one';
-
     return Scaffold(
-      backgroundColor: const Color.fromARGB(250, 250, 250, 250),
-      appBar: AppBar(
-        elevation: 0, // No elevation
-        backgroundColor: const Color.fromARGB(250, 250, 250, 250),
-        title: Row(
-          children: [
-            Container(
-              child: Image.asset('assets/images/logo.jpeg'),
-              width: 70,
-              height: 60,
-            ),
-            const Text(
-              'Restaux',
-              style: TextStyle(
-                fontWeight: FontWeight.w500,
-                fontSize: 18,
-                color: Colors.red,
-              ),
-            ),
-            const Spacer(
-              flex: 2,
-            ),
-            DropdownButton(
-              value: val,
-              items: const [
-                DropdownMenuItem(
-                  value: 'one',
-                  child: Text(
-                    'English',
-                    style: TextStyle(fontSize: 14, color: Colors.deepPurple),
-                  ),
-                ),
-                DropdownMenuItem(value: 'two', child: Text('عربي')),
-                DropdownMenuItem(value: 'threeo', child: Text('Deutsch')),
-                DropdownMenuItem(value: 'two', child: Text('Español')),
-                DropdownMenuItem(value: 'threeo', child: Text('Español')),
-              ],
-              onChanged: (String? newVal) {
-                // Handle dropdown value change
-                val = newVal!;
-              },
-            ),
-          ],
-        ),
-      ),
-      body: Center(
+      backgroundColor: AppColors.backColor,
+      body: SafeArea(
         child: SingleChildScrollView(
           child: Column(
             children: [
-              const SizedBox(height: 20),
-              // ConstrainedBox(
-              //   constraints: BoxConstraints(maxWidth: 500),
-              SingleChildScrollView(
-                child: Card(
-                  elevation: 12,
-                  margin: EdgeInsets.all(20),
-                  child: SizedBox(
-                    height: 461,
-                    width: 502,
-                    child: Column(
-                      children: [
-                        const SizedBox(height: 25),
-                        const Text(
-                          'Log in to your account',
-                          style: TextStyle(
-                            fontWeight: FontWeight.w500,
-                            fontSize: 24,
-                          ),
-                        ),
-                        const SizedBox(height: 20),
-                        SocialButton(
-                          iconButtonS: const Icon(
-                            FontAwesomeIcons.google,
-                            color: Colors.black,
-                            size: 15,
-                          ),
-                          labelButtonS: const Text(
-                            'Log in with Google',
-                            style: TextStyle(
-                              fontSize: 16,
-                              color: Colors.black87,
-                              fontWeight: FontWeight.w400,
-                            ),
-                          ),
-                          paddingButtonS: EdgeInsets.fromLTRB(140, 18, 140, 18),
-                        ),
-                        const SizedBox(height: 10),
-                        SocialButton(
-                          iconButtonS: const Icon(
-                            FontAwesomeIcons.apple,
-                            color: Colors.black,
-                            size: 16,
-                          ),
-                          labelButtonS: const Text(
-                            'Log in with Apple',
-                            style: TextStyle(
-                              fontSize: 16,
-                              color: Colors.black87,
-                              fontWeight: FontWeight.w400,
-                            ),
-                          ),
-                          paddingButtonS: EdgeInsets.fromLTRB(145, 18, 145, 18),
-                        ),
-                        const SizedBox(height: 15),
-                        const Row(
-                          mainAxisAlignment: MainAxisAlignment.center,
+              LoginBar(),
+              Center(
+                child: Column(
+                  children: [
+                    const SizedBox(height: 20),
+                    Card(
+                      elevation: 15,
+                      margin: EdgeInsets.all(20),
+                      child: SizedBox(
+                        height: 461,
+                        width: 502,
+                        child: Column(
                           children: [
-                            Expanded(
-                              child: Divider(
-                                indent: 40,
-                                endIndent: 5,
-                              ),
-                            ),
-                            Text(
-                              'or',
+                            const SizedBox(height: 25),
+                            const Text(
+                              'Log in to your account',
                               style: TextStyle(
-                                fontSize: 14,
-                                fontWeight: FontWeight.w400,
+                                fontWeight: FontWeight.w700,
+                                fontSize: 24,
                               ),
                             ),
+                            const SizedBox(height: 20),
                             Expanded(
-                              child: Divider(
-                                indent: 5,
-                                endIndent: 40,
-                              ),
+                              child: SocialButton(
+                                  iconButtonS: const Icon(
+                                    FontAwesomeIcons.google,
+                                    color: AppColors.blackColor,
+                                    size: 15,
+                                  ),
+                                  labelButtonS: const Text(
+                                    'Log in with Google',
+                                    style: TextStyle(
+                                      fontSize: 16,
+                                      color: AppColors.tblackColor,
+                                      fontWeight: FontWeight.w400,
+                                    ),
+                                  ),
+                                  paddingButtonS: ResponsiveValue(context,
+                                          defaultValue: EdgeInsets.fromLTRB(
+                                              140, 18, 140, 18),
+                                          valueWhen: isMobileTabletS)
+                                      .value
+                                  // EdgeInsets.fromLTRB(140, 18, 140, 18),
+                                  ),
                             ),
+                            const SizedBox(height: 10),
+                            Expanded(
+                              child: SocialButton(
+                                  iconButtonS: const Icon(
+                                    FontAwesomeIcons.apple,
+                                    color: Colors.black,
+                                    size: 16,
+                                  ),
+                                  labelButtonS: const Text(
+                                    'Log in with Apple',
+                                    style: TextStyle(
+                                      fontSize: 16,
+                                      color: Colors.black87,
+                                      fontWeight: FontWeight.w400,
+                                    ),
+                                  ),
+                                  paddingButtonS: ResponsiveValue(context,
+                                          defaultValue: EdgeInsets.fromLTRB(
+                                              140, 18, 140, 18),
+                                          valueWhen: isMobileTabletS)
+                                      .value),
+                            ),
+                            const SizedBox(height: 15),
+                            const Row(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                Expanded(
+                                  child: Divider(
+                                    indent: 40,
+                                    endIndent: 5,
+                                  ),
+                                ),
+                                Text(
+                                  'or',
+                                  style: TextStyle(
+                                    fontSize: 14,
+                                    fontWeight: FontWeight.w400,
+                                  ),
+                                ),
+                                Expanded(
+                                  child: Divider(
+                                    indent: 5,
+                                    endIndent: 40,
+                                  ),
+                                ),
+                              ],
+                            ),
+                            const SizedBox(height: 15),
+                            Expanded(child: LoginFieldEmail()),
+                            const SizedBox(height: 20),
+                            Expanded(child: LoginFieldPassword()),
+                            const SizedBox(height: 20),
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                Checkbox(
+                                  side: BorderSide(
+                                    color: AppColors.greyColor,
+                                  ),
+                                  activeColor: AppColors.purpleColor,
+                                  tristate:
+                                      false, // Set to false for a two-state checkbox
+                                  value: isChecked,
+                                  onChanged: (newBool) {
+                                    setState(() {
+                                      isChecked = newBool ?? false;
+                                      print(isChecked);
+                                    });
+                                  },
+                                ),
+                                const Text('Remember me'),
+                                const SizedBox(width: 220),
+                                InkWell(
+                                  child: Text(
+                                    'Forgot Password?',
+                                    style:
+                                        TextStyle(color: AppColors.purpleColor),
+                                  ),
+                                ),
+                              ],
+                            ),
+                            const SizedBox(height: 25.0),
+                            Expanded(
+                              child: CustomButton(),
+                            ),
+                            const SizedBox(height: 20.0),
                           ],
                         ),
-                        const SizedBox(height: 15),
-                        LoginFieldEmail(),
-                        const SizedBox(height: 20),
-                        LoginFieldPassword(),
-                        const SizedBox(height: 20),
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            Checkbox(
-                              side: BorderSide(
-                                color: Colors.grey,
-                              ),
-                              activeColor: Colors.deepPurple,
-                              value: isChecked,
-                              onChanged: (value) {
-                                setState(() {
-                                  isChecked = !isChecked;
-                                });
-                              },
-                            ),
-                            const Text('Remember me'),
-                            const SizedBox(width: 220),
-                            InkWell(
-                              child: Text(
-                                'Forgot Password?',
-                                style: TextStyle(color: Colors.deepPurple),
-                              ),
-                            ),
-                          ],
+                      ),
+                    ),
+                    const SizedBox(height: 40.0),
+                    const Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        InkWell(
+                          child: Text(
+                            'Terms of Service',
+                            style: TextStyle(
+                                fontSize: 12, color: AppColors.purpleColor),
+                          ),
                         ),
-                        const SizedBox(height: 25.0),
-                        const CustomButton(),
-                        const SizedBox(height: 20.0),
+                        SizedBox(width: 20),
+                        VerticalDivider(),
+                        InkWell(
+                          child: Text(
+                            'Privacy Policy',
+                            style: TextStyle(
+                                fontSize: 12, color: AppColors.purpleColor),
+                          ),
+                        ),
                       ],
                     ),
-                  ),
+                  ],
                 ),
-              ),
-
-              const SizedBox(height: 40.0),
-              const Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  InkWell(
-                    child: Text(
-                      'Terms of Service',
-                      style: TextStyle(fontSize: 12, color: Colors.deepPurple),
-                    ),
-                  ),
-                  SizedBox(width: 20),
-                  VerticalDivider(),
-                  InkWell(
-                    child: Text(
-                      'Privacy Policy',
-                      style: TextStyle(fontSize: 12, color: Colors.deepPurple),
-                    ),
-                  ),
-                ],
               ),
             ],
           ),

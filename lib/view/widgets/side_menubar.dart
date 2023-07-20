@@ -2,24 +2,65 @@ part of 'pack_widgets.dart';
 
 class SideMenuBar extends StatelessWidget {
   const SideMenuBar({Key? key, required SidebarXController controller})
-      : _controller = controller,
+      : controller = controller,
         super(key: key);
 
-  final SidebarXController _controller;
+  final SidebarXController controller;
 
   @override
   Widget build(BuildContext context) {
     return SidebarX(
-      controller: _controller,
-      // headerBuilder: (context, extended) => Icon(Icons.person_add_alt_1_outlined),
-
+      controller: controller,
+      headerBuilder: (_, isCollapsed) {
+        return Ink(
+          color: AppColors.greyColor,
+          height: 45,
+          padding: const EdgeInsets.symmetric(horizontal: 10),
+          child: DropdownButton(
+            underline: const SizedBox(),
+            icon: isCollapsed
+                ? const Icon(
+                    FontAwesomeIcons.chevronDown,
+                    size: 11,
+                  )
+                : const SizedBox(),
+            hint: Row(
+              mainAxisAlignment: isCollapsed
+                  ? MainAxisAlignment.start
+                  : MainAxisAlignment.center,
+              children: [
+                const CircleAvatar(
+                  radius: 13,
+                  // backgroundImage: NetworkImage(''),
+                ),
+                if (isCollapsed) const SizedBox(width: 10),
+                if (isCollapsed)
+                  Flexible(
+                    child: Text(
+                      'MGA',
+                      maxLines: 1,
+                      overflow: TextOverflow.ellipsis,
+                      style: TextStyle(
+                        fontSize: 12,
+                      ),
+                    ),
+                  ),
+              ],
+            ),
+            borderRadius: BorderRadius.zero,
+            isExpanded: true,
+            onChanged: (value) {},
+            items: [],
+          ),
+        );
+      },
       theme: const SidebarXTheme(
         margin: EdgeInsets.zero,
         decoration: const BoxDecoration(
-          color: Colors.white,
+          color: AppColors.whiteColor,
         ),
-        textStyle: const TextStyle(color: Colors.black),
-        selectedTextStyle: const TextStyle(color: Colors.deepPurple),
+        textStyle: const TextStyle(color: AppColors.blackColor),
+        selectedTextStyle: const TextStyle(color: AppColors.purpleColor),
         itemTextPadding: const EdgeInsets.only(left: 10),
         selectedItemTextPadding: const EdgeInsets.only(left: 10),
         itemMargin: EdgeInsets.zero,
@@ -37,26 +78,26 @@ class SideMenuBar extends StatelessWidget {
         selectedItemDecoration: BoxDecoration(
           border: const Border(
             right: BorderSide(
-              color: Colors.grey,
+              color: AppColors.greyColors,
               width: 3,
             ),
           ),
         ),
         iconTheme: const IconThemeData(
-          color: Colors.black,
+          color: AppColors.blackColor,
           size: 18,
         ),
         selectedIconTheme: const IconThemeData(
-          color: Colors.deepPurple,
+          color: AppColors.purpleColor,
           size: 18,
         ),
       ),
       extendedTheme: const SidebarXTheme(
         // hoverColor: Colors.grey,
-        width: 150,
+        width: 200,
         decoration: BoxDecoration(),
       ),
-      items: const [
+      items: [
         SidebarXItem(
           icon: Icons.speed,
           label: 'Dashboard',
@@ -64,8 +105,18 @@ class SideMenuBar extends StatelessWidget {
         SidebarXItem(icon: Icons.chat_sharp, label: 'Reports'),
         SidebarXItem(icon: Icons.table_chart, label: 'Recommendations'),
         SidebarXItem(icon: Icons.fastfood, label: 'Orders'),
-        SidebarXItem(icon: Icons.supervisor_account, label: 'Customers'),
-        SidebarXItem(icon: Icons.restaurant, label: 'Menu Management'),
+        SidebarXItem(
+            icon: Icons.supervisor_account,
+            label: 'Customers',
+            onTap: () {
+              router.pushNamed('customersscreen');
+            }),
+        SidebarXItem(
+            icon: Icons.restaurant,
+            label: 'Menu Management',
+            onTap: () {
+              router.pushNamed('menuscreen');
+            }),
         SidebarXItem(icon: Icons.feedback_outlined, label: 'Feedbacks'),
         SidebarXItem(
           icon: Icons.translate,

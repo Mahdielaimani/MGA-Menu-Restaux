@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+part of 'pack_components.dart';
 
 class LoginFieldPassword extends StatefulWidget {
   @override
@@ -12,23 +12,23 @@ class _LoginFieldPasswordState extends State<LoginFieldPassword> {
   Widget build(BuildContext context) {
     return Container(
       height: 40,
-      width: 440,
+      width: ResponsiveValue(context,
+              defaultValue: 440, valueWhen: isMobileTabletField)
+          .value,
       child: TextFormField(
         controller: null,
         obscureText: passwordObscure,
         decoration: InputDecoration(
           border: OutlineInputBorder(
+            borderSide: BorderSide(color: AppColors.cgreyColor),
             borderRadius: BorderRadius.circular(10),
-            borderSide: BorderSide(
-              color:
-                  Color.fromARGB(250, 250, 250, 250), // Set border color here
-            ),
           ),
           focusedBorder: OutlineInputBorder(
-            borderSide: BorderSide(color: Color.fromARGB(255, 131, 68, 248)),
+            borderSide: BorderSide(color: AppColors.bSideColor),
             borderRadius: BorderRadius.circular(10),
           ),
           hintText: 'Password',
+          hintStyle: TextStyle(color: AppColors.greyColor),
           suffixIcon: IconButton(
             onPressed: () {
               setState(() {

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../../core/function/functions.dart';
+import '../../helpers/appcolors.dart';
 
 class TopCardIcons extends StatelessWidget {
   @override
@@ -8,10 +9,9 @@ class TopCardIcons extends StatelessWidget {
     return Container(
       height: 48,
       width: getSizeApp(context).width,
-      decoration: BoxDecoration(
-        color: Colors.white,
-        // borderRadius: BorderRadius.circular(8),
-      ),
+      decoration: BoxDecoration(color: AppColors.whiteColor
+          // borderRadius: BorderRadius.circular(8),
+          ),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.end,
         children: [

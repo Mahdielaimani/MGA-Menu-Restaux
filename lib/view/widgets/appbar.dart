@@ -8,7 +8,7 @@ class AppBarWelcome extends StatelessWidget {
     return Container(
       width: getSizeApp(context).width,
       height: 40,
-      color: Color.fromARGB(255, 255, 229, 195),
+      color: AppColors.appbarColor,
       padding: const EdgeInsets.symmetric(vertical: 5),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.center,
@@ -16,7 +16,7 @@ class AppBarWelcome extends StatelessWidget {
           const Icon(
             FontAwesomeIcons.circleExclamation,
             size: 18,
-            color: Colors.orangeAccent,
+            color: AppColors.orageaColor,
           ),
           const Padding(
             padding: EdgeInsets.symmetric(horizontal: 10),
@@ -31,13 +31,13 @@ class AppBarWelcome extends StatelessWidget {
             height: 25,
             child: OutlinedButton(
                 style: ButtonStyle(
-                  backgroundColor: MaterialStateProperty.all(
-                      Color.fromARGB(255, 16, 87, 209)),
+                  backgroundColor:
+                      MaterialStateProperty.all(AppColors.bSideColor),
                 ),
                 onPressed: () {},
                 child: Text(
                   "UPGRADE",
-                  style: TextStyle(color: Colors.white, fontSize: 12),
+                  style: TextStyle(color: AppColors.whiteColor, fontSize: 12),
                 )),
           ),
         ],

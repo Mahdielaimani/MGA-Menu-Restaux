@@ -1,11 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-import 'package:menu_restaux/view/screens/home/menu/components/SectionContainer.dart';
-import 'package:menu_restaux/view/screens/home/menu/pages/modidiers_page.dart';
-import 'package:menu_restaux/view/screens/packages_screens.dart';
-import 'view/screens/home/menu/pages/archive_page.dart';
-import 'view/screens/home/menu/pages/promocode_page.dart';
-import 'view/screens/home/menu/pages/promotions.dart';
+
+import 'packages/packages.dart';
+import 'view/screens/menu/components/pack_components.dart';
+import 'view/screens/packages_screens.dart';
 
 final _rootNavigatorKey = GlobalKey<NavigatorState>();
 final _shellNavigatorKey = GlobalKey<NavigatorState>();
@@ -15,57 +13,38 @@ final router =
   GoRoute(
     path: '/',
     name: 'loginscreen',
-    // parentNavigatorKey: _rootNavigatorKey,
     builder: (context, state) => LoginScreen(),
   ),
   GoRoute(
-    path: '/dashboard',
-    name: 'dashboardscreen',
-    // parentNavigatorKey: _rootNavigatorKey,
-    builder: (context, state) => DashboardPage(),
+    path:
+        '/menuscreen', // Make sure the path here matches the one in GoRouter.go
+    name: 'menuscreen',
+    builder: (context, state) => MenuScreen(),
   ),
   GoRoute(
-    path: '/menu',
-    name: 'menupage',
+    path: '/cardMenuManagement',
+    name: 'cardmenuManagement',
     // parentNavigatorKey: _rootNavigatorKey,
-    builder: (context, state) => MenuManagement(),
+    builder: (context, state) => CardMenuManagement(),
   ),
   GoRoute(
-    path: '/modifer',
-    name: 'modifersscreen',
+    path: '/scratchMenuscreen',
+    name: 'scratchMenuscreen',
     // parentNavigatorKey: _rootNavigatorKey,
-    builder: (context, state) => Modifiers(),
-  ),
-  GoRoute(
-    path: '/archive',
-    name: 'archivescreen',
-    // parentNavigatorKey: _rootNavigatorKey,
-    builder: (context, state) => Archive(),
-  ),
-  GoRoute(
-    path: '/promocodes',
-    name: 'promocodesscreen',
-    // parentNavigatorKey: _rootNavigatorKey,
-    builder: (context, state) => PromoCodes(),
-  ),
-  GoRoute(
-    path: '/promotions',
-    name: 'promotionsscreen',
-    // parentNavigatorKey: _rootNavigatorKey,
-    builder: (context, state) => Promotions(),
-  ),
-  GoRoute(
-    path: '/scratchmenu',
-    name: 'scratchmenuscreen',
-    // parentNavigatorKey: _rootNavigatorKey,
-    builder: (context, state) => ScratchMenu(),
+    builder: (context, state) => ScratchMenuScreen(),
   ),
   GoRoute(
     path: '/addsection',
-    name: 'addsectionscreen',
+    name: 'addSectionscreen',
     // parentNavigatorKey: _rootNavigatorKey,
     builder: (context, state) => SectionContainer(
       hideSectionContainer: (BuildContext) {},
     ),
+  ),
+  GoRoute(
+    path: '/customersscreen',
+    name: 'customersscreen',
+    // parentNavigatorKey: _rootNavigatorKey,
+    builder: (context, state) => CustomersScreen(),
   )
 ]);

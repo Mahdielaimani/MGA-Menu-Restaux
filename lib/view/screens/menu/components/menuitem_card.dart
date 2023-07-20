@@ -1,4 +1,4 @@
-part of 'pack_widgets.dart';
+part of 'pack_components.dart';
 
 class MenuItem extends StatefulWidget {
   @override

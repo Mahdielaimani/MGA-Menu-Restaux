@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 import '../core/function/functions.dart';
+import '../helpers/appcolors.dart';
 
 class TranslationCenter extends StatelessWidget {
   const TranslationCenter({Key? key}) : super(key: key);
@@ -15,15 +16,15 @@ class TranslationCenter extends StatelessWidget {
         padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 15),
         margin: const EdgeInsets.symmetric(vertical: 15),
         decoration: BoxDecoration(
-          color: Color.fromARGB(255, 255, 241, 241).withOpacity(.3),
-          border: Border.all(color: Colors.deepPurple, width: 1),
+          color: AppColors.noteColor,
+          border: Border.all(color: AppColors.purpleColor, width: 1),
           borderRadius: BorderRadius.circular(10),
         ),
         child: Wrap(
           children: [
             const Icon(
               FontAwesomeIcons.circleExclamation,
-              color: Colors.deepPurple,
+              color: AppColors.purpleColor,
               size: 16,
             ),
             const SizedBox(width: 10),
@@ -35,7 +36,7 @@ class TranslationCenter extends StatelessWidget {
               child: const Text(
                 "Translation Center.",
                 style: TextStyle(
-                  color: Colors.deepPurple,
+                  color: AppColors.purpleColor,
                   decoration: TextDecoration.underline,
                 ),
               ),

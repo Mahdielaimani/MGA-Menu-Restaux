@@ -1,6 +1,4 @@
-import 'package:flutter/material.dart';
-
-import '../../../../../core/function/functions.dart';
+part of 'pack_components.dart';
 
 class CardScratch extends StatelessWidget {
   const CardScratch({super.key});

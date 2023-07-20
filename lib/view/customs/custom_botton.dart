@@ -1,5 +1,4 @@
-import 'package:flutter/material.dart';
-import '../../routes.dart';
+part of 'pack_customs.dart';
 
 class CustomButton extends StatelessWidget {
   const CustomButton({super.key});
@@ -8,25 +7,26 @@ class CustomButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return OutlinedButton(
       style: ButtonStyle(
-          shape: MaterialStateProperty.all(
-            RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(10.0),
-            ),
+        shape: MaterialStateProperty.all(
+          RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(10.0),
           ),
-          backgroundColor: MaterialStatePropertyAll(
-            Color(0xF5F5F5F5),
-          ),
-          padding:
-              MaterialStatePropertyAll(EdgeInsets.fromLTRB(210, 18, 210, 18))),
+        ),
+        backgroundColor: MaterialStatePropertyAll(AppColors.buttLoginColor),
+        padding: MaterialStatePropertyAll(ResponsiveValue(context,
+                defaultValue: EdgeInsets.fromLTRB(205, 18, 205, 18),
+                valueWhen: isMobileTabletButt)
+            .value),
+      ),
       onPressed: () {
-        router.pushNamed('dashboardscreen');
+        router.pushNamed('menuscreen');
       },
       child: const Text('Login',
           style: TextStyle(
-            color: Color.fromARGB(255, 199, 197, 197),
+            color: AppColors.greyColor,
             // color: Colors.gre,
-            fontSize: 15,
-            fontWeight: FontWeight.w400,
+            fontSize: 16,
+            fontWeight: FontWeight.normal,
           )),
     );
   }
