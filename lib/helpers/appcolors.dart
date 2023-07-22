@@ -17,4 +17,5 @@ class AppColors {
   static const Color orageaColor = Colors.orangeAccent;
   static const Color wbackColor = Color.fromARGB(245, 245, 245, 245);
   static const Color noteColor = Color.fromARGB(255, 255, 246, 246);
+  static const Color dividerColor = Color.fromARGB(255, 231, 224, 224);
 }

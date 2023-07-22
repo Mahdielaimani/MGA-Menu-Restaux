@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
-import '../model/menuitem.dart';
+
+import '../view/screens/menu/components/pack_components.dart';
 
 class MenuItemController {
   final titleController = TextEditingController();
@@ -24,29 +25,16 @@ class MenuItemController {
     if (title.isEmpty) {
       title = "without title";
     }
-    MenuItem menuItem = MenuItem(
-      title: title,
-      content: content,
-      dateTimeEdited: DateFormat("MMM dd, yyyy  HH:mm").format(DateTime.now()),
-      dateTimeCreated: DateFormat("MMM dd, yyyy HH:mm").format(DateTime.now()),
-    );
+    MenuItem menuItem = MenuItem();
   }
 
   void deleteMenuItem(int id) async {
-    MenuItem menuItem = MenuItem(
-      id: id,
-    );
+    MenuItem menuItem = MenuItem();
 
     void updateMenuItem(int id, String dTCreated) async {
       final title = titleController.text;
       final content = contentController.text;
-      MenuItem menuItem = MenuItem(
-        id: id,
-        title: title,
-        content: content,
-        dateTimeEdited: DateFormat("MMM dd, yyyy HH:mm").format(DateTime.now()),
-        dateTimeCreated: dTCreated,
-      );
+      MenuItem menuItem = MenuItem();
     }
   }
 }

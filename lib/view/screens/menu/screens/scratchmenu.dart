@@ -13,7 +13,7 @@ class _ScratchMenuScreenState extends State<ScratchMenuScreen>
   AnimationController? _animationController;
   bool _isSectionContainerVisible = false;
   bool _isItemContainerVisible = false;
-  double _clipRRectWidth = 811;
+  double clipRRectWidth = 811;
 
   @override
   void initState() {
@@ -35,7 +35,7 @@ class _ScratchMenuScreenState extends State<ScratchMenuScreen>
       _isSectionContainerVisible = true;
     });
     _animationController?.forward();
-    _updateContentWidth(); // Call the function to update the content width
+    _updateContentWidth();
   }
 
   void hideSectionContainer(BuildContext context) {
@@ -43,7 +43,7 @@ class _ScratchMenuScreenState extends State<ScratchMenuScreen>
       setState(() {
         _isSectionContainerVisible = false;
       });
-      _updateContentWidth(); // Call the function to update the content width
+      _updateContentWidth();
     });
   }
 
@@ -52,7 +52,7 @@ class _ScratchMenuScreenState extends State<ScratchMenuScreen>
       _isItemContainerVisible = true;
     });
     _animationController?.forward();
-    _updateContentWidth(); // Call the function to update the content width
+    _updateContentWidth();
   }
 
   void hideItemContainer(BuildContext context) {
@@ -60,18 +60,18 @@ class _ScratchMenuScreenState extends State<ScratchMenuScreen>
       setState(() {
         _isItemContainerVisible = false;
       });
-      _updateContentWidth(); // Call the function to update the content width
+      _updateContentWidth();
     });
   }
 
   void _updateContentWidth() {
     if (_isSectionContainerVisible || _isItemContainerVisible) {
       setState(() {
-        _clipRRectWidth = 460;
+        clipRRectWidth = 460;
       });
     } else {
       setState(() {
-        _clipRRectWidth = 800;
+        clipRRectWidth = 800;
       });
     }
   }
@@ -108,40 +108,43 @@ class _ScratchMenuScreenState extends State<ScratchMenuScreen>
                             child: Row(
                               mainAxisAlignment: MainAxisAlignment.start,
                               children: [
-                                Container(
-                                  width: 150,
-                                  height: 365,
-                                  color: Colors.white,
-                                  child: const Column(children: [
-                                    Row(
-                                      children: [
-                                        Text('Sections'),
-                                        SizedBox(
-                                          width: 5,
-                                        ),
-                                        Icon(Icons.add)
-                                      ],
-                                    ),
-                                    SizedBox(
-                                      height: 20,
-                                    ),
-                                    Row(
-                                      children: [
-                                        SizedBox(
-                                          width: 10,
-                                        ),
-                                        Text('All'),
-                                        SizedBox(
-                                          width: 10,
-                                        ),
-                                        Text('Active'),
-                                        SizedBox(
-                                          width: 10,
-                                        ),
-                                        Text('Inactive'),
-                                      ],
-                                    )
-                                  ]),
+                                ResponsiveVisibility(
+                                  hiddenWhen: isMobileTablet,
+                                  child: Container(
+                                    width: 150,
+                                    height: 365,
+                                    color: AppColors.whiteColor,
+                                    child: const Column(children: [
+                                      Row(
+                                        children: [
+                                          Text('Sections'),
+                                          SizedBox(
+                                            width: 5,
+                                          ),
+                                          Icon(AppIcons.add)
+                                        ],
+                                      ),
+                                      SizedBox(
+                                        height: 20,
+                                      ),
+                                      Row(
+                                        children: [
+                                          SizedBox(
+                                            width: 10,
+                                          ),
+                                          Text('All'),
+                                          SizedBox(
+                                            width: 10,
+                                          ),
+                                          Text('Active'),
+                                          SizedBox(
+                                            width: 10,
+                                          ),
+                                          Text('Inactive'),
+                                        ],
+                                      )
+                                    ]),
+                                  ),
                                 ),
                                 SizedBox(
                                   width: 20,
@@ -156,7 +159,11 @@ class _ScratchMenuScreenState extends State<ScratchMenuScreen>
                                     ClipRRect(
                                       borderRadius: BorderRadius.circular(15),
                                       child: Container(
-                                        width: _clipRRectWidth,
+                                        width: ResponsiveValue(context,
+                                                defaultValue: clipRRectWidth,
+                                                valueWhen:
+                                                    isMobileTabletSctratch)
+                                            .value,
                                         height: 48,
                                         color: AppColors.whiteColor,
                                         child: InkWell(
@@ -209,9 +216,9 @@ class _ScratchMenuScreenState extends State<ScratchMenuScreen>
                                               SizedBox(
                                                 width: 10,
                                               ),
-                                              IconButton(
-                                                  onPressed: () {},
-                                                  icon: Icon(Icons.add)),
+                                              // IconButton(
+                                              //     onPressed: () {},
+                                              //     icon: Icon(Icons.add)),
                                               Text(
                                                 textAlign: TextAlign.start,
                                                 'Add',

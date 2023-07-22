@@ -1,4 +1,4 @@
-part of 'pack_components.dart';
+part of '../view/screens/menu/components/pack_components.dart';
 
 class DialogMenu extends StatefulWidget {
   const DialogMenu({super.key});

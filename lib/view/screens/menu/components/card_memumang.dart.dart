@@ -1,38 +1,22 @@
 part of 'pack_components.dart';
 
 class CardMenuManagement extends StatefulWidget {
+  CardMenuManagement();
   @override
   _CardMenuManagementState createState() => _CardMenuManagementState();
 }
 
 class _CardMenuManagementState extends State<CardMenuManagement>
     with TickerProviderStateMixin {
-  late TabController _tabController;
+  TabController? _tabController;
 
   @override
   void initState() {
     super.initState();
-    _tabController = TabController(
-        length: 5, vsync: this); // Number of tabs, in your case 5 sections
+    _tabController = TabController(length: 5, vsync: this);
   }
 
   @override
-  void dispose() {
-    _tabController.dispose();
-    super.dispose();
-  }
-
-  List<Widget> cards = [TranslationCenter()];
-
-  void showCreateMenuDialog(BuildContext context) {
-    showDialog(
-      context: context,
-      builder: (BuildContext context) {
-        return DialogMenu();
-      },
-    );
-  }
-
   @override
   Widget build(BuildContext context) {
     return SingleChildScrollView(
@@ -43,14 +27,14 @@ class _CardMenuManagementState extends State<CardMenuManagement>
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Container(
-              color: Colors.white,
+              color: AppColors.whiteColor,
               width: getSizeApp(context).width,
               height: 113,
               child: SingleChildScrollView(
                 child: Column(
                   children: [
                     Divider(
-                      color: const Color.fromARGB(255, 231, 224, 224),
+                      color: AppColors.dividerColor,
                       height: 1,
                     ),
                     SizedBox(
@@ -77,15 +61,14 @@ class _CardMenuManagementState extends State<CardMenuManagement>
                               height: 32,
                               child: OutlinedButton(
                                 style: ButtonStyle(
-                                  backgroundColor:
-                                      MaterialStateProperty.all(Colors.white),
+                                  backgroundColor: MaterialStateProperty.all(
+                                      AppColors.whiteColor),
                                 ),
-                                onPressed: () {
-                                  // showCreateMenuDialog(context);
-                                },
+                                onPressed: () {},
                                 child: Text(
                                   'Improve Menu',
-                                  style: TextStyle(color: Colors.deepPurple),
+                                  style:
+                                      TextStyle(color: AppColors.purpleColor),
                                 ),
                               ),
                             ),
@@ -98,16 +81,16 @@ class _CardMenuManagementState extends State<CardMenuManagement>
                               child: OutlinedButton(
                                 style: ButtonStyle(
                                     backgroundColor: MaterialStatePropertyAll(
-                                        Colors.deepPurple)),
+                                        AppColors.purpleColor)),
                                 onPressed: () {
-                                  showCreateMenuDialog(context);
-                                  setState(() {
-                                    cards.add(MenuItem());
-                                  });
+                                  showDialog(
+                                      context: context,
+                                      builder: (builder) =>
+                                          const DialogAddMenu());
                                 },
                                 child: Text(
                                   'Create Menu',
-                                  style: TextStyle(color: Colors.white),
+                                  style: TextStyle(color: AppColors.whiteColor),
                                 ),
                               ),
                             ),
@@ -129,33 +112,27 @@ class _CardMenuManagementState extends State<CardMenuManagement>
                           tabs: [
                             Tab(text: 'Menus'),
                             Tab(text: 'Modifiers'),
-                            Tab(text: 'Archive'),
                             Tab(text: 'Promo Codes'),
                             Tab(text: 'In-app Promotions'),
+                            Tab(text: 'Archive'),
                           ],
                           controller: _tabController,
                         ),
                       ),
-                    ),
-                    Container(
-                      height: 500,
-                      child: TabBarView(controller: _tabController, children: [
-                        ListMenuItem(),
-                        Modifers(),
-                        Archive(),
-                        CodePromo(),
-                        Promotion(),
-                      ]),
                     ),
                   ],
                 ),
               ),
             ),
             Container(
-              child: Column(
-                children: cards,
-                // Render the list of cards
-              ),
+              height: 500,
+              child: TabBarView(controller: _tabController, children: [
+                ListMenu(),
+                Modifers(),
+                CodePromo(),
+                Promotion(),
+                Archive(),
+              ]),
             ),
           ],
         ),

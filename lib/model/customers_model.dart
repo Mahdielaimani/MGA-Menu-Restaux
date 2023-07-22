@@ -1,5 +1,10 @@
 class CustomersModel {
-  late final String? id;
-  late final String? text;
-  late final String? body;
+  final String? id;
+  final String? text;
+  final String? body;
+  CustomersModel(
+    this.id,
+    this.text,
+    this.body,
+  );
 }

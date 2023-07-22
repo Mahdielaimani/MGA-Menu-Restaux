@@ -5,6 +5,7 @@ import 'package:menu_restaux/view/screens/customers/dineconfig.dart';
 import 'package:responsive_framework/responsive_value.dart';
 import 'package:sidebarx/sidebarx.dart';
 
+import '../../core/constant/appiconns.dart';
 import '../../core/function/functions.dart';
 import '../../helpers/responsive_condition.dart';
 

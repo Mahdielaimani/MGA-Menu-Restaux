@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:responsive_framework/responsive_value.dart';
 import '../../helpers/appcolors.dart';
 import '../../helpers/responsive_condition.dart';
+import '../core/logic/bloc/menu_bloc.dart';
+import '../core/logic/bloc/menu_event.dart';
 import '../view/auth/components/pack_components.dart';
 import '../view/customs/pack_customs.dart';
 part '../view/auth/loginscreen.dart';

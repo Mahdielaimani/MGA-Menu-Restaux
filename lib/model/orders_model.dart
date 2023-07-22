@@ -1,5 +1,10 @@
 class OrdersModel {
-  late final String? id;
-  late final String? text;
-  late final String? body;
+  final String? id;
+  final String? text;
+  final String? body;
+  OrdersModel({
+    required this.text,
+    required this.body,
+    required this.id,
+  });
 }

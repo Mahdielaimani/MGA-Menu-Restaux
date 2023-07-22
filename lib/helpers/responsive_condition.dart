@@ -26,10 +26,10 @@ const List<Condition> isMobileTabletField = [
     value: 410,
   ),
 ];
-const List<Condition> isMobileTabletAddSctratch = [
+const List<Condition> isMobileTabletSctratch = [
   Condition.smallerThan(
     name: DESKTOP,
-    value: 400,
+    value: 450,
   ),
 ];
 
