@@ -1,23 +1,28 @@
 part of 'pack_pages.dart';
 
-class ListMenu extends StatelessWidget {
+class ListMenu extends StatefulWidget {
   ListMenu({super.key});
 
   @override
+  State<ListMenu> createState() => _ListMenuState();
+}
+
+class _ListMenuState extends State<ListMenu> {
+  @override
   Widget build(BuildContext context) {
+    bool isActive = true;
+    void toggleCardStatus(bool value) {
+      setState(() {
+        isActive = !isActive;
+      });
+    }
+
     DateTime currentDate = DateTime.now();
 
     String formattedDate = DateFormat('yyyy-MM-dd').format(currentDate);
 
     return Scaffold(
       backgroundColor: AppColors.cgreyColor,
-      floatingActionButton: FloatingActionButton(
-        child: const Icon(Icons.add),
-        onPressed: () {
-          showDialog(
-              context: context, builder: (builder) => const DialogAddMenu());
-        },
-      ),
       body: BlocBuilder<MenuBloc, MenuState>(
         builder: (context, state) {
           ///STATE LOADING
@@ -67,74 +72,107 @@ class ListMenu extends StatelessWidget {
                                   child: Column(
                                     children: [
                                       Row(
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.spaceBetween,
                                         children: [
-                                          Text(
-                                            list[i].name,
-                                            style: TextStyle(
-                                                fontSize: 16,
-                                                fontWeight: FontWeight.w600),
-                                          ),
-                                          SizedBox(
-                                            width: 10,
-                                          ),
-                                          Expanded(
-                                            child: Row(
-                                              mainAxisAlignment:
-                                                  MainAxisAlignment
-                                                      .spaceBetween,
-                                              children: [
-                                                Switch(
-                                                  value: list[i].status,
-                                                  onChanged: (value) {
-                                                    context
-                                                        .read<MenuBloc>()
-                                                        .add(UpdateMenuEvent(
-                                                            status: value,
-                                                            name:
-                                                                list[i].name));
-                                                  },
+                                          Row(
+                                            children: [
+                                              Text(
+                                                list[i].name,
+                                                style: TextStyle(
+                                                    fontSize: 16,
+                                                    fontWeight:
+                                                        FontWeight.w600),
+                                              ),
+                                              SizedBox(
+                                                width: 5,
+                                              ),
+                                              Card(
+                                                child: Text(
+                                                  isActive
+                                                      ? 'Live'
+                                                      : 'Inactive',
+                                                  style: TextStyle(
+                                                    fontSize: 14,
+                                                    color: isActive
+                                                        ? Colors.lightGreen
+                                                        : Colors.grey,
+                                                    fontWeight: FontWeight.w400,
+                                                  ),
                                                 ),
-                                                Row(
-                                                  children: [
-                                                    OutlinedButton(
-                                                        style: ButtonStyle(
-                                                            backgroundColor:
-                                                                MaterialStatePropertyAll(
-                                                                    AppColors
-                                                                        .purpleColor)),
-                                                        onPressed: () {
-                                                          router.pushNamed(
-                                                              'scratchMenuscreen');
-                                                        },
-                                                        child: Text(
-                                                          'Edit Menu',
-                                                          style: TextStyle(
-                                                              color: AppColors
-                                                                  .whiteColor),
-                                                        )),
-                                                    IconButton(
-                                                      hoverColor:
-                                                          AppColors.transpColor,
-                                                      onPressed: () {},
-                                                      icon: const Icon(
-                                                        Icons.settings,
-                                                        color:
-                                                            AppColors.greyColor,
-                                                      ),
-                                                      iconSize: 18,
-                                                      color: Colors.transparent,
-                                                      highlightColor:
-                                                          AppColors.transpColor,
-                                                      autofocus: false,
-                                                    ),
-                                                    Icon(
-                                                      Icons.more_vert_outlined,
-                                                      size: 20,
-                                                    ),
-                                                  ],
-                                                )
-                                              ],
-                                            ),
+                                              ),
+                                            ],
+                                          ),
+                                          Row(
+                                            children: [
+                                              Switch(
+                                                value: list[i].status,
+                                                onChanged: (value) {
+                                                  toggleCardStatus(value);
+                                                },
+                                                activeColor: Colors.lightGreen,
+                                                inactiveThumbColor: Colors.grey,
+                                                inactiveTrackColor: Colors.grey
+                                                    .withOpacity(0.5),
+
+                                                //   context
+                                                //       .read<MenuBloc>()
+                                                //       .add(UpdateMenuEvent(
+                                                //           status: value,
+                                                //           name:
+                                                //               list[i].name)
+                                                //               );
+                                                // },
+                                              ),
+                                              OutlinedButton(
+                                                  style: ButtonStyle(
+                                                      backgroundColor:
+                                                          MaterialStatePropertyAll(
+                                                              AppColors
+                                                                  .purpleColor)),
+                                                  onPressed: () {
+                                                    router.pushNamed(
+                                                        'scratchMenuscreen');
+                                                  },
+                                                  child: Text(
+                                                    'Edit Menu',
+                                                    style: TextStyle(
+                                                        color: AppColors
+                                                            .whiteColor),
+                                                  )),
+                                              // IconButton(
+                                              //   hoverColor:
+                                              //       AppColors.transpColor,
+                                              //   onPressed: () {},
+                                              //   icon: const Icon(
+                                              //     Icons.settings,
+                                              //     color: AppColors.greyColor,
+                                              //   ),
+                                              //   iconSize: 18,
+                                              //   color: Colors.transparent,
+                                              //   highlightColor:
+                                              //       AppColors.transpColor,
+                                              //   autofocus: false,
+                                              // ),
+                                              PopupMenuButton<String>(
+                                                itemBuilder: (context) => [
+                                                  PopupMenuItem<String>(
+                                                    value: 'delete',
+                                                    child: Text('Delete'),
+                                                  ),
+                                                  PopupMenuItem<String>(
+                                                    value: 'duplicate',
+                                                    child: Text('Duplicate'),
+                                                  ),
+                                                ],
+                                                onSelected: (value) {
+                                                  if (value == 'delete') {
+                                                  } else if (value ==
+                                                      'duplicate') {}
+                                                },
+                                                icon: Icon(Icons.more_vert),
+                                              ),
+                                            ],
                                           )
                                         ],
                                       ),
@@ -142,6 +180,7 @@ class ListMenu extends StatelessWidget {
                                         alignment: Alignment.centerLeft,
                                         child: Text(
                                           list[i].description,
+                                          overflow: TextOverflow.ellipsis,
                                           style: TextStyle(
                                               fontSize: 12,
                                               fontWeight: FontWeight.w400),

@@ -41,5 +41,10 @@ final router = GoRouter(initialLocation: '/', routes: [
     path: '/customersscreen',
     name: 'customersscreen',
     builder: (context, state) => CustomersScreen(),
+  ),
+  GoRoute(
+    path: '/ordersscreen',
+    name: 'ordersscreen',
+    builder: (context, state) => OrdersScreen(),
   )
 ]);

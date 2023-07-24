@@ -104,7 +104,12 @@ class SideMenuBar extends StatelessWidget {
         ),
         SidebarXItem(icon: Icons.chat_sharp, label: 'Reports'),
         SidebarXItem(icon: Icons.table_chart, label: 'Recommendations'),
-        SidebarXItem(icon: Icons.fastfood, label: 'Orders'),
+        SidebarXItem(
+            icon: Icons.fastfood,
+            label: 'Orders',
+            onTap: () {
+              router.pushNamed('ordersscreen');
+            }),
         SidebarXItem(
             icon: Icons.supervisor_account,
             label: 'Customers',

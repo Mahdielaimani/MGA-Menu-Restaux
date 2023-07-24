@@ -1,14 +1,15 @@
 part of '../packages_screens.dart';
 
-class CustomersScreen extends StatefulWidget {
+class OrdersScreen extends StatefulWidget {
+  OrdersScreen({super.key});
+
   @override
-  _CustomersScreenState createState() => _CustomersScreenState();
+  State<OrdersScreen> createState() => OrdersScreenState();
 }
 
-class _CustomersScreenState extends State<CustomersScreen>
+class OrdersScreenState extends State<OrdersScreen>
     with SingleTickerProviderStateMixin {
   TabController? _tabController;
-
   final _controller = SidebarXController(selectedIndex: 0, extended: true);
 
   void initState() {
@@ -35,10 +36,24 @@ class _CustomersScreenState extends State<CustomersScreen>
                 AppBarWelcome(),
                 TopCardIcons(),
                 SizedBox(
-                  height: 20,
+                  height: 30,
+                ),
+                Container(
+                  width: 120,
+                  child: OutlinedButton(
+                    style: ButtonStyle(
+                      backgroundColor:
+                          MaterialStateProperty.all(AppColors.purpleColor),
+                    ),
+                    onPressed: () {},
+                    child: Text(
+                      'Export',
+                      style: TextStyle(color: AppColors.whiteColor),
+                    ),
+                  ),
                 ),
                 Padding(
-                  padding: EdgeInsets.only(left: 50, right: 50, top: 100),
+                  padding: EdgeInsets.only(left: 50, right: 50, top: 30),
                   child: Card(
                     child: Center(
                       child: Column(
@@ -56,11 +71,11 @@ class _CustomersScreenState extends State<CustomersScreen>
                               labelPadding:
                                   EdgeInsets.only(left: 20, right: 20),
                               tabs: [
-                                Tab(text: 'Tags'),
-                                Tab(text: 'Emails'),
-                                Tab(text: 'Orders'),
-                                Tab(text: 'phone'),
-                                Tab(text: 'visbile'),
+                                Tab(text: 'ID'),
+                                Tab(text: 'Dayly No'),
+                                Tab(text: 'Status'),
+                                Tab(text: 'Type'),
+                                Tab(text: 'Source'),
                               ],
                               controller: _tabController,
                             ),

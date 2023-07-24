@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:menu_restaux/helpers/appcolors.dart';
-import 'package:menu_restaux/view/screens/customers/dineconfig.dart';
 import 'package:responsive_framework/responsive_value.dart';
 import 'package:sidebarx/sidebarx.dart';
 
@@ -18,3 +17,4 @@ import 'menu/components/pack_components.dart';
 part 'menu/screens/scratchmenu.dart';
 part 'menu/screens/menu_screen.dart';
 part 'customers/customers_screen.dart';
+part 'orders/orders_screen.dart';

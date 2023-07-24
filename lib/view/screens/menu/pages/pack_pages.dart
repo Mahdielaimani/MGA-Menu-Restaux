@@ -5,7 +5,6 @@ import 'package:menu_restaux/core/logic/bloc/menu_state.dart';
 
 import '../../../../core/function/functions.dart';
 import '../../../../core/logic/bloc/menu_bloc.dart';
-import '../../../../core/logic/bloc/menu_event.dart';
 import '../../../../helpers/appcolors.dart';
 import '../../../../routes.dart';
 import '../components/dialog_menulist.dart';
