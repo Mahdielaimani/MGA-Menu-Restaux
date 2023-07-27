@@ -1,8 +1,6 @@
 import 'dart:js';
-
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-
 import 'packages/packages.dart';
 import 'view/screens/menu/components/pack_components.dart';
 import 'view/screens/packages_screens.dart';
@@ -35,6 +33,7 @@ final router = GoRouter(initialLocation: '/', routes: [
     name: 'addSectionscreen',
     builder: (context, state) => SectionContainer(
       hideSectionContainer: (BuildContext) {},
+      onSaveSectionData: (String name, String description, String note) {},
     ),
   ),
   GoRoute(
@@ -46,5 +45,15 @@ final router = GoRouter(initialLocation: '/', routes: [
     path: '/ordersscreen',
     name: 'ordersscreen',
     builder: (context, state) => OrdersScreen(),
+  ),
+  GoRoute(
+    path: '/recommendsscreen',
+    name: 'recommendsscreen',
+    builder: (context, state) => RecommendScreen(),
+  ),
+  GoRoute(
+    path: '/reportsscreen',
+    name: 'reportsscreen',
+    builder: (context, state) => ReportsScreen(),
   )
 ]);

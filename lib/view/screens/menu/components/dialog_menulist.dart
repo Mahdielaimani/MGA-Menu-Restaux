@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-import '../../../../core/logic/bloc/menu_bloc.dart';
-import '../../../../core/logic/bloc/menu_event.dart';
+import '../../../../core/logic/blocs/menu/menu_bloc.dart';
+import '../../../../core/logic/blocs/menu/menu_event.dart';
 import '../../../../helpers/appcolors.dart';
 
 class DialogAddMenu extends StatefulWidget {

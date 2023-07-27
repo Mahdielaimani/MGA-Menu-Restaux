@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:lottie/lottie.dart';
 import 'package:menu_restaux/helpers/appcolors.dart';
 import 'package:responsive_framework/responsive_value.dart';
 import 'package:sidebarx/sidebarx.dart';
@@ -18,3 +19,5 @@ part 'menu/screens/scratchmenu.dart';
 part 'menu/screens/menu_screen.dart';
 part 'customers/customers_screen.dart';
 part 'orders/orders_screen.dart';
+part 'recommendations/recommend_screen.dart';
+part 'reports/reports_screen.dart';

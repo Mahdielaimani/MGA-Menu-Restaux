@@ -7,10 +7,11 @@ class ListMenu extends StatefulWidget {
   State<ListMenu> createState() => _ListMenuState();
 }
 
+bool isActive = true;
+
 class _ListMenuState extends State<ListMenu> {
   @override
   Widget build(BuildContext context) {
-    bool isActive = true;
     void toggleCardStatus(bool value) {
       setState(() {
         isActive = !isActive;
@@ -82,7 +83,7 @@ class _ListMenuState extends State<ListMenu> {
                                                 style: TextStyle(
                                                     fontSize: 16,
                                                     fontWeight:
-                                                        FontWeight.w600),
+                                                        FontWeight.w500),
                                               ),
                                               SizedBox(
                                                 width: 5,
@@ -106,7 +107,7 @@ class _ListMenuState extends State<ListMenu> {
                                           Row(
                                             children: [
                                               Switch(
-                                                value: list[i].status,
+                                                value: isActive,
                                                 onChanged: (value) {
                                                   toggleCardStatus(value);
                                                 },

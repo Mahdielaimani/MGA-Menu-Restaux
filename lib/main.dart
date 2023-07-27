@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:get_storage/get_storage.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:menu_restaux/core/logic/bloc/menu_bloc.dart';
+import 'package:menu_restaux/core/logic/blocs/menu/menu_bloc.dart';
 import 'package:menu_restaux/routes.dart';
 import 'package:responsive_framework/responsive_framework.dart';
 

@@ -42,6 +42,7 @@ class _MenuScreenState extends State<MenuScreen> {
           ),
         ),
       ),
+      floatingActionButtonLocation: FloatingActionButtonLocation.endFloat,
       floatingActionButton: FloatingActionButton(
         onPressed: () {},
         child: const Icon(

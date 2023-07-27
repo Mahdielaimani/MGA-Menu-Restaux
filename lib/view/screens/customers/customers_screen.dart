@@ -31,69 +31,108 @@ class _CustomersScreenState extends State<CustomersScreen>
             Expanded(
                 child: Ink(
               color: AppColors.wbackColor,
-              child: Column(children: [
-                AppBarWelcome(),
-                TopCardIcons(),
-                SizedBox(
-                  height: 20,
-                ),
-                Padding(
-                  padding: EdgeInsets.only(left: 50, right: 50, top: 100),
-                  child: Card(
-                    child: Center(
-                      child: Column(
-                        mainAxisSize: MainAxisSize.min,
+              child: Column(
+                children: [
+                  AppBarWelcome(),
+                  TopCardIcons(),
+                  SizedBox(
+                    height: 30,
+                  ),
+
+                  SizedBox(
+                    height: 40.0,
+                  ),
+
+                  //let's set the filter section
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Text(
+                        '0 results listed.',
+                        style: TextStyle(
+                            fontSize: 22, fontWeight: FontWeight.w500),
+                      ),
+                      Row(
                         children: [
-                          Container(
-                            margin: EdgeInsets.all(20),
-                            color: AppColors.whiteColor,
-                            width: MediaQuery.of(context).size.width,
-                            padding: EdgeInsets.all(16),
-                            child: TabBar(
-                              labelColor: AppColors.purpleColor,
-                              unselectedLabelColor: AppColors.blackColor,
-                              isScrollable: true,
-                              labelPadding:
-                                  EdgeInsets.only(left: 20, right: 20),
-                              tabs: [
-                                Tab(text: 'Tags'),
-                                Tab(text: 'Emails'),
-                                Tab(text: 'Orders'),
-                                Tab(text: 'phone'),
-                                Tab(text: 'visbile'),
+                          DropdownButton(
+                              hint: Text("Search "),
+                              items: [
+                                DropdownMenuItem(
+                                  value: "Date",
+                                  child: Text("Date"),
+                                ),
                               ],
-                              controller: _tabController,
-                            ),
+                              onChanged: (value) {}),
+                          SizedBox(
+                            width: 20.0,
                           ),
                           Container(
-                            height: 100,
-                            color: AppColors.whiteColor,
-                            child: TabBarView(
-                                controller: _tabController,
-                                children: [
-                                  Container(
-                                    child: Text('No Data'),
-                                  ),
-                                  Container(
-                                    child: Text('No Data'),
-                                  ),
-                                  Container(
-                                    child: Text('No Data'),
-                                  ),
-                                  Container(
-                                    child: Text('No Data'),
-                                  ),
-                                  Container(
-                                    child: Text('No Data'),
-                                  ),
-                                ]),
+                            width: 120,
+                            child: OutlinedButton(
+                              style: ButtonStyle(
+                                backgroundColor: MaterialStateProperty.all(
+                                    AppColors.purpleColor),
+                              ),
+                              onPressed: () {},
+                              child: Text(
+                                'Export',
+                                style: TextStyle(color: AppColors.whiteColor),
+                              ),
+                            ),
                           ),
                         ],
                       ),
-                    ),
+                    ],
                   ),
-                ),
-              ]),
+                  SizedBox(
+                    height: 40.0,
+                  ),
+                  //Now let's add the Table
+                  Column(
+                    crossAxisAlignment: CrossAxisAlignment.stretch,
+                    children: [
+                      DataTable(
+                          headingRowColor: MaterialStateProperty.resolveWith(
+                              (states) => AppColors.backColor),
+                          columns: [
+                            DataColumn(label: Text("Customer")),
+                            DataColumn(label: Text("Tags")),
+                            DataColumn(label: Text("Email")),
+                            DataColumn(label: Text("Phone")),
+                            DataColumn(label: Text("Total Orders")),
+                            DataColumn(label: Text("LastVisit")),
+                          ],
+                          rows: [
+                            DataRow(
+                                color: MaterialStateProperty.resolveWith(
+                                    (states) => AppColors.whiteColor),
+                                cells: [
+                                  DataCell(Text("Np Data")),
+                                  DataCell(Text("Np Data")),
+                                  DataCell(Text("Np Data")),
+                                  DataCell(Text("Np Data")),
+                                  DataCell(Text("Np Data")),
+                                  DataCell(Text("Np Data")),
+                                ]),
+                            DataRow(
+                                color: MaterialStateProperty.resolveWith(
+                                    (states) => AppColors.whiteColor),
+                                cells: [
+                                  DataCell(Text("Np Data")),
+                                  DataCell(Text("Np Data")),
+                                  DataCell(Text("Np Data")),
+                                  DataCell(Text("Np Data")),
+                                  DataCell(Text("Np Data")),
+                                  DataCell(Text("Np Data")),
+                                ]),
+                          ]),
+                      SizedBox(
+                        height: 40.0,
+                      ),
+                    ],
+                  )
+                ],
+              ),
             )),
           ]),
         ),

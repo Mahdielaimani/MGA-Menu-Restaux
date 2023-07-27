@@ -102,8 +102,18 @@ class SideMenuBar extends StatelessWidget {
           icon: Icons.speed,
           label: 'Dashboard',
         ),
-        SidebarXItem(icon: Icons.chat_sharp, label: 'Reports'),
-        SidebarXItem(icon: Icons.table_chart, label: 'Recommendations'),
+        SidebarXItem(
+            icon: Icons.chat_sharp,
+            label: 'Reports',
+            onTap: () {
+              router.pushNamed('reportsscreen');
+            }),
+        SidebarXItem(
+            icon: Icons.blur_linear_outlined,
+            label: 'Recommendations',
+            onTap: () {
+              router.pushNamed('recommendsscreen');
+            }),
         SidebarXItem(
             icon: Icons.fastfood,
             label: 'Orders',

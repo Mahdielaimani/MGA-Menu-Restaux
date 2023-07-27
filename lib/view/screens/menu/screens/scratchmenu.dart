@@ -1,7 +1,7 @@
 part of '../../packages_screens.dart';
 
 class ScratchMenuScreen extends StatefulWidget {
-  const ScratchMenuScreen({Key? key}) : super(key: key);
+  ScratchMenuScreen({Key? key}) : super(key: key);
 
   @override
   _ScratchMenuScreenState createState() => _ScratchMenuScreenState();
@@ -9,6 +9,35 @@ class ScratchMenuScreen extends StatefulWidget {
 
 class _ScratchMenuScreenState extends State<ScratchMenuScreen>
     with SingleTickerProviderStateMixin {
+  String? _enteredName;
+  String? _enteredDescription;
+  String? _enteredNote;
+
+  List<Map<String, String>> sectionList = [];
+
+  // Callback function to update the data when called from SectionContainer.
+  void onSaveSectionData(String name, String description, String note) {
+    setState(() {
+      _enteredName = name;
+      _enteredDescription = description;
+      _enteredNote = note;
+
+      // Add the entered data to the list
+      sectionList.add({
+        'name': _enteredName!,
+        'description': _enteredDescription!,
+        'note': _enteredNote!,
+      });
+    });
+  }
+
+  bool isActive = true;
+  void toggleCardStatus(bool value) {
+    setState(() {
+      isActive = !isActive;
+    });
+  }
+
   final _controller = SidebarXController(selectedIndex: 0, extended: true);
   AnimationController? _animationController;
   bool _isSectionContainerVisible = false;
@@ -75,6 +104,11 @@ class _ScratchMenuScreenState extends State<ScratchMenuScreen>
         clipRRectWidth = 800;
       });
     }
+  }
+
+  Future<String> getData() async {
+    await Future.delayed(const Duration(seconds: 1));
+    return 'data';
   }
 
   @override
@@ -227,11 +261,100 @@ class _ScratchMenuScreenState extends State<ScratchMenuScreen>
                                       ),
                                     ),
                                   ),
+                                  SizedBox(
+                                    height: 20,
+                                  ),
+
+                                  Padding(
+                                      padding: EdgeInsets.only(top: 16),
+                                      child: Container(
+                                        width: 450,
+                                        height: 50.0 * sectionList.length,
+                                        child: ListView.builder(
+                                          shrinkWrap: true,
+                                          itemCount: sectionList.length,
+                                          itemBuilder: (context, index) {
+                                            return ClipRRect(
+                                              borderRadius:
+                                                  BorderRadius.circular(15),
+                                              child: Container(
+                                                width: ResponsiveValue(
+                                                  context,
+                                                  defaultValue: clipRRectWidth,
+                                                  valueWhen:
+                                                      isMobileTabletSctratch,
+                                                ).value,
+                                                height: 48,
+                                                color: AppColors.whiteColor,
+                                                child: InkWell(
+                                                  onTap: () {},
+                                                  child: Row(
+                                                    mainAxisAlignment:
+                                                        MainAxisAlignment
+                                                            .spaceBetween,
+                                                    children: [
+                                                      Row(children: [
+                                                        SizedBox(width: 10),
+                                                        Icon(
+                                                          Icons
+                                                              .table_rows_rounded,
+                                                          size: 18,
+                                                        ),
+                                                        SizedBox(width: 10),
+                                                        Text(
+                                                          '${sectionList[index]['name']}', // Show the entered name
+                                                          style: TextStyle(
+                                                              color: AppColors
+                                                                  .blackColor,
+                                                              fontSize: 16,
+                                                              fontWeight:
+                                                                  FontWeight
+                                                                      .w400),
+                                                        ),
+                                                        SizedBox(width: 10),
+                                                      ]),
+                                                      Row(
+                                                        children: [
+                                                          Switch(
+                                                            value: isActive,
+                                                            onChanged: (value) {
+                                                              toggleCardStatus(
+                                                                  value);
+                                                            },
+                                                            activeColor: Colors
+                                                                .lightGreen,
+                                                            inactiveThumbColor:
+                                                                Colors.grey,
+                                                            inactiveTrackColor:
+                                                                Colors.grey
+                                                                    .withOpacity(
+                                                                        0.5),
+                                                          ),
+                                                        ],
+                                                      )
+                                                    ],
+                                                  ),
+                                                ),
+                                              ),
+                                            );
+                                          },
+                                        ),
+                                      ))
+                                  // Container(
+                                  //   color: AppColors.orageaColor,
+                                  //   child: Text(
+                                  //       'Name: ${_enteredName ?? ""}'), // Show the entered name
+                                  // ),
+                                  // Container(
+                                  //   color: AppColors.purpleColor,
+                                  //   child: Text(
+                                  //       'Description: ${_enteredDescription ?? ""}'), // Show the entered description
+                                  // )
                                 ],
                               ),
                             ],
                           ),
-                        )
+                        ),
                       ],
                     ),
                   ),
@@ -250,7 +373,9 @@ class _ScratchMenuScreenState extends State<ScratchMenuScreen>
                         curve: Curves.easeInOut,
                       )),
                       child: SectionContainer(
-                          hideSectionContainer: hideSectionContainer),
+                        hideSectionContainer: hideSectionContainer,
+                        onSaveSectionData: onSaveSectionData,
+                      ),
                     ),
                   ),
                 ),
@@ -278,6 +403,7 @@ class _ScratchMenuScreenState extends State<ScratchMenuScreen>
           ),
         ),
       ]),
+      floatingActionButtonLocation: FloatingActionButtonLocation.endFloat,
       floatingActionButton: FloatingActionButton(
         onPressed: () {},
         child: const Icon(
