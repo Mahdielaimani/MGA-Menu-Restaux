@@ -49,7 +49,7 @@ class _ListMenuState extends State<ListMenu> {
                       height: 10,
                     ),
                     Container(
-                      width: getSizeApp(context).width,
+                      width: MediaQuery.sizeOf(context).width,
                       height: 160,
                       child: Padding(
                         padding: EdgeInsets.only(
@@ -133,7 +133,7 @@ class _ListMenuState extends State<ListMenu> {
                                                                   .purpleColor)),
                                                   onPressed: () {
                                                     router.pushNamed(
-                                                        'scratchMenuscreen');
+                                                        'scratchMenuScreen');
                                                   },
                                                   child: Text(
                                                     'Edit Menu',

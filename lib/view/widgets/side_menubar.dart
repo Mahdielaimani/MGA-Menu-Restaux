@@ -1,11 +1,15 @@
 part of 'pack_widgets.dart';
 
 class SideMenuBar extends StatelessWidget {
-  const SideMenuBar({Key? key, required SidebarXController controller})
+  const SideMenuBar(
+      {Key? key,
+      required SidebarXController controller,
+      required this.onChange})
       : controller = controller,
         super(key: key);
 
   final SidebarXController controller;
+  final Function(int) onChange;
 
   @override
   Widget build(BuildContext context) {
@@ -60,7 +64,7 @@ class SideMenuBar extends StatelessWidget {
           color: AppColors.whiteColor,
         ),
         textStyle: const TextStyle(color: AppColors.blackColor),
-        selectedTextStyle: const TextStyle(color: AppColors.purpleColor),
+        selectedTextStyle: TextStyle(color: AppColors.purpleColor),
         itemTextPadding: const EdgeInsets.only(left: 10),
         selectedItemTextPadding: const EdgeInsets.only(left: 10),
         itemMargin: EdgeInsets.zero,
@@ -99,51 +103,65 @@ class SideMenuBar extends StatelessWidget {
       ),
       items: [
         SidebarXItem(
-          icon: Icons.speed,
-          label: 'Dashboard',
-        ),
+            icon: Icons.speed,
+            label: 'Dashboard',
+            onTap: () {
+              router.pushNamed('dashboardScreen');
+            }),
         SidebarXItem(
             icon: Icons.chat_sharp,
             label: 'Reports',
             onTap: () {
-              router.pushNamed('reportsscreen');
+              router.pushNamed('reportsScreen');
             }),
         SidebarXItem(
             icon: Icons.blur_linear_outlined,
             label: 'Recommendations',
             onTap: () {
-              router.pushNamed('recommendsscreen');
+              router.pushNamed('recommendsScreen');
             }),
         SidebarXItem(
             icon: Icons.fastfood,
             label: 'Orders',
             onTap: () {
-              router.pushNamed('ordersscreen');
+              router.pushNamed('ordersScreen');
             }),
         SidebarXItem(
             icon: Icons.supervisor_account,
             label: 'Customers',
             onTap: () {
-              router.pushNamed('customersscreen');
+              router.pushNamed('customersScreen');
             }),
         SidebarXItem(
             icon: Icons.restaurant,
             label: 'Menu Management',
             onTap: () {
-              router.pushNamed('menuscreen');
+              router.pushNamed('menuScreen');
             }),
-        SidebarXItem(icon: Icons.feedback_outlined, label: 'Feedbacks'),
         SidebarXItem(
-          icon: Icons.translate,
-          label: 'Translation Center',
-        ),
-        SidebarXItem(icon: Icons.settings, label: 'Venue Settings'),
+            icon: Icons.feedback_outlined,
+            label: 'Feedbacks',
+            onTap: () {
+              router.pushNamed('feedbacksScreen');
+            }),
         SidebarXItem(
-            icon: Icons.integration_instructions, label: 'Integrations'),
-        SidebarXItem(icon: Icons.qr_code, label: 'Dine-In QR Menu'),
+            icon: Icons.translate,
+            label: 'Translation Center',
+            onTap: () {
+              router.pushNamed('translationScreen');
+            }),
         SidebarXItem(
-            icon: Icons.delivery_dining_outlined, label: 'Delivery / Pick Up'),
-        SidebarXItem(icon: Icons.menu, label: 'Tablet Menu'),
+            icon: Icons.settings,
+            label: 'Venue Settings',
+            onTap: () {
+              router.pushNamed('venuesettingsScreen');
+            }),
+        SidebarXItem(
+            icon: Icons.integration_instructions,
+            label: 'Integrations',
+            onTap: () {
+              router.pushNamed('paymentSystemScreen');
+            }),
       ],
     );
   }

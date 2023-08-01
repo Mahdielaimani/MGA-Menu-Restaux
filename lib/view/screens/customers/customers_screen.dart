@@ -9,132 +9,123 @@ class _CustomersScreenState extends State<CustomersScreen>
     with SingleTickerProviderStateMixin {
   TabController? _tabController;
 
-  final _controller = SidebarXController(selectedIndex: 0, extended: true);
+  final _controller = SidebarXController(selectedIndex: 4, extended: true);
 
   void initState() {
     super.initState();
-    _tabController = TabController(length: 5, vsync: this);
+    _tabController = TabController(length: 2, vsync: this);
   }
 
   @override
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        body: Ink(
-          width: getSizeApp(context).width,
-          height: getSizeApp(context).height,
-          child: Row(children: [
-            ResponsiveVisibility(
-                visible: true,
-                hiddenWhen: isMobileTablet,
-                child: SideMenuBar(controller: _controller)),
-            Expanded(
+        body: SingleChildScrollView(
+          child: Ink(
+            width: MediaQuery.of(context).size.width,
+            height: MediaQuery.of(context).size.height,
+            color: AppColors.whiteColor,
+            child: Row(children: [
+              ResponsiveVisibility(
+                  visible: true,
+                  hiddenWhen: isMobileTablet,
+                  child: SideMenuBar(
+                    controller: _controller,
+                    onChange: (int page) {
+                      _controller.selectIndex(page);
+                      setState(() {});
+                    },
+                  )),
+              Expanded(
                 child: Ink(
-              color: AppColors.wbackColor,
-              child: Column(
-                children: [
-                  AppBarWelcome(),
-                  TopCardIcons(),
-                  SizedBox(
-                    height: 30,
-                  ),
-
-                  SizedBox(
-                    height: 40.0,
-                  ),
-
-                  //let's set the filter section
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Text(
-                        '0 results listed.',
-                        style: TextStyle(
-                            fontSize: 22, fontWeight: FontWeight.w500),
-                      ),
-                      Row(
-                        children: [
-                          DropdownButton(
-                              hint: Text("Search "),
-                              items: [
-                                DropdownMenuItem(
-                                  value: "Date",
-                                  child: Text("Date"),
-                                ),
-                              ],
-                              onChanged: (value) {}),
-                          SizedBox(
-                            width: 20.0,
+                  color: AppColors.wbackColor,
+                  child: ListView(children: [
+                    const AppBarWelcome(),
+                    TopCardIcons(),
+                    ResponsiveVisibility(
+                        visible: true,
+                        hiddenWhen: isMobileTablet,
+                        child: CardCustomers()),
+                    const SizedBox(
+                      width: 30.0,
+                    ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Padding(
+                          padding: const EdgeInsets.only(left: 15),
+                          child: Text(
+                            '0 results listed.',
+                            style: TextStyle(
+                                fontSize: 16, fontWeight: FontWeight.w500),
                           ),
-                          Container(
-                            width: 120,
-                            child: OutlinedButton(
-                              style: ButtonStyle(
-                                backgroundColor: MaterialStateProperty.all(
-                                    AppColors.purpleColor),
-                              ),
-                              onPressed: () {},
-                              child: Text(
-                                'Export',
-                                style: TextStyle(color: AppColors.whiteColor),
-                              ),
-                            ),
-                          ),
-                        ],
+                        ),
+                        // TextField(
+                        //   decoration: InputDecoration(
+                        //     hintText: "search",
+                        //     prefixIcon: Icon(Icons.search),
+                        //     border: OutlineInputBorder(
+                        //       borderSide: BorderSide(
+                        //         color: Colors.black26,
+                        //       ),
+                        //     ),
+                        //   ),
+                        // ),
+                      ],
+                    ),
+                    const SizedBox(
+                      height: 40.0,
+                    ),
+                    //Now let's add the Table
+
+                    Padding(
+                      padding: EdgeInsets.only(left: 20, right: 20),
+                      child: Container(
+                        color: AppColors.whiteColor,
+                        child: DataTable(
+                            headingRowColor: MaterialStateProperty.resolveWith(
+                                (states) => AppColors.backColor),
+                            columns: const [
+                              DataColumn(label: Text("Customer")),
+                              DataColumn(label: Text("Tags")),
+                              DataColumn(label: Text("Email")),
+                              DataColumn(label: Text("Phone")),
+                              DataColumn(label: Text("Total Orders")),
+                              DataColumn(label: Text("LastVisit")),
+                            ],
+                            rows: [
+                              DataRow(cells: [
+                                DataCell(Text("Jane Smith")),
+                                DataCell(Text("Regular")),
+                                DataCell(Text("jane.smith@example.com")),
+                                DataCell(Text("987-654-3210")),
+                                DataCell(Text("5")),
+                                DataCell(Text("2023-07-30")),
+                              ]),
+                              DataRow(cells: [
+                                DataCell(Text("John Doe")),
+                                DataCell(Text("VIP")),
+                                DataCell(Text("john.doe@example.com")),
+                                DataCell(Text("123-456-7890")),
+                                DataCell(Text("10")),
+                                DataCell(Text("2023-07-31")),
+                              ]),
+                            ]),
                       ),
-                    ],
-                  ),
-                  SizedBox(
-                    height: 40.0,
-                  ),
-                  //Now let's add the Table
-                  Column(
-                    crossAxisAlignment: CrossAxisAlignment.stretch,
-                    children: [
-                      DataTable(
-                          headingRowColor: MaterialStateProperty.resolveWith(
-                              (states) => AppColors.backColor),
-                          columns: [
-                            DataColumn(label: Text("Customer")),
-                            DataColumn(label: Text("Tags")),
-                            DataColumn(label: Text("Email")),
-                            DataColumn(label: Text("Phone")),
-                            DataColumn(label: Text("Total Orders")),
-                            DataColumn(label: Text("LastVisit")),
-                          ],
-                          rows: [
-                            DataRow(
-                                color: MaterialStateProperty.resolveWith(
-                                    (states) => AppColors.whiteColor),
-                                cells: [
-                                  DataCell(Text("Np Data")),
-                                  DataCell(Text("Np Data")),
-                                  DataCell(Text("Np Data")),
-                                  DataCell(Text("Np Data")),
-                                  DataCell(Text("Np Data")),
-                                  DataCell(Text("Np Data")),
-                                ]),
-                            DataRow(
-                                color: MaterialStateProperty.resolveWith(
-                                    (states) => AppColors.whiteColor),
-                                cells: [
-                                  DataCell(Text("Np Data")),
-                                  DataCell(Text("Np Data")),
-                                  DataCell(Text("Np Data")),
-                                  DataCell(Text("Np Data")),
-                                  DataCell(Text("Np Data")),
-                                  DataCell(Text("Np Data")),
-                                ]),
-                          ]),
-                      SizedBox(
-                        height: 40.0,
-                      ),
-                    ],
-                  )
-                ],
+                    ),
+                  ]),
+                ),
               ),
-            )),
-          ]),
+            ]),
+          ),
+        ),
+        floatingActionButtonLocation: FloatingActionButtonLocation.endFloat,
+        floatingActionButton: FloatingActionButton(
+          onPressed: () {},
+          child: const Icon(
+            FontAwesomeIcons.solidCommentDots,
+            color: AppColors.whiteColor,
+          ),
         ),
       ),
     );

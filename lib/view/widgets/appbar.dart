@@ -6,7 +6,7 @@ class AppBarWelcome extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: getSizeApp(context).width,
+      width: MediaQuery.sizeOf(context).width,
       height: 40,
       color: AppColors.appbarColor,
       padding: const EdgeInsets.symmetric(vertical: 5),

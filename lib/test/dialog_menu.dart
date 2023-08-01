@@ -14,7 +14,7 @@ class _DialogMenuState extends State<DialogMenu> {
   Widget build(BuildContext context) {
     return Dialog(
       child: Container(
-        width: getSizeApp(context).width * .6,
+        width: MediaQuery.sizeOf(context).width * .6,
         constraints: const BoxConstraints(maxWidth: 700),
         padding: const EdgeInsets.all(20),
         child: Column(
@@ -37,8 +37,8 @@ class _DialogMenuState extends State<DialogMenu> {
             ),
             const SizedBox(height: 10),
             SizedBox(
-              width: getSizeApp(context).width / 4,
-              height: getSizeApp(context).height * .15,
+              width: MediaQuery.sizeOf(context).width / 4,
+              height: MediaQuery.sizeOf(context).height * .15,
               child: Row(
                 children: [
                   CardCreateMenuItem(

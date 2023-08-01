@@ -49,6 +49,16 @@ class _SectionContainerState extends State<SectionContainer> {
   }
 
   @override
+  void initState() {
+    super.initState();
+
+    // Prepopulate the TextFields with existing data if available.
+    nameController.text = widget.name ?? '';
+    descriptionController.text = widget.description ?? '';
+    noteController.text = widget.note ?? '';
+  }
+
+  @override
   Widget build(BuildContext context) {
     return Container(
       color: AppColors.whiteColor,

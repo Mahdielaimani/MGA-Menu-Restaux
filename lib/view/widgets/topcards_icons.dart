@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 
-import '../../core/function/functions.dart';
 import '../../helpers/appcolors.dart';
 
 class TopCardIcons extends StatelessWidget {
@@ -8,7 +7,7 @@ class TopCardIcons extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       height: 48,
-      width: getSizeApp(context).width,
+      width: MediaQuery.sizeOf(context).width,
       decoration: BoxDecoration(color: AppColors.whiteColor
           // borderRadius: BorderRadius.circular(8),
           ),

@@ -1,21 +1,46 @@
-import 'dart:js';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'packages/packages.dart';
 import 'view/screens/menu/components/pack_components.dart';
 import 'view/screens/packages_screens.dart';
+import 'view/screens/payment/payment_system_screen.dart.dart';
 
 final _rootNavigatorKey = GlobalKey<NavigatorState>();
 
 final router = GoRouter(initialLocation: '/', routes: [
   GoRoute(
     path: '/',
-    name: 'loginscreen',
+    name: 'loginScreen',
     builder: (context, state) => LoginScreen(),
   ),
   GoRoute(
-    path: '/menuscreen',
-    name: 'menuscreen',
+    path: '/dashboardScreen',
+    name: 'dashboardScreen',
+    builder: (context, state) => DashboardScreen(),
+  ),
+  GoRoute(
+    path: '/reportsScreen',
+    name: 'reportsScreen',
+    builder: (context, state) => ReportsScreen(),
+  ),
+  GoRoute(
+    path: '/recommendsScreen',
+    name: 'recommendsScreen',
+    builder: (context, state) => RecommendScreen(),
+  ),
+  GoRoute(
+    path: '/customersScreen',
+    name: 'customersScreen',
+    builder: (context, state) => CustomersScreen(),
+  ),
+  GoRoute(
+    path: '/ordersScreen',
+    name: 'ordersScreen',
+    builder: (context, state) => OrdersScreen(),
+  ),
+  GoRoute(
+    path: '/menuScreen',
+    name: 'menuScreen',
     builder: (context, state) => MenuScreen(),
   ),
   GoRoute(
@@ -24,36 +49,36 @@ final router = GoRouter(initialLocation: '/', routes: [
     builder: (context, state) => CardMenuManagement(),
   ),
   GoRoute(
-    path: '/scratchMenuscreen',
-    name: 'scratchMenuscreen',
+    path: '/scratchMenuScreen',
+    name: 'scratchMenuScreen',
     builder: (context, state) => ScratchMenuScreen(),
   ),
   GoRoute(
     path: '/addsection',
-    name: 'addSectionscreen',
+    name: 'addsection',
     builder: (context, state) => SectionContainer(
       hideSectionContainer: (BuildContext) {},
       onSaveSectionData: (String name, String description, String note) {},
     ),
   ),
   GoRoute(
-    path: '/customersscreen',
-    name: 'customersscreen',
-    builder: (context, state) => CustomersScreen(),
+    path: '/feedbacksScreen',
+    name: 'feedbacksScreen',
+    builder: (context, state) => FeedbacksScreen(),
   ),
   GoRoute(
-    path: '/ordersscreen',
-    name: 'ordersscreen',
-    builder: (context, state) => OrdersScreen(),
+    path: '/translationScreen',
+    name: 'translationScreen',
+    builder: (context, state) => TranslationScreen(),
   ),
   GoRoute(
-    path: '/recommendsscreen',
-    name: 'recommendsscreen',
-    builder: (context, state) => RecommendScreen(),
+    path: '/venuesettingsScreen',
+    name: 'venuesettingsScreen',
+    builder: (context, state) => VenueSeetingsScreen(),
   ),
   GoRoute(
-    path: '/reportsscreen',
-    name: 'reportsscreen',
-    builder: (context, state) => ReportsScreen(),
-  )
+    path: '/paymentSystemScreen',
+    name: 'paymentSystemScreen',
+    builder: (context, state) => PaymentSystem(),
+  ),
 ]);

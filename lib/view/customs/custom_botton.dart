@@ -19,7 +19,7 @@ class CustomButton extends StatelessWidget {
             .value),
       ),
       onPressed: () {
-        router.pushNamed('menuscreen');
+        router.pushNamed('menuScreen');
       },
       child: const Text('Login',
           style: TextStyle(

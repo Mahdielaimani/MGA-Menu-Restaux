@@ -14,7 +14,7 @@ class CardScratch extends StatelessWidget {
         ),
         Container(
           color: Colors.white,
-          width: getSizeApp(context).width,
+          width: MediaQuery.sizeOf(context).width,
           height: 72,
           child: Row(mainAxisAlignment: MainAxisAlignment.center, children: [
             SizedBox(

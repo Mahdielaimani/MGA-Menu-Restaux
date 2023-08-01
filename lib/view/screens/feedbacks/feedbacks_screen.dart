@@ -1,16 +1,22 @@
 part of '../packages_screens.dart';
 
-class OrdersScreen extends StatefulWidget {
-  OrdersScreen({super.key});
+class FeedbacksScreen extends StatefulWidget {
+  const FeedbacksScreen({super.key});
 
   @override
-  State<OrdersScreen> createState() => OrdersScreenState();
+  State<FeedbacksScreen> createState() => _FeedbacksScreenState();
 }
 
-class OrdersScreenState extends State<OrdersScreen>
+class _FeedbacksScreenState extends State<FeedbacksScreen>
     with SingleTickerProviderStateMixin {
   TabController? _tabController;
-  final _controller = SidebarXController(selectedIndex: 3, extended: true);
+
+  final _controller = SidebarXController(selectedIndex: 6, extended: true);
+
+  void initState() {
+    super.initState();
+    _tabController = TabController(length: 2, vsync: this);
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -38,7 +44,7 @@ class OrdersScreenState extends State<OrdersScreen>
                   AppBarWelcome(),
                   TopCardIcons(),
 
-                  CardOrders(),
+                  CardFeedbacks(),
 
                   //let's set the filter section
 

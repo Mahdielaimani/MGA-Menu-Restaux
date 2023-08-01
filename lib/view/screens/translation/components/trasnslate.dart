@@ -1,8 +1,4 @@
-import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-
-import '../core/function/functions.dart';
-import '../helpers/appcolors.dart';
+part of '../../packages_screens.dart';
 
 class TranslationCenter extends StatelessWidget {
   const TranslationCenter({Key? key}) : super(key: key);
@@ -10,9 +6,9 @@ class TranslationCenter extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.fromLTRB(20, 0, 20, 0),
+      padding: const EdgeInsets.fromLTRB(20, 0, 20, 0),
       child: Container(
-        width: getSizeApp(context).width,
+        width: MediaQuery.sizeOf(context).width,
         padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 15),
         margin: const EdgeInsets.symmetric(vertical: 15),
         decoration: BoxDecoration(

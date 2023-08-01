@@ -6,7 +6,7 @@ class MenuScreen extends StatefulWidget {
 }
 
 class _MenuScreenState extends State<MenuScreen> {
-  final _controller = SidebarXController(selectedIndex: 0, extended: true);
+  final _controller = SidebarXController(selectedIndex: 5, extended: true);
 
   @override
   Widget build(BuildContext context) {
@@ -22,7 +22,12 @@ class _MenuScreenState extends State<MenuScreen> {
               ResponsiveVisibility(
                   visible: true,
                   hiddenWhen: isMobileTablet,
-                  child: SideMenuBar(controller: _controller)),
+                  child: SideMenuBar(
+                      onChange: (int page) {
+                        _controller.selectIndex(page);
+                        setState(() {});
+                      },
+                      controller: _controller)),
               Expanded(
                 child: Ink(
                   color: AppColors.wbackColor,

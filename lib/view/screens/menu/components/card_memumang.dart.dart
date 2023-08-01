@@ -1,7 +1,7 @@
 part of 'pack_components.dart';
 
 class CardMenuManagement extends StatefulWidget {
-  CardMenuManagement();
+  const CardMenuManagement({super.key});
   @override
   _CardMenuManagementState createState() => _CardMenuManagementState();
 }
@@ -17,46 +17,45 @@ class _CardMenuManagementState extends State<CardMenuManagement>
   }
 
   @override
-  @override
   Widget build(BuildContext context) {
     return SingleChildScrollView(
       scrollDirection: Axis.vertical,
-      child: Container(
-        width: getSizeApp(context).width,
+      child: SizedBox(
+        width: MediaQuery.sizeOf(context).width,
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Container(
               color: AppColors.whiteColor,
-              width: getSizeApp(context).width,
+              width: MediaQuery.sizeOf(context).width,
               height: 113,
               child: SingleChildScrollView(
                 child: Column(
                   children: [
-                    Divider(
+                    const Divider(
                       color: AppColors.dividerColor,
                       height: 1,
                     ),
-                    SizedBox(
+                    const SizedBox(
                       height: 20,
                     ),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        SizedBox(
+                        const SizedBox(
                           width: 15,
                         ),
-                        Text(
+                        const Text(
                           'Menu Management',
                           textAlign: TextAlign.left,
                           style: TextStyle(fontSize: 20),
                         ),
-                        Spacer(
+                        const Spacer(
                           flex: 2,
                         ),
                         Row(
                           children: [
-                            Container(
+                            SizedBox(
                               width: 123,
                               height: 32,
                               child: OutlinedButton(
@@ -65,21 +64,21 @@ class _CardMenuManagementState extends State<CardMenuManagement>
                                       AppColors.whiteColor),
                                 ),
                                 onPressed: () {},
-                                child: Text(
+                                child: const Text(
                                   'Improve Menu',
                                   style:
                                       TextStyle(color: AppColors.purpleColor),
                                 ),
                               ),
                             ),
-                            SizedBox(
+                            const SizedBox(
                               width: 5,
                             ),
-                            Container(
+                            SizedBox(
                               width: 123,
                               height: 32,
                               child: OutlinedButton(
-                                style: ButtonStyle(
+                                style: const ButtonStyle(
                                     backgroundColor: MaterialStatePropertyAll(
                                         AppColors.purpleColor)),
                                 onPressed: () {
@@ -88,13 +87,13 @@ class _CardMenuManagementState extends State<CardMenuManagement>
                                       builder: (builder) =>
                                           const DialogAddMenu());
                                 },
-                                child: Text(
+                                child: const Text(
                                   'Create Menu',
                                   style: TextStyle(color: AppColors.whiteColor),
                                 ),
                               ),
                             ),
-                            SizedBox(
+                            const SizedBox(
                               width: 20,
                             )
                           ],
@@ -108,8 +107,9 @@ class _CardMenuManagementState extends State<CardMenuManagement>
                           labelColor: AppColors.purpleColor,
                           unselectedLabelColor: AppColors.blackColor,
                           isScrollable: true,
-                          labelPadding: EdgeInsets.only(left: 20, right: 20),
-                          tabs: [
+                          labelPadding:
+                              const EdgeInsets.only(left: 20, right: 20),
+                          tabs: const [
                             Tab(text: 'Menus'),
                             Tab(text: 'Modifiers'),
                             Tab(text: 'Promo Codes'),

@@ -21,7 +21,7 @@ class _MenuItemState extends State<MenuItem> {
     String formattedDate = DateFormat('yyyy-MM-dd').format(currentDate);
 
     return Container(
-      width: getSizeApp(context).width,
+      width: MediaQuery.sizeOf(context).width,
       height: 164,
       child: Padding(
         padding: EdgeInsets.all(5),
