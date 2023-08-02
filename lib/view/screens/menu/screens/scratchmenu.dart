@@ -165,8 +165,8 @@ class _ScratchMenuScreenState extends State<ScratchMenuScreen>
                                             ),
                                             Text('All',
                                                 style: TextStyle(
-                                                    color:
-                                                        AppColors.purpleColor)),
+                                                    color: AppColors
+                                                        .kPurpleColor)),
                                             SizedBox(
                                               width: 10,
                                             ),

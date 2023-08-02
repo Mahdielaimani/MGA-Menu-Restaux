@@ -1,4 +1,4 @@
-part of 'pack_widgets.dart';
+part of 'widgets.dart';
 
 class AppBarWelcome extends StatelessWidget {
   const AppBarWelcome({Key? key}) : super(key: key);

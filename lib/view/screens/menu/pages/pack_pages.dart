@@ -4,7 +4,7 @@ import 'package:intl/intl.dart';
 import 'package:menu_restaux/core/logic/blocs/menu/menu_state.dart';
 
 import '../../../../core/logic/blocs/menu/menu_bloc.dart';
-import '../../../../helpers/appcolors.dart';
+import '../../../../core/constant/colors.dart';
 import '../../../../routes.dart';
 import '../components/dialog_menulist.dart';
 import '../container/create_menucontainer.dart';

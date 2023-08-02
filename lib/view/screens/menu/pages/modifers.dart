@@ -37,7 +37,7 @@ class _ModifersState extends State<Modifers> {
               child: OutlinedButton(
                 style: ButtonStyle(
                     backgroundColor:
-                        MaterialStatePropertyAll(AppColors.purpleColor)),
+                        MaterialStatePropertyAll(AppColors.kPurpleColor)),
                 onPressed: () {},
                 child: Text(
                   'Create a Modifer',

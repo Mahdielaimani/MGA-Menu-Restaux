@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
-class AppColors {
-  static const purpleColor = Colors.deepPurple;
-  static const Color backColor = Color.fromARGB(250, 250, 250, 250);
+abstract class AppColors {
+  static const Color kPurpleColor = Colors.deepPurple;
+  static const Color kBackColor = Color.fromARGB(250, 250, 250, 250);
   static const Color blackColor = Colors.black;
   static const Color tblackColor = Colors.black87;
 

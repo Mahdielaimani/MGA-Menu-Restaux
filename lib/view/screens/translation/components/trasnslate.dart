@@ -13,14 +13,14 @@ class TranslationCenter extends StatelessWidget {
         margin: const EdgeInsets.symmetric(vertical: 15),
         decoration: BoxDecoration(
           color: AppColors.noteColor,
-          border: Border.all(color: AppColors.purpleColor, width: 1),
+          border: Border.all(color: AppColors.kPurpleColor, width: 1),
           borderRadius: BorderRadius.circular(10),
         ),
         child: Wrap(
           children: [
             const Icon(
               FontAwesomeIcons.circleExclamation,
-              color: AppColors.purpleColor,
+              color: AppColors.kPurpleColor,
               size: 16,
             ),
             const SizedBox(width: 10),
@@ -32,7 +32,7 @@ class TranslationCenter extends StatelessWidget {
               child: const Text(
                 "Translation Center.",
                 style: TextStyle(
-                  color: AppColors.purpleColor,
+                  color: AppColors.kPurpleColor,
                   decoration: TextDecoration.underline,
                 ),
               ),

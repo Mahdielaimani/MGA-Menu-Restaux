@@ -130,7 +130,7 @@ class _ListMenuState extends State<ListMenu> {
                                                       backgroundColor:
                                                           MaterialStatePropertyAll(
                                                               AppColors
-                                                                  .purpleColor)),
+                                                                  .kPurpleColor)),
                                                   onPressed: () {
                                                     router.pushNamed(
                                                         'scratchMenuScreen');
@@ -262,7 +262,7 @@ class _ListMenuState extends State<ListMenu> {
                       child: OutlinedButton(
                         style: ButtonStyle(
                             backgroundColor: MaterialStatePropertyAll(
-                                AppColors.purpleColor)),
+                                AppColors.kPurpleColor)),
                         onPressed: () {
                           showDialog(
                               context: context,

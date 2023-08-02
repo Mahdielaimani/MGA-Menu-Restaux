@@ -32,7 +32,7 @@ class Archive extends StatelessWidget {
                 child: OutlinedButton(
                   style: ButtonStyle(
                       backgroundColor:
-                          MaterialStatePropertyAll(AppColors.purpleColor)),
+                          MaterialStatePropertyAll(AppColors.kPurpleColor)),
                   onPressed: () {},
                   child: Text(
                     'Create a Archive',

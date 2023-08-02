@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../../../helpers/appcolors.dart';
+import '../../../../core/constant/colors.dart';
 import '../../menu/pages/pack_pages.dart';
 
 class CardTranslation extends StatefulWidget {
@@ -55,7 +55,7 @@ class _CardTranslationState extends State<CardTranslation>
                     Align(
                       alignment: Alignment.bottomLeft,
                       child: TabBar(
-                        labelColor: AppColors.purpleColor,
+                        labelColor: AppColors.kPurpleColor,
                         unselectedLabelColor: AppColors.blackColor,
                         isScrollable: true,
                         labelPadding:

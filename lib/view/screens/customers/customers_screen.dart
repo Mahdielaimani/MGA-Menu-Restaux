@@ -84,7 +84,7 @@ class _CustomersScreenState extends State<CustomersScreen>
                         color: AppColors.whiteColor,
                         child: DataTable(
                             headingRowColor: MaterialStateProperty.resolveWith(
-                                (states) => AppColors.backColor),
+                                (states) => AppColors.kBackColor),
                             columns: const [
                               DataColumn(label: Text("Customer")),
                               DataColumn(label: Text("Tags")),

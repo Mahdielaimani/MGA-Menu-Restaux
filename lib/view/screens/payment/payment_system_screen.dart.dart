@@ -3,9 +3,9 @@ import 'package:menu_restaux/view/screens/payment/components/payment_class.dart'
 import 'package:responsive_framework/responsive_value.dart';
 import 'package:sidebarx/sidebarx.dart';
 
-import '../../../helpers/appcolors.dart';
-import '../../../helpers/responsive_condition.dart';
-import '../../widgets/pack_widgets.dart';
+import '../../../core/constant/colors.dart';
+import '../../../core/ui/responsive_condition.dart';
+import '../../widgets/widgets.dart';
 import '../../widgets/topcards_icons.dart';
 import 'components/card_payment.dart';
 

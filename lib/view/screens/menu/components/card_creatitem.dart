@@ -31,7 +31,7 @@ class CardCreateMenuItem extends StatelessWidget {
             children: [
               Icon(
                 icon,
-                color: AppColors.purpleColor,
+                color: AppColors.kPurpleColor,
                 size: 18,
               ),
               const SizedBox(height: 18),

@@ -37,16 +37,7 @@ class _SectionContainerState extends State<SectionContainer> {
 
   final imageController = TextEditingController();
 
-  void _pickImage(BuildContext context) async {
-    final pickedImage =
-        await ImagePicker().pickImage(source: ImageSource.gallery);
-
-    if (pickedImage != null) {
-      setState(() {
-        widget.image = Image.file(File(pickedImage.path));
-      });
-    }
-  }
+  File? image;
 
   @override
   void initState() {
@@ -102,11 +93,11 @@ class _SectionContainerState extends State<SectionContainer> {
                 decoration: InputDecoration(
                   hintText: 'couscous',
                   border: OutlineInputBorder(
-                    borderSide: BorderSide(color: AppColors.purpleColor),
+                    borderSide: BorderSide(color: AppColors.kPurpleColor),
                     borderRadius: BorderRadius.circular(10),
                   ),
                   focusedBorder: OutlineInputBorder(
-                    borderSide: BorderSide(color: AppColors.purpleColor),
+                    borderSide: BorderSide(color: AppColors.kPurpleColor),
                     borderRadius: BorderRadius.circular(10),
                   ),
                 ),
@@ -122,7 +113,7 @@ class _SectionContainerState extends State<SectionContainer> {
                     borderRadius: BorderRadius.circular(10),
                   ),
                   focusedBorder: OutlineInputBorder(
-                    borderSide: BorderSide(color: AppColors.purpleColor),
+                    borderSide: BorderSide(color: AppColors.kPurpleColor),
                     borderRadius: BorderRadius.circular(10),
                   ),
                 ),
@@ -137,28 +128,48 @@ class _SectionContainerState extends State<SectionContainer> {
                     borderRadius: BorderRadius.circular(10),
                   ),
                   focusedBorder: OutlineInputBorder(
-                    borderSide: BorderSide(color: AppColors.purpleColor),
+                    borderSide: BorderSide(color: AppColors.kPurpleColor),
                     borderRadius: BorderRadius.circular(10),
                   ),
                 ),
               ),
               SizedBox(height: 20),
               Text('Image'),
+              if (image != null)
+                kIsWeb
+                    ? Image(
+                        width: 200,
+                        height: 200,
+                        image: NetworkImage(image!.path),
+                      )
+                    : Image(
+                        width: 200,
+                        height: 200,
+                        image: FileImage(image!),
+                      ),
               Padding(
                 padding: EdgeInsets.all(8),
                 child: Column(
                   children: [
                     ElevatedButton.icon(
-                      style: ButtonStyle(
+                      style: const ButtonStyle(
                           backgroundColor:
-                              MaterialStatePropertyAll(AppColors.purpleColor)),
-                      label: Text(
+                              MaterialStatePropertyAll(AppColors.kPurpleColor)),
+                      label: const Text(
                         'Upload',
                       ),
-                      icon: Icon(
+                      icon: const Icon(
                         Icons.image_outlined,
                       ),
-                      onPressed: () => _pickImage(context),
+                      onPressed: () async {
+                        final file = await AppFunctions.pickImage(context);
+                        //TODO: change image
+                        if (file != null) {
+                          setState(() {
+                            image = File(file.path);
+                          });
+                        }
+                      },
                     ),
                   ],
                 ),

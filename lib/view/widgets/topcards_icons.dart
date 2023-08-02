@@ -1,17 +1,19 @@
 import 'package:flutter/material.dart';
 
-import '../../helpers/appcolors.dart';
+import '../../core/constant/colors.dart';
 
 class TopCardIcons extends StatelessWidget {
+  const TopCardIcons({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Container(
       height: 48,
       width: MediaQuery.sizeOf(context).width,
-      decoration: BoxDecoration(color: AppColors.whiteColor
+      decoration: const BoxDecoration(color: AppColors.whiteColor
           // borderRadius: BorderRadius.circular(8),
           ),
-      child: Row(
+      child: const Row(
         mainAxisAlignment: MainAxisAlignment.end,
         children: [
           SizedBox(width: 10),

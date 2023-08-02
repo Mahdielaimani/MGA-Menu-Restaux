@@ -6,6 +6,7 @@ import 'package:menu_restaux/core/logic/blocs/menu/menu_bloc.dart';
 import 'package:menu_restaux/routes.dart';
 import 'package:responsive_framework/responsive_framework.dart';
 
+import 'core/constant/colors.dart';
 import 'data/api/api.dart';
 
 void main() async {
