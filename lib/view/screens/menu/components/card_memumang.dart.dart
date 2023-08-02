@@ -85,7 +85,7 @@ class _CardMenuManagementState extends State<CardMenuManagement>
                                   showDialog(
                                       context: context,
                                       builder: (builder) =>
-                                          const DialogAddMenu());
+                                          const CreateMenuContainer());
                                 },
                                 child: const Text(
                                   'Create Menu',

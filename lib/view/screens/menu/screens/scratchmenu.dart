@@ -163,15 +163,24 @@ class _ScratchMenuScreenState extends State<ScratchMenuScreen>
                                             SizedBox(
                                               width: 10,
                                             ),
-                                            Text('All'),
+                                            Text('All',
+                                                style: TextStyle(
+                                                    color:
+                                                        AppColors.purpleColor)),
                                             SizedBox(
                                               width: 10,
                                             ),
-                                            Text('Active'),
+                                            Text('Active',
+                                                style: TextStyle(
+                                                    color:
+                                                        AppColors.greenColor)),
                                             SizedBox(
                                               width: 10,
                                             ),
-                                            Text('Inactive'),
+                                            Text('Inactive',
+                                                style: TextStyle(
+                                                    color:
+                                                        AppColors.greyColor)),
                                           ],
                                         )
                                       ]),
@@ -244,6 +253,7 @@ class _ScratchMenuScreenState extends State<ScratchMenuScreen>
                                                 );
                                               },
                                               child: Row(
+                                                mainAxisSize: MainAxisSize.min,
                                                 children: [
                                                   SizedBox(
                                                     width: 10,

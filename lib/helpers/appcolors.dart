@@ -18,4 +18,5 @@ class AppColors {
   static const Color wbackColor = Color.fromARGB(245, 245, 245, 245);
   static const Color noteColor = Color.fromARGB(255, 255, 246, 246);
   static const Color dividerColor = Color.fromARGB(255, 231, 224, 224);
+  static const Color greenColor = Color.fromARGB(255, 133, 248, 62);
 }

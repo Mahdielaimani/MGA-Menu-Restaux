@@ -266,7 +266,8 @@ class _ListMenuState extends State<ListMenu> {
                         onPressed: () {
                           showDialog(
                               context: context,
-                              builder: (builder) => const DialogAddMenu());
+                              builder: (builder) =>
+                                  const CreateMenuContainer());
                         },
                         child: Text(
                           'Create a Menu',
