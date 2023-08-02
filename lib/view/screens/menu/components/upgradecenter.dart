@@ -16,7 +16,7 @@ class UpgradeCenter extends StatelessWidget {
           decoration: BoxDecoration(
             color: AppColors.noteColor,
             // color: Color.fromARGB(255, 236, 228, 228).withOpacity(.3),
-            border: Border.all(color: AppColors.purpleColor, width: 1),
+            border: Border.all(color: AppColors.kPurpleColor, width: 1),
             borderRadius: BorderRadius.circular(10),
           ),
           child: Row(
@@ -27,7 +27,7 @@ class UpgradeCenter extends StatelessWidget {
                   const SizedBox(width: 10),
                   const Icon(
                     FontAwesomeIcons.circleExclamation,
-                    color: AppColors.purpleColor,
+                    color: AppColors.kPurpleColor,
                     size: 16,
                   ),
                   const SizedBox(width: 10),
@@ -54,7 +54,7 @@ class UpgradeCenter extends StatelessWidget {
                   Text(
                     "10 items left",
                     style: TextStyle(
-                      color: AppColors.purpleColor,
+                      color: AppColors.kPurpleColor,
                     ),
                   )
                 ],

@@ -1,4 +1,4 @@
-part of 'pack_widgets.dart';
+part of 'widgets.dart';
 
 class SideMenuBar extends StatelessWidget {
   const SideMenuBar(
@@ -64,7 +64,7 @@ class SideMenuBar extends StatelessWidget {
           color: AppColors.whiteColor,
         ),
         textStyle: const TextStyle(color: AppColors.blackColor),
-        selectedTextStyle: TextStyle(color: AppColors.purpleColor),
+        selectedTextStyle: TextStyle(color: AppColors.kPurpleColor),
         itemTextPadding: const EdgeInsets.only(left: 10),
         selectedItemTextPadding: const EdgeInsets.only(left: 10),
         itemMargin: EdgeInsets.zero,
@@ -92,7 +92,7 @@ class SideMenuBar extends StatelessWidget {
           size: 18,
         ),
         selectedIconTheme: const IconThemeData(
-          color: AppColors.purpleColor,
+          color: AppColors.kPurpleColor,
           size: 18,
         ),
       ),

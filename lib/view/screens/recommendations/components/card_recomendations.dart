@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
 
-import '../../../../helpers/appcolors.dart';
+import '../../../../core/constant/colors.dart';
 
 class CardRecomendation extends StatefulWidget {
   const CardRecomendation({super.key});
@@ -60,7 +60,7 @@ class _CardRecomendationState extends State<CardRecomendation>
                       child: Align(
                         alignment: Alignment.bottomLeft,
                         child: TabBar(
-                          labelColor: AppColors.purpleColor,
+                          labelColor: AppColors.kPurpleColor,
                           unselectedLabelColor: AppColors.blackColor,
                           isScrollable: true,
                           labelPadding: EdgeInsets.only(left: 20, right: 20),

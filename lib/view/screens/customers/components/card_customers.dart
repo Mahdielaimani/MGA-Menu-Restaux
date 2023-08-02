@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../../../helpers/appcolors.dart';
+import '../../../../core/constant/colors.dart';
 
 class CardCustomers extends StatefulWidget {
   const CardCustomers({super.key});

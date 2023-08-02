@@ -105,7 +105,7 @@ class _DashboardScreenState extends State<DashboardScreen>
                                   "View Reports",
                                   style: TextStyle(
                                       fontWeight: FontWeight.bold,
-                                      color: AppColors.purpleColor),
+                                      color: AppColors.kPurpleColor),
                                 ),
                               ),
                             ],
@@ -208,7 +208,7 @@ class _DashboardScreenState extends State<DashboardScreen>
                                   "View Orders",
                                   style: TextStyle(
                                       fontWeight: FontWeight.bold,
-                                      color: AppColors.purpleColor),
+                                      color: AppColors.kPurpleColor),
                                 ),
                               ),
                             ],

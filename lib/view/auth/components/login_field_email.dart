@@ -1,6 +1,8 @@
 part of 'pack_components.dart';
 
 class LoginFieldEmail extends StatelessWidget {
+  const LoginFieldEmail({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Container(

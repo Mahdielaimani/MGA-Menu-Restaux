@@ -3,7 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../../../core/logic/blocs/menu/menu_bloc.dart';
 import '../../../../core/logic/blocs/menu/menu_event.dart';
-import '../../../../helpers/appcolors.dart';
+import '../../../../core/constant/colors.dart';
 
 class DialogAddMenu extends StatefulWidget {
   const DialogAddMenu({super.key});
@@ -44,7 +44,7 @@ class _DialogAddMenuState extends State<DialogAddMenu> {
                   borderRadius: BorderRadius.circular(10),
                 ),
                 focusedBorder: OutlineInputBorder(
-                  borderSide: BorderSide(color: AppColors.purpleColor),
+                  borderSide: BorderSide(color: AppColors.kPurpleColor),
                   borderRadius: BorderRadius.circular(10),
                 ),
               ),
@@ -65,7 +65,7 @@ class _DialogAddMenuState extends State<DialogAddMenu> {
                   borderRadius: BorderRadius.circular(10),
                 ),
                 focusedBorder: OutlineInputBorder(
-                  borderSide: BorderSide(color: AppColors.purpleColor),
+                  borderSide: BorderSide(color: AppColors.kPurpleColor),
                   borderRadius: BorderRadius.circular(10),
                 ),
               ),

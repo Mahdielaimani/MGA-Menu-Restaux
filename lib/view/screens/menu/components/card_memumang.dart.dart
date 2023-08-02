@@ -21,7 +21,7 @@ class _CardMenuManagementState extends State<CardMenuManagement>
     return SingleChildScrollView(
       scrollDirection: Axis.vertical,
       child: SizedBox(
-        width: MediaQuery.sizeOf(context).width,
+        width: context.width,
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
@@ -67,7 +67,7 @@ class _CardMenuManagementState extends State<CardMenuManagement>
                                 child: const Text(
                                   'Improve Menu',
                                   style:
-                                      TextStyle(color: AppColors.purpleColor),
+                                      TextStyle(color: AppColors.kPurpleColor),
                                 ),
                               ),
                             ),
@@ -80,7 +80,7 @@ class _CardMenuManagementState extends State<CardMenuManagement>
                               child: OutlinedButton(
                                 style: const ButtonStyle(
                                     backgroundColor: MaterialStatePropertyAll(
-                                        AppColors.purpleColor)),
+                                        AppColors.kPurpleColor)),
                                 onPressed: () {
                                   showDialog(
                                       context: context,
@@ -104,7 +104,7 @@ class _CardMenuManagementState extends State<CardMenuManagement>
                       child: Align(
                         alignment: Alignment.bottomLeft,
                         child: TabBar(
-                          labelColor: AppColors.purpleColor,
+                          labelColor: AppColors.kPurpleColor,
                           unselectedLabelColor: AppColors.blackColor,
                           isScrollable: true,
                           labelPadding:

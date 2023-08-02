@@ -1,7 +1,7 @@
 part of '../../../packages/packages.dart';
 
 class LoginScreen extends StatefulWidget {
-  LoginScreen({Key? key}) : super(key: key);
+  const LoginScreen({Key? key}) : super(key: key);
 
   @override
   State<LoginScreen> createState() => _LoginScreenState();
@@ -13,7 +13,7 @@ class _LoginScreenState extends State<LoginScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: AppColors.backColor,
+      backgroundColor: AppColors.kBackColor,
       body: SafeArea(
         child: SingleChildScrollView(
           child: Column(
@@ -122,7 +122,7 @@ class _LoginScreenState extends State<LoginScreen> {
                                   side: BorderSide(
                                     color: AppColors.greyColor,
                                   ),
-                                  activeColor: AppColors.purpleColor,
+                                  activeColor: AppColors.kPurpleColor,
                                   tristate:
                                       false, // Set to false for a two-state checkbox
                                   value: isChecked,
@@ -138,8 +138,8 @@ class _LoginScreenState extends State<LoginScreen> {
                                 InkWell(
                                   child: Text(
                                     'Forgot Password?',
-                                    style:
-                                        TextStyle(color: AppColors.purpleColor),
+                                    style: TextStyle(
+                                        color: AppColors.kPurpleColor),
                                   ),
                                 ),
                               ],
@@ -161,7 +161,7 @@ class _LoginScreenState extends State<LoginScreen> {
                           child: Text(
                             'Terms of Service',
                             style: TextStyle(
-                                fontSize: 12, color: AppColors.purpleColor),
+                                fontSize: 12, color: AppColors.kPurpleColor),
                           ),
                         ),
                         SizedBox(width: 20),
@@ -170,7 +170,7 @@ class _LoginScreenState extends State<LoginScreen> {
                           child: Text(
                             'Privacy Policy',
                             style: TextStyle(
-                                fontSize: 12, color: AppColors.purpleColor),
+                                fontSize: 12, color: AppColors.kPurpleColor),
                           ),
                         ),
                       ],

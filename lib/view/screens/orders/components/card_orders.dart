@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../../../helpers/appcolors.dart';
+import '../../../../core/constant/colors.dart';
 
 class CardOrders extends StatefulWidget {
   const CardOrders({super.key});
@@ -56,7 +56,7 @@ class _CardOrdersState extends State<CardOrders> with TickerProviderStateMixin {
                     child: Align(
                       alignment: Alignment.bottomLeft,
                       child: TabBar(
-                        labelColor: AppColors.purpleColor,
+                        labelColor: AppColors.kPurpleColor,
                         unselectedLabelColor: AppColors.blackColor,
                         isScrollable: true,
                         labelPadding: EdgeInsets.only(left: 20, right: 20),
@@ -109,7 +109,7 @@ class _CardOrdersState extends State<CardOrders> with TickerProviderStateMixin {
                 child: OutlinedButton(
                   style: ButtonStyle(
                     backgroundColor:
-                        MaterialStateProperty.all(AppColors.purpleColor),
+                        MaterialStateProperty.all(AppColors.kPurpleColor),
                   ),
                   onPressed: () {},
                   child: Text(
@@ -129,7 +129,7 @@ class _CardOrdersState extends State<CardOrders> with TickerProviderStateMixin {
               color: AppColors.whiteColor,
               child: DataTable(
                 headingRowColor: MaterialStateProperty.resolveWith(
-                    (states) => AppColors.backColor),
+                    (states) => AppColors.kBackColor),
                 columns: const [
                   DataColumn(label: Text("ID")),
                   DataColumn(label: Text("Daily No")),

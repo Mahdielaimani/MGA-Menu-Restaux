@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
-import '../../../../helpers/appcolors.dart';
+import '../../../../core/constant/colors.dart';
 
 class DineConfig extends StatefulWidget {
   const DineConfig({super.key});
@@ -23,7 +23,7 @@ class _DineConfigState extends State<DineConfig> {
         decoration: BoxDecoration(
           color: AppColors.noteColor,
           // color: Color.fromARGB(255, 236, 228, 228).withOpacity(.3),
-          border: Border.all(color: AppColors.purpleColor, width: 1),
+          border: Border.all(color: AppColors.kPurpleColor, width: 1),
           borderRadius: BorderRadius.circular(10),
         ),
         child: Expanded(
@@ -35,7 +35,7 @@ class _DineConfigState extends State<DineConfig> {
                   SizedBox(width: 10),
                   Icon(
                     FontAwesomeIcons.circleExclamation,
-                    color: AppColors.purpleColor,
+                    color: AppColors.kPurpleColor,
                     size: 16,
                   ),
                   const SizedBox(width: 10),
@@ -47,7 +47,7 @@ class _DineConfigState extends State<DineConfig> {
                     child: const Text(
                       " Dine-In Configurations ",
                       style: TextStyle(
-                        color: AppColors.purpleColor,
+                        color: AppColors.kPurpleColor,
                         decoration: TextDecoration.underline,
                       ),
                     ),

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:sidebarx/sidebarx.dart';
 
-import '../../../../helpers/appcolors.dart';
+import '../../../../core/constant/colors.dart';
 
 class CardFeedbacks extends StatefulWidget {
   const CardFeedbacks({super.key});
@@ -60,7 +60,7 @@ class _CardFeedbacksState extends State<CardFeedbacks>
                       alignment: Alignment.bottomLeft,
                       child: TabBar(
                         indicatorWeight: MediaQuery.sizeOf(context).width,
-                        labelColor: AppColors.purpleColor,
+                        labelColor: AppColors.kPurpleColor,
                         unselectedLabelColor: AppColors.blackColor,
                         isScrollable: true,
                         labelPadding: EdgeInsets.only(left: 20, right: 20),
@@ -99,7 +99,7 @@ class _CardFeedbacksState extends State<CardFeedbacks>
                 child: OutlinedButton(
                   style: ButtonStyle(
                     backgroundColor:
-                        MaterialStateProperty.all(AppColors.purpleColor),
+                        MaterialStateProperty.all(AppColors.kPurpleColor),
                   ),
                   onPressed: () {},
                   child: Text(

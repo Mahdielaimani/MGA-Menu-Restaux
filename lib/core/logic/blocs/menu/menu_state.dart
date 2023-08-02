@@ -1,4 +1,4 @@
-import '../../../../model/menu.dart';
+import '../../../../data/model/menu.dart';
 
 abstract class MenuState {}
 

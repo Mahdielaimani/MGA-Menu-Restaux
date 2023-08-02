@@ -1,13 +1,15 @@
 import 'package:flutter/material.dart';
-import 'package:menu_restaux/helpers/appcolors.dart';
+
 import 'package:menu_restaux/view/screens/payment/components/payment_class.dart';
 
+import '../../../../core/constant/colors.dart';
 import '../payment_system_screen.dart.dart';
 
 class PaymentSystemCard extends StatelessWidget {
-  PaymentSystemCard({Key? key, required this.paymentSystem}) : super(key: key);
+  const PaymentSystemCard({Key? key, required this.paymentSystem})
+      : super(key: key);
 
-  PaymentSystemModel paymentSystem;
+  final PaymentSystemModel paymentSystem;
 
   @override
   Widget build(BuildContext context) {
@@ -25,18 +27,18 @@ class PaymentSystemCard extends StatelessWidget {
         children: [
           Text(
             paymentSystem.name,
-            style: TextStyle(
+            style: const TextStyle(
               fontWeight: FontWeight.bold,
               fontSize: 18,
             ),
           ),
-          SizedBox(height: 5),
+          const SizedBox(height: 5),
           Text(
             paymentSystem.description,
             textAlign: TextAlign.center,
           ),
-          SizedBox(height: 5),
-          Text(
+          const SizedBox(height: 5),
+          const Text(
             'Free',
             style: TextStyle(
               fontWeight: FontWeight.bold,

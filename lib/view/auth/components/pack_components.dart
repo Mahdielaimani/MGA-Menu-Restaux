@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:responsive_framework/responsive_value.dart';
-import '../../../helpers/appcolors.dart';
-import '../../../helpers/responsive_condition.dart';
-part 'loginfield_email.dart';
+import '../../../core/constant/assets.dart';
+import '../../../core/constant/colors.dart';
+import '../../../core/ui/responsive_condition.dart';
+part 'login_field_email.dart';
 part 'loginfield_pass.dart';
 part 'social_button.dart';
-part 'loginbar.dart';
+part 'login_bar.dart';

@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:intl/intl.dart';
-import 'package:menu_restaux/helpers/appcolors.dart';
+import 'package:menu_restaux/core/constant/colors.dart';
 import 'package:responsive_framework/responsive_value.dart';
 import 'package:sidebarx/sidebarx.dart';
 
-import '../../core/constant/appiconns.dart';
-import '../../helpers/responsive_condition.dart';
+import '../../core/constant/icons.dart';
+import '../../core/ui/responsive_condition.dart';
 
 import '../../routes.dart';
-import '../widgets/pack_widgets.dart';
+import '../widgets/widgets.dart';
 import '../widgets/topcards_icons.dart';
 import 'customers/components/card_customers.dart';
 import 'feedbacks/components/card_fedbacks.dart';
