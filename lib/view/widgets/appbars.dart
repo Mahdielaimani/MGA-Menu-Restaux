@@ -1,4 +1,4 @@
-part of 'widgets.dart';
+part of '../../../packages/packages.dart';
 
 class AppBarWelcome extends StatelessWidget {
   const AppBarWelcome({Key? key}) : super(key: key);
@@ -6,9 +6,9 @@ class AppBarWelcome extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: MediaQuery.sizeOf(context).width,
+      width: context.width,
       height: 40,
-      color: AppColors.appbarColor,
+      color: AppColors.kappbarColor,
       padding: const EdgeInsets.symmetric(vertical: 5),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.center,
@@ -16,7 +16,7 @@ class AppBarWelcome extends StatelessWidget {
           const Icon(
             FontAwesomeIcons.circleExclamation,
             size: 18,
-            color: AppColors.orageaColor,
+            color: AppColors.korageaColor,
           ),
           const Padding(
             padding: EdgeInsets.symmetric(horizontal: 10),
@@ -32,12 +32,12 @@ class AppBarWelcome extends StatelessWidget {
             child: OutlinedButton(
                 style: ButtonStyle(
                   backgroundColor:
-                      MaterialStateProperty.all(AppColors.bSideColor),
+                      MaterialStateProperty.all(AppColors.kbSideColor),
                 ),
                 onPressed: () {},
                 child: Text(
                   "UPGRADE",
-                  style: TextStyle(color: AppColors.whiteColor, fontSize: 12),
+                  style: TextStyle(color: AppColors.kwhiteColor, fontSize: 12),
                 )),
           ),
         ],

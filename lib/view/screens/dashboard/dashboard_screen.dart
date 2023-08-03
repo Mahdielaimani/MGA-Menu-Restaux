@@ -1,4 +1,4 @@
-part of '../packages_screens.dart';
+part of '../../../../packages/packages.dart';
 
 class DashboardScreen extends StatefulWidget {
   const DashboardScreen({super.key});
@@ -23,8 +23,8 @@ class _DashboardScreenState extends State<DashboardScreen>
     return SafeArea(
       child: Scaffold(
         body: Ink(
-          width: MediaQuery.sizeOf(context).width,
-          height: MediaQuery.sizeOf(context).height,
+          width: context.width,
+          height: context.height,
           child: Row(children: [
             ResponsiveVisibility(
                 visible: true,
@@ -38,16 +38,16 @@ class _DashboardScreenState extends State<DashboardScreen>
                 )),
             Expanded(
                 child: Ink(
-              color: AppColors.wbackColor,
+              color: AppColors.kwbackColor,
               child: SingleChildScrollView(
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.start,
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    AppBarWelcome(),
-                    TopCardIcons(),
+                    const AppBarWelcome(),
+                    const TopCardIcons(),
 
-                    SizedBox(
+                    const SizedBox(
                       height: 40.0,
                     ),
                     Padding(
@@ -60,7 +60,7 @@ class _DashboardScreenState extends State<DashboardScreen>
                       ),
                     ),
 
-                    SizedBox(
+                    const SizedBox(
                       height: 20.0,
                     ),
                     Padding(
@@ -76,7 +76,7 @@ class _DashboardScreenState extends State<DashboardScreen>
                     ),
                     //let's set the filter section
 
-                    SizedBox(
+                    const SizedBox(
                       height: 40.0,
                     ),
                     //Now
@@ -85,7 +85,7 @@ class _DashboardScreenState extends State<DashboardScreen>
                       child: Container(
                         width: 900,
                         decoration: BoxDecoration(
-                            color: AppColors.whiteColor,
+                            color: AppColors.kwhiteColor,
                             borderRadius: BorderRadius.circular(20)),
                         padding: EdgeInsets.all(20),
                         child: Column(children: [
@@ -110,9 +110,9 @@ class _DashboardScreenState extends State<DashboardScreen>
                               ),
                             ],
                           ),
-                          Divider(
+                          const Divider(
                             thickness: 0.5,
-                            color: AppColors.greyColor,
+                            color: AppColors.kgreyColor,
                           ),
                           const Row(
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -132,9 +132,9 @@ class _DashboardScreenState extends State<DashboardScreen>
                                 ]),
                                 Text('0.00%'),
                               ]),
-                          Divider(
+                          const Divider(
                             thickness: 0.5,
-                            color: AppColors.greyColor,
+                            color: AppColors.kgreyColor,
                           ),
                           const Row(
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -154,9 +154,9 @@ class _DashboardScreenState extends State<DashboardScreen>
                                 ]),
                                 Text('0.00%'),
                               ]),
-                          Divider(
+                          const Divider(
                             thickness: 0.5,
-                            color: AppColors.greyColor,
+                            color: AppColors.kgreyColor,
                           ),
                           const Row(
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -180,7 +180,7 @@ class _DashboardScreenState extends State<DashboardScreen>
                       ),
                     ),
 
-                    SizedBox(
+                    const SizedBox(
                       height: 40.0,
                     ),
                     Padding(
@@ -188,14 +188,14 @@ class _DashboardScreenState extends State<DashboardScreen>
                       child: Container(
                         width: 900,
                         decoration: BoxDecoration(
-                            color: AppColors.whiteColor,
+                            color: AppColors.kwhiteColor,
                             borderRadius: BorderRadius.circular(20)),
-                        padding: EdgeInsets.all(10),
+                        padding: const EdgeInsets.all(10),
                         child: Column(children: [
                           Row(
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
-                              Text(
+                              const Text(
                                 "Recent Orders",
                                 style: TextStyle(
                                   fontSize: 16,
@@ -204,7 +204,7 @@ class _DashboardScreenState extends State<DashboardScreen>
                               TextButton(
                                 onPressed: () =>
                                     router.pushNamed('ordersScreen'),
-                                child: Text(
+                                child: const Text(
                                   "View Orders",
                                   style: TextStyle(
                                       fontWeight: FontWeight.bold,
@@ -216,8 +216,8 @@ class _DashboardScreenState extends State<DashboardScreen>
                           DataTable(
                               headingRowColor:
                                   MaterialStateProperty.resolveWith(
-                                      (states) => AppColors.wbackColor),
-                              columns: [
+                                      (states) => AppColors.kwbackColor),
+                              columns: const [
                                 DataColumn(label: Text("ID")),
                                 DataColumn(label: Text("Daily No")),
                                 DataColumn(label: Text("Status")),

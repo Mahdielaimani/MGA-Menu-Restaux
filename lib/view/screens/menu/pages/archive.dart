@@ -1,4 +1,4 @@
-part of 'pack_pages.dart';
+part of '../../../../../packages/packages.dart';
 
 class Archive extends StatelessWidget {
   const Archive({super.key});
@@ -6,7 +6,7 @@ class Archive extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-        color: AppColors.wbackColor,
+        color: AppColors.kwbackColor,
         child: Center(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
@@ -36,7 +36,7 @@ class Archive extends StatelessWidget {
                   onPressed: () {},
                   child: Text(
                     'Create a Archive',
-                    style: TextStyle(color: AppColors.whiteColor),
+                    style: TextStyle(color: AppColors.kwhiteColor),
                   ),
                 ),
               ),

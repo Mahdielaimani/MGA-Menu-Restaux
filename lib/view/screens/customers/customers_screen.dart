@@ -1,4 +1,4 @@
-part of '../packages_screens.dart';
+part of '../../../../packages/packages.dart';
 
 class CustomersScreen extends StatefulWidget {
   @override
@@ -24,7 +24,7 @@ class _CustomersScreenState extends State<CustomersScreen>
           child: Ink(
             width: MediaQuery.of(context).size.width,
             height: MediaQuery.of(context).size.height,
-            color: AppColors.whiteColor,
+            color: AppColors.kwhiteColor,
             child: Row(children: [
               ResponsiveVisibility(
                   visible: true,
@@ -38,18 +38,18 @@ class _CustomersScreenState extends State<CustomersScreen>
                   )),
               Expanded(
                 child: Ink(
-                  color: AppColors.wbackColor,
+                  color: AppColors.kwbackColor,
                   child: ListView(children: [
                     const AppBarWelcome(),
-                    TopCardIcons(),
-                    ResponsiveVisibility(
+                    const TopCardIcons(),
+                    const ResponsiveVisibility(
                         visible: true,
                         hiddenWhen: isMobileTablet,
                         child: CardCustomers()),
                     const SizedBox(
                       width: 30.0,
                     ),
-                    Row(
+                    const Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         Padding(
@@ -76,12 +76,10 @@ class _CustomersScreenState extends State<CustomersScreen>
                     const SizedBox(
                       height: 40.0,
                     ),
-                    //Now let's add the Table
-
                     Padding(
-                      padding: EdgeInsets.only(left: 20, right: 20),
+                      padding: const EdgeInsets.only(left: 20, right: 20),
                       child: Container(
-                        color: AppColors.whiteColor,
+                        color: AppColors.kwhiteColor,
                         child: DataTable(
                             headingRowColor: MaterialStateProperty.resolveWith(
                                 (states) => AppColors.kBackColor),
@@ -93,7 +91,7 @@ class _CustomersScreenState extends State<CustomersScreen>
                               DataColumn(label: Text("Total Orders")),
                               DataColumn(label: Text("LastVisit")),
                             ],
-                            rows: [
+                            rows: const [
                               DataRow(cells: [
                                 DataCell(Text("Jane Smith")),
                                 DataCell(Text("Regular")),
@@ -124,7 +122,7 @@ class _CustomersScreenState extends State<CustomersScreen>
           onPressed: () {},
           child: const Icon(
             FontAwesomeIcons.solidCommentDots,
-            color: AppColors.whiteColor,
+            color: AppColors.kwhiteColor,
           ),
         ),
       ),

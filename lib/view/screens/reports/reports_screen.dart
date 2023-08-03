@@ -1,4 +1,4 @@
-part of '../packages_screens.dart';
+part of '../../../../packages/packages.dart';
 
 class ReportsScreen extends StatefulWidget {
   const ReportsScreen({super.key});
@@ -19,7 +19,7 @@ class _ReportsScreenState extends State<ReportsScreen> {
         child: Ink(
           width: MediaQuery.of(context).size.width,
           height: MediaQuery.of(context).size.height,
-          color: AppColors.whiteColor,
+          color: AppColors.kwhiteColor,
           child: Row(
             children: [
               ResponsiveVisibility(
@@ -34,7 +34,7 @@ class _ReportsScreenState extends State<ReportsScreen> {
                   )),
               Expanded(
                 child: Ink(
-                  color: AppColors.wbackColor,
+                  color: AppColors.kwbackColor,
                   child: ListView(
                     children: [
                       const AppBarWelcome(),
@@ -88,7 +88,7 @@ class _ReportsScreenState extends State<ReportsScreen> {
                                               Text(
                                                 "Revenue",
                                                 style: TextStyle(
-                                                  color: AppColors.greyColor,
+                                                  color: AppColors.kgreyColor,
                                                   fontWeight: FontWeight.w400,
                                                 ),
                                               )
@@ -127,7 +127,7 @@ class _ReportsScreenState extends State<ReportsScreen> {
                                               Text(
                                                 "Orders",
                                                 style: TextStyle(
-                                                  color: AppColors.greyColor,
+                                                  color: AppColors.kgreyColor,
                                                   fontWeight: FontWeight.w400,
                                                 ),
                                               )
@@ -166,7 +166,7 @@ class _ReportsScreenState extends State<ReportsScreen> {
                                               Text(
                                                 "Customers",
                                                 style: TextStyle(
-                                                  color: AppColors.greyColor,
+                                                  color: AppColors.kgreyColor,
                                                   fontWeight: FontWeight.w400,
                                                 ),
                                               )
@@ -206,7 +206,7 @@ class _ReportsScreenState extends State<ReportsScreen> {
                                               Text(
                                                 "Tip",
                                                 style: TextStyle(
-                                                  color: AppColors.greyColor,
+                                                  color: AppColors.kgreyColor,
                                                   fontWeight: FontWeight.w400,
                                                 ),
                                               )
@@ -254,7 +254,7 @@ class _ReportsScreenState extends State<ReportsScreen> {
                                               Text(
                                                 "Items Served",
                                                 style: TextStyle(
-                                                  color: AppColors.greyColor,
+                                                  color: AppColors.kgreyColor,
                                                   fontWeight: FontWeight.w400,
                                                 ),
                                               )
@@ -293,7 +293,7 @@ class _ReportsScreenState extends State<ReportsScreen> {
                                               Text(
                                                 "Average Order Size",
                                                 style: TextStyle(
-                                                  color: AppColors.greyColor,
+                                                  color: AppColors.kgreyColor,
                                                   fontWeight: FontWeight.w400,
                                                 ),
                                               )
@@ -332,7 +332,7 @@ class _ReportsScreenState extends State<ReportsScreen> {
                                               Text(
                                                 "Sessions",
                                                 style: TextStyle(
-                                                  color: AppColors.greyColor,
+                                                  color: AppColors.kgreyColor,
                                                   fontWeight: FontWeight.w400,
                                                 ),
                                               )
@@ -372,7 +372,7 @@ class _ReportsScreenState extends State<ReportsScreen> {
                                               Text(
                                                 "Best Day",
                                                 style: TextStyle(
-                                                  color: AppColors.greyColor,
+                                                  color: AppColors.kgreyColor,
                                                   fontWeight: FontWeight.w400,
                                                 ),
                                               )
@@ -409,7 +409,7 @@ class _ReportsScreenState extends State<ReportsScreen> {
         onPressed: () {},
         child: const Icon(
           FontAwesomeIcons.solidCommentDots,
-          color: AppColors.whiteColor,
+          color: AppColors.kwhiteColor,
         ),
       ),
     ));

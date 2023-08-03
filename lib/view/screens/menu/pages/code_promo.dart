@@ -1,13 +1,8 @@
 part of '../../../../../packages/packages.dart';
 
-class Modifers extends StatefulWidget {
-  const Modifers({super.key});
+class CodePromo extends StatelessWidget {
+  const CodePromo({super.key});
 
-  @override
-  State<Modifers> createState() => _ModifersState();
-}
-
-class _ModifersState extends State<Modifers> {
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -25,14 +20,14 @@ class _ModifersState extends State<Modifers> {
               height: 10,
             ),
             Text(
-              'You don’t have any modifiers yet. Start creating new one.',
+              'You don’t have any promo code yet. Start creating new one.',
               style: TextStyle(fontSize: 14, fontWeight: FontWeight.w400),
             ),
             SizedBox(
               height: 15,
             ),
             Container(
-              width: 150,
+              width: 170,
               height: 32,
               child: OutlinedButton(
                 style: ButtonStyle(
@@ -40,7 +35,7 @@ class _ModifersState extends State<Modifers> {
                         MaterialStatePropertyAll(AppColors.kPurpleColor)),
                 onPressed: () {},
                 child: Text(
-                  'Create a Modifer',
+                  'Create a Promo Code',
                   style: TextStyle(color: AppColors.kwhiteColor),
                 ),
               ),

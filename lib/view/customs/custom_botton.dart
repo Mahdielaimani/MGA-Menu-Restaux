@@ -1,4 +1,4 @@
-part of 'pack_customs.dart';
+part of '../../../packages/packages.dart';
 
 class CustomButton extends StatelessWidget {
   const CustomButton({super.key});
@@ -12,9 +12,10 @@ class CustomButton extends StatelessWidget {
             borderRadius: BorderRadius.circular(10.0),
           ),
         ),
-        backgroundColor: MaterialStatePropertyAll(AppColors.buttLoginColor),
+        backgroundColor:
+            const MaterialStatePropertyAll(AppColors.kbuttLoginColor),
         padding: MaterialStatePropertyAll(ResponsiveValue(context,
-                defaultValue: EdgeInsets.fromLTRB(205, 18, 205, 18),
+                defaultValue: const EdgeInsets.fromLTRB(205, 18, 205, 18),
                 valueWhen: isMobileTabletButt)
             .value),
       ),
@@ -23,7 +24,7 @@ class CustomButton extends StatelessWidget {
       },
       child: const Text('Login',
           style: TextStyle(
-            color: AppColors.greyColor,
+            color: AppColors.kgreyColor,
             // color: Colors.gre,
             fontSize: 16,
             fontWeight: FontWeight.normal,

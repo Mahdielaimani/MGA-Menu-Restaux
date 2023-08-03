@@ -1,6 +1,5 @@
-part of '../components/pack_components.dart';
+part of '../../../../../packages/packages.dart';
 
-// ignore: must_be_immutable
 class SectionContainer extends StatefulWidget {
   String? name;
   String? description;
@@ -16,7 +15,7 @@ class SectionContainer extends StatefulWidget {
 
   SectionContainer({
     required this.hideSectionContainer,
-    required this.onSaveSectionData, // Include the callback function in the constructor.
+    required this.onSaveSectionData,
     this.name,
     this.description,
     this.note,
@@ -43,7 +42,6 @@ class _SectionContainerState extends State<SectionContainer> {
   void initState() {
     super.initState();
 
-    // Prepopulate the TextFields with existing data if available.
     nameController.text = widget.name ?? '';
     descriptionController.text = widget.description ?? '';
     noteController.text = widget.note ?? '';
@@ -52,7 +50,7 @@ class _SectionContainerState extends State<SectionContainer> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      color: AppColors.whiteColor,
+      color: AppColors.kwhiteColor,
       width: 500,
       height: MediaQuery.of(context).size.height,
       child: SingleChildScrollView(
@@ -69,7 +67,7 @@ class _SectionContainerState extends State<SectionContainer> {
                       widget.hideSectionContainer(context);
                     },
                   ),
-                  Text(
+                  const Text(
                     'Add New Section',
                     style: TextStyle(
                       fontSize: 16,
@@ -78,16 +76,16 @@ class _SectionContainerState extends State<SectionContainer> {
                   ),
                 ],
               ),
-              SizedBox(height: 16),
-              Row(
+              const SizedBox(height: 16),
+              const Row(
                 children: [
                   Text('Overview'),
                   SizedBox(width: 5),
                   Text('Detail'),
                 ],
               ),
-              SizedBox(height: 16),
-              Text('Name'),
+              const SizedBox(height: 16),
+              const Text('Name'),
               TextField(
                 controller: nameController,
                 decoration: InputDecoration(
@@ -102,7 +100,7 @@ class _SectionContainerState extends State<SectionContainer> {
                   ),
                 ),
               ),
-              SizedBox(height: 16),
+              const SizedBox(height: 16),
               Text('Description'),
               TextField(
                 controller: descriptionController,
@@ -118,7 +116,7 @@ class _SectionContainerState extends State<SectionContainer> {
                   ),
                 ),
               ),
-              SizedBox(height: 16),
+              const SizedBox(height: 16),
               Text('Note'),
               TextField(
                 controller: noteController,
@@ -133,7 +131,7 @@ class _SectionContainerState extends State<SectionContainer> {
                   ),
                 ),
               ),
-              SizedBox(height: 20),
+              const SizedBox(height: 20),
               Text('Image'),
               if (image != null)
                 kIsWeb
@@ -174,7 +172,7 @@ class _SectionContainerState extends State<SectionContainer> {
                   ],
                 ),
               ),
-              SizedBox(height: 42),
+              const SizedBox(height: 42),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
@@ -188,7 +186,6 @@ class _SectionContainerState extends State<SectionContainer> {
                     onPressed: () {
                       widget.hideSectionContainer(context);
 
-                      // Call the callback function with the entered name and description.
                       widget.onSaveSectionData(nameController.text,
                           descriptionController.text, noteController.text);
                     },

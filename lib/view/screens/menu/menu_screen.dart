@@ -1,21 +1,12 @@
 part of '../../../../packages/packages.dart';
 
-class TranslationScreen extends StatefulWidget {
-  const TranslationScreen({super.key});
-
+class MenuScreen extends StatefulWidget {
   @override
-  State<TranslationScreen> createState() => _TranslationScreenState();
+  _MenuScreenState createState() => _MenuScreenState();
 }
 
-class _TranslationScreenState extends State<TranslationScreen>
-    with SingleTickerProviderStateMixin {
-  TabController? _tabController;
-  final _controller = SidebarXController(selectedIndex: 7, extended: true);
-
-  void initState() {
-    super.initState();
-    _tabController = TabController(length: 5, vsync: this);
-  }
+class _MenuScreenState extends State<MenuScreen> {
+  final _controller = SidebarXController(selectedIndex: 5, extended: true);
 
   @override
   Widget build(BuildContext context) {
@@ -32,12 +23,11 @@ class _TranslationScreenState extends State<TranslationScreen>
                   visible: true,
                   hiddenWhen: isMobileTablet,
                   child: SideMenuBar(
-                    controller: _controller,
-                    onChange: (int page) {
-                      _controller.selectIndex(page);
-                      setState(() {});
-                    },
-                  )),
+                      onChange: (int page) {
+                        _controller.selectIndex(page);
+                        setState(() {});
+                      },
+                      controller: _controller)),
               Expanded(
                 child: Ink(
                   color: AppColors.kwbackColor,
@@ -48,7 +38,7 @@ class _TranslationScreenState extends State<TranslationScreen>
                       ResponsiveVisibility(
                           visible: true,
                           hiddenWhen: isMobileTablet,
-                          child: CardTranslation()),
+                          child: CardMenuManagement()),
                     ],
                   ),
                 ),

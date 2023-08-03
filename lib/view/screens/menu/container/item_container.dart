@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+part of '../../../../../packages/packages.dart';
 
 class ItemContainer extends StatefulWidget {
   final Function(BuildContext) hideItemContainer;

@@ -1,11 +1,12 @@
-import 'package:flutter/material.dart';
+part of '../../../packages/packages.dart';
 
 class CustomCard extends StatelessWidget {
   final String title;
   final String subtitle;
   final String description;
 
-  CustomCard({
+  const CustomCard({
+    super.key,
     required this.title,
     required this.subtitle,
     required this.description,
@@ -13,7 +14,7 @@ class CustomCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return SizedBox(
       height: 330,
       width: 789,
       child: Card(
@@ -25,24 +26,24 @@ class CustomCard extends StatelessWidget {
             children: [
               Text(
                 title,
-                style: TextStyle(
+                style: const TextStyle(
                   fontSize: 18,
                   fontWeight: FontWeight.bold,
                 ),
               ),
-              Divider(),
+              const Divider(),
               Text(
                 subtitle,
-                style: TextStyle(
+                style: const TextStyle(
                   fontSize: 14,
                   color: Colors.grey,
                 ),
               ),
-              Divider(),
-              SizedBox(height: 16),
+              const Divider(),
+              const SizedBox(height: 16),
               Text(
                 description,
-                style: TextStyle(
+                style: const TextStyle(
                   fontSize: 16,
                 ),
               ),

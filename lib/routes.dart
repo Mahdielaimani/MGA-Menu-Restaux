@@ -1,9 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'packages/packages.dart';
-import 'view/screens/menu/components/pack_components.dart';
-import 'view/screens/packages_screens.dart';
-import 'view/screens/payment/payment_system_screen.dart.dart';
 
 final _rootNavigatorKey = GlobalKey<NavigatorState>();
 

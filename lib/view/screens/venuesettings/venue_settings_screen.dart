@@ -1,20 +1,20 @@
 part of '../../../../packages/packages.dart';
 
-class TranslationScreen extends StatefulWidget {
-  const TranslationScreen({super.key});
+class VenueSeetingsScreen extends StatefulWidget {
+  const VenueSeetingsScreen({super.key});
 
   @override
-  State<TranslationScreen> createState() => _TranslationScreenState();
+  State<VenueSeetingsScreen> createState() => _VenueSeetingsScreenState();
 }
 
-class _TranslationScreenState extends State<TranslationScreen>
+class _VenueSeetingsScreenState extends State<VenueSeetingsScreen>
     with SingleTickerProviderStateMixin {
   TabController? _tabController;
-  final _controller = SidebarXController(selectedIndex: 7, extended: true);
+  final _controller = SidebarXController(selectedIndex: 8, extended: true);
 
   void initState() {
     super.initState();
-    _tabController = TabController(length: 5, vsync: this);
+    _tabController = TabController(length: 8, vsync: this);
   }
 
   @override
@@ -42,13 +42,9 @@ class _TranslationScreenState extends State<TranslationScreen>
                 child: Ink(
                   color: AppColors.kwbackColor,
                   child: ListView(
-                    children: [
-                      const AppBarWelcome(),
+                    children: const [
+                      AppBarWelcome(),
                       TopCardIcons(),
-                      ResponsiveVisibility(
-                          visible: true,
-                          hiddenWhen: isMobileTablet,
-                          child: CardTranslation()),
                     ],
                   ),
                 ),

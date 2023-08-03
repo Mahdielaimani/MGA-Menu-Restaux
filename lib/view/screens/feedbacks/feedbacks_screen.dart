@@ -1,4 +1,4 @@
-part of '../packages_screens.dart';
+part of '../../../../packages/packages.dart';
 
 class FeedbacksScreen extends StatefulWidget {
   const FeedbacksScreen({super.key});
@@ -23,8 +23,8 @@ class _FeedbacksScreenState extends State<FeedbacksScreen>
     return SafeArea(
       child: Scaffold(
         body: Ink(
-          width: MediaQuery.sizeOf(context).width,
-          height: MediaQuery.sizeOf(context).height,
+          width: context.width,
+          height: context.height,
           child: Row(children: [
             ResponsiveVisibility(
                 visible: true,
@@ -38,7 +38,7 @@ class _FeedbacksScreenState extends State<FeedbacksScreen>
                 )),
             Expanded(
                 child: Ink(
-              color: AppColors.wbackColor,
+              color: AppColors.kwbackColor,
               child: Column(
                 children: [
                   AppBarWelcome(),

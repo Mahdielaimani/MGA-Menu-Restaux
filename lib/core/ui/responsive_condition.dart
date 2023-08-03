@@ -1,5 +1,4 @@
-import 'package:flutter/material.dart';
-import 'package:responsive_framework/responsive_framework.dart';
+part of '../../../packages/packages.dart';
 
 const List<Condition> isDesktop = [Condition.largerThan(name: TABLET)];
 

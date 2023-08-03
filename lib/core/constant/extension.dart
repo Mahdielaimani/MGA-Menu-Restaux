@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+part of '../../../packages/packages.dart';
 
 extension QueryApp on BuildContext {
   Size get getSize => MediaQuery.of(this).size;

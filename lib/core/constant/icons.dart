@@ -1,5 +1,5 @@
-import 'package:flutter/material.dart';
+part of '../../../packages/packages.dart';
 
-class AppIcons {
-  static const add = Icons.add;
+abstract class AppIcons {
+  static const kadd = Icons.add;
 }

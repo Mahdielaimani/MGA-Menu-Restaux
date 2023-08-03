@@ -1,20 +1,20 @@
 part of '../../../../packages/packages.dart';
 
-class TranslationScreen extends StatefulWidget {
-  const TranslationScreen({super.key});
+class RecommendScreen extends StatefulWidget {
+  const RecommendScreen({super.key});
 
   @override
-  State<TranslationScreen> createState() => _TranslationScreenState();
+  State<RecommendScreen> createState() => _RecommendScreenState();
 }
 
-class _TranslationScreenState extends State<TranslationScreen>
+class _RecommendScreenState extends State<RecommendScreen>
     with SingleTickerProviderStateMixin {
   TabController? _tabController;
-  final _controller = SidebarXController(selectedIndex: 7, extended: true);
+  final _controller = SidebarXController(selectedIndex: 2, extended: true);
 
   void initState() {
     super.initState();
-    _tabController = TabController(length: 5, vsync: this);
+    _tabController = TabController(length: 2, vsync: this);
   }
 
   @override
@@ -48,7 +48,7 @@ class _TranslationScreenState extends State<TranslationScreen>
                       ResponsiveVisibility(
                           visible: true,
                           hiddenWhen: isMobileTablet,
-                          child: CardTranslation()),
+                          child: CardRecomendation()),
                     ],
                   ),
                 ),

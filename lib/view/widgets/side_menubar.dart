@@ -1,4 +1,4 @@
-part of 'widgets.dart';
+part of '../../../packages/packages.dart';
 
 class SideMenuBar extends StatelessWidget {
   const SideMenuBar(
@@ -17,7 +17,7 @@ class SideMenuBar extends StatelessWidget {
       controller: controller,
       headerBuilder: (_, isCollapsed) {
         return Ink(
-          color: AppColors.greyColor,
+          color: AppColors.kgreyColor,
           height: 45,
           padding: const EdgeInsets.symmetric(horizontal: 10),
           child: DropdownButton(
@@ -61,9 +61,9 @@ class SideMenuBar extends StatelessWidget {
       theme: const SidebarXTheme(
         margin: EdgeInsets.zero,
         decoration: const BoxDecoration(
-          color: AppColors.whiteColor,
+          color: AppColors.kwhiteColor,
         ),
-        textStyle: const TextStyle(color: AppColors.blackColor),
+        textStyle: const TextStyle(color: AppColors.kblackColor),
         selectedTextStyle: TextStyle(color: AppColors.kPurpleColor),
         itemTextPadding: const EdgeInsets.only(left: 10),
         selectedItemTextPadding: const EdgeInsets.only(left: 10),
@@ -82,13 +82,13 @@ class SideMenuBar extends StatelessWidget {
         selectedItemDecoration: BoxDecoration(
           border: const Border(
             right: BorderSide(
-              color: AppColors.greyColors,
+              color: AppColors.kgreyColors,
               width: 3,
             ),
           ),
         ),
         iconTheme: const IconThemeData(
-          color: AppColors.blackColor,
+          color: AppColors.kblackColor,
           size: 18,
         ),
         selectedIconTheme: const IconThemeData(

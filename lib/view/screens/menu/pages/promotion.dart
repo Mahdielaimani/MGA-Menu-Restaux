@@ -1,4 +1,4 @@
-part of 'pack_pages.dart';
+part of '../../../../../packages/packages.dart';
 
 class Promotion extends StatelessWidget {
   const Promotion({super.key});
@@ -6,7 +6,7 @@ class Promotion extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      color: AppColors.wbackColor,
+      color: AppColors.kwbackColor,
       child: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
@@ -36,7 +36,7 @@ class Promotion extends StatelessWidget {
                 onPressed: () {},
                 child: Text(
                   'Create a Promotion',
-                  style: TextStyle(color: AppColors.whiteColor),
+                  style: TextStyle(color: AppColors.kwhiteColor),
                 ),
               ),
             ),

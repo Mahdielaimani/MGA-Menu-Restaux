@@ -1,4 +1,4 @@
-part of '../packages_screens.dart';
+part of '../../../../packages/packages.dart';
 
 class OrdersScreen extends StatefulWidget {
   OrdersScreen({super.key});
@@ -17,8 +17,8 @@ class OrdersScreenState extends State<OrdersScreen>
     return SafeArea(
       child: Scaffold(
         body: Ink(
-          width: MediaQuery.sizeOf(context).width,
-          height: MediaQuery.sizeOf(context).height,
+          width: context.width,
+          height: context.height,
           child: Row(children: [
             ResponsiveVisibility(
                 visible: true,
@@ -32,9 +32,9 @@ class OrdersScreenState extends State<OrdersScreen>
                 )),
             Expanded(
                 child: Ink(
-              color: AppColors.wbackColor,
+              color: AppColors.kwbackColor,
               child: Column(
-                children: [
+                children: const [
                   AppBarWelcome(),
                   TopCardIcons(),
 

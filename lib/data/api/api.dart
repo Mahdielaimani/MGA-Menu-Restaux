@@ -1,10 +1,4 @@
-import 'dart:convert';
-
-import 'package:flutter/material.dart';
-import 'package:get_storage/get_storage.dart';
-import 'package:intl/intl.dart';
-
-import '../model/menu.dart';
+part of '../../packages/packages.dart';
 
 final locale = GetStorage();
 
