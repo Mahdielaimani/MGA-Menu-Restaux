@@ -1,4 +1,8 @@
+<<<<<<< Updated upstream:lib/view/screens/menu/scratch_screen.dart
 part of '../../../../packages/packages.dart';
+=======
+part of '../../packages_screens.dart';
+>>>>>>> Stashed changes:lib/view/screens/menu/screens/scratchmenu.dart
 
 class ScratchMenuScreen extends StatefulWidget {
   const ScratchMenuScreen({Key? key}) : super(key: key);
@@ -254,8 +258,12 @@ class _ScratchMenuScreenState extends State<ScratchMenuScreen>
                                                   },
                                                 );
                                               },
+<<<<<<< Updated upstream:lib/view/screens/menu/scratch_screen.dart
                                               child: const Row(
                                                 mainAxisSize: MainAxisSize.min,
+=======
+                                              child: Row(
+>>>>>>> Stashed changes:lib/view/screens/menu/screens/scratchmenu.dart
                                                 children: [
                                                   SizedBox(
                                                     width: 10,
