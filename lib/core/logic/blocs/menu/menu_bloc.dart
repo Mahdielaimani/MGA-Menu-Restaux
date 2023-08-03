@@ -1,12 +1,4 @@
-<<<<<<< Updated upstream
 part of '../../../../../packages/packages.dart';
-=======
-import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:menu_restaux/core/logic/blocs/menu/menu_event.dart';
-
-import '../../../../data/api/api.dart';
-import 'menu_state.dart';
->>>>>>> Stashed changes
 
 class MenuBloc extends Bloc<MenuEvent, MenuState> {
   final MenuApi menuApi;
