@@ -36,14 +36,14 @@ class _ReportsScreenState extends State<ReportsScreen> {
                 child: Ink(
                   color: AppColors.kwbackColor,
                   child: ListView(
-                    children: [
-                      const AppBarWelcome(),
+                    children: const [
+                      AppBarWelcome(),
                       TopCardIcons(),
                       ResponsiveVisibility(
                           visible: true,
                           hiddenWhen: isMobileTablet,
                           child: CardReports()),
-                      const Column(
+                      Column(
                           mainAxisAlignment: MainAxisAlignment.start,
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [

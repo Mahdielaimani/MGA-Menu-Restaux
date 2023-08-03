@@ -45,9 +45,8 @@ class _PaymentSystemState extends State<PaymentSystem>
                         ),
                         itemCount: paymentSystems.length,
                         itemBuilder: (context, index) {
-                          return Container(
-                              child: PaymentSystemCard(
-                                  paymentSystem: paymentSystems[index]));
+                          return PaymentSystemCard(
+                              paymentSystem: paymentSystems[index]);
                         },
                       ),
                     ),

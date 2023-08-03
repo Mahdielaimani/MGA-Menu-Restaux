@@ -34,15 +34,15 @@ class _CardRecomendationState extends State<CardRecomendation>
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Divider(
+                    const Divider(
                       color: AppColors.kdividerColor,
                       height: 1,
                     ),
-                    SizedBox(
+                    const SizedBox(
                       height: 30,
                     ),
-                    Padding(
-                      padding: const EdgeInsets.only(left: 15),
+                    const Padding(
+                      padding: EdgeInsets.only(left: 15),
                       child: Text(
                         'Recommendations',
                         textAlign: TextAlign.left,
@@ -50,10 +50,10 @@ class _CardRecomendationState extends State<CardRecomendation>
                             fontSize: 20, fontWeight: FontWeight.w500),
                       ),
                     ),
-                    SizedBox(
+                    const SizedBox(
                       height: 20,
                     ),
-                    Container(
+                    SizedBox(
                       child: Align(
                         alignment: Alignment.bottomLeft,
                         child: TabBar(
@@ -61,7 +61,7 @@ class _CardRecomendationState extends State<CardRecomendation>
                           unselectedLabelColor: AppColors.kblackColor,
                           isScrollable: true,
                           labelPadding: EdgeInsets.only(left: 20, right: 20),
-                          tabs: [
+                          tabs: const [
                             Tab(text: 'Overview'),
                             Tab(text: 'Recommended Items'),
                           ],

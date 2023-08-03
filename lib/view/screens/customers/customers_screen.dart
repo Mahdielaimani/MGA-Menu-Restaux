@@ -1,7 +1,10 @@
 part of '../../../../packages/packages.dart';
 
 class CustomersScreen extends StatefulWidget {
+  const CustomersScreen({super.key});
+
   @override
+  // ignore: library_private_types_in_public_api
   _CustomersScreenState createState() => _CustomersScreenState();
 }
 
@@ -10,7 +13,7 @@ class _CustomersScreenState extends State<CustomersScreen>
   TabController? _tabController;
 
   final _controller = SidebarXController(selectedIndex: 4, extended: true);
-
+  @override
   void initState() {
     super.initState();
     _tabController = TabController(length: 2, vsync: this);
@@ -53,7 +56,7 @@ class _CustomersScreenState extends State<CustomersScreen>
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         Padding(
-                          padding: const EdgeInsets.only(left: 15),
+                          padding: EdgeInsets.only(left: 15),
                           child: Text(
                             '0 results listed.',
                             style: TextStyle(

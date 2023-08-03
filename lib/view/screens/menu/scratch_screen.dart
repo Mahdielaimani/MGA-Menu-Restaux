@@ -1,9 +1,10 @@
 part of '../../../../packages/packages.dart';
 
 class ScratchMenuScreen extends StatefulWidget {
-  ScratchMenuScreen({Key? key}) : super(key: key);
+  const ScratchMenuScreen({Key? key}) : super(key: key);
 
   @override
+  // ignore: library_private_types_in_public_api
   _ScratchMenuScreenState createState() => _ScratchMenuScreenState();
 }
 
@@ -129,7 +130,7 @@ class _ScratchMenuScreenState extends State<ScratchMenuScreen>
                             AppBarWelcome(),
                             TopCardIcons(),
                             CardScratch(),
-                            SizedBox(
+                            const SizedBox(
                               height: 20,
                             ),
                             Expanded(
@@ -138,16 +139,15 @@ class _ScratchMenuScreenState extends State<ScratchMenuScreen>
                                 children: [
                                   ResponsiveVisibility(
                                     hiddenWhen: isMobileTablet,
-                                    child: Container(
-                                      width: 170,
-                                      height: 365,
-                                      padding: EdgeInsets.all(15),
-                                      color: AppColors.kwhiteColor,
-                                      child: Column(children: [
-                                        ClipRRect(
-                                          borderRadius:
-                                              BorderRadius.circular(15),
-                                          child: const Row(
+                                    child: ClipRRect(
+                                      borderRadius: BorderRadius.circular(15),
+                                      child: Container(
+                                        width: 170,
+                                        height: 365,
+                                        padding: const EdgeInsets.all(15),
+                                        color: AppColors.kwhiteColor,
+                                        child: const Column(children: [
+                                          Row(
                                             children: [
                                               Text('Sections'),
                                               SizedBox(
@@ -156,36 +156,36 @@ class _ScratchMenuScreenState extends State<ScratchMenuScreen>
                                               Icon(AppIcons.kadd)
                                             ],
                                           ),
-                                        ),
-                                        const SizedBox(
-                                          height: 20,
-                                        ),
-                                        const Row(
-                                          children: [
-                                            SizedBox(
-                                              width: 10,
-                                            ),
-                                            Text('All',
-                                                style: TextStyle(
-                                                    color: AppColors
-                                                        .kPurpleColor)),
-                                            SizedBox(
-                                              width: 10,
-                                            ),
-                                            Text('Active',
-                                                style: TextStyle(
-                                                    color:
-                                                        AppColors.kblackColor)),
-                                            SizedBox(
-                                              width: 10,
-                                            ),
-                                            Text('Inactive',
-                                                style: TextStyle(
-                                                    color:
-                                                        AppColors.kblackColor)),
-                                          ],
-                                        )
-                                      ]),
+                                          SizedBox(
+                                            height: 20,
+                                          ),
+                                          Row(
+                                            children: [
+                                              SizedBox(
+                                                width: 10,
+                                              ),
+                                              Text('All',
+                                                  style: TextStyle(
+                                                      color: AppColors
+                                                          .kPurpleColor)),
+                                              SizedBox(
+                                                width: 10,
+                                              ),
+                                              Text('Active',
+                                                  style: TextStyle(
+                                                      color: AppColors
+                                                          .kgreenColor)),
+                                              SizedBox(
+                                                width: 10,
+                                              ),
+                                              Text('Inactive',
+                                                  style: TextStyle(
+                                                      color: AppColors
+                                                          .kblackColor)),
+                                            ],
+                                          )
+                                        ]),
+                                      ),
                                     ),
                                   ),
                                   const SizedBox(
@@ -227,9 +227,9 @@ class _ScratchMenuScreenState extends State<ScratchMenuScreen>
                                                             },
                                                             child: Container(
                                                               padding:
-                                                                  EdgeInsets
+                                                                  const EdgeInsets
                                                                       .all(8.0),
-                                                              child: Text(
+                                                              child: const Text(
                                                                   'Section'),
                                                             ),
                                                           ),
@@ -242,7 +242,7 @@ class _ScratchMenuScreenState extends State<ScratchMenuScreen>
                                                             },
                                                             child: Container(
                                                               padding:
-                                                                  EdgeInsets
+                                                                  const EdgeInsets
                                                                       .all(8.0),
                                                               child: const Text(
                                                                   'Item'),
@@ -274,14 +274,14 @@ class _ScratchMenuScreenState extends State<ScratchMenuScreen>
                                             ),
                                           ),
                                         ),
-                                        SizedBox(
+                                        const SizedBox(
                                           height: 20,
                                         ),
                                         ListView.separated(
                                           shrinkWrap: true,
                                           itemCount: sectionList.length,
                                           separatorBuilder: (context, index) =>
-                                              SizedBox(height: 8),
+                                              const SizedBox(height: 8),
                                           itemBuilder: (context, index) {
                                             return ClipRRect(
                                               borderRadius:
@@ -297,13 +297,15 @@ class _ScratchMenuScreenState extends State<ScratchMenuScreen>
                                                             .spaceBetween,
                                                     children: [
                                                       Row(children: [
-                                                        SizedBox(width: 10),
-                                                        Icon(
+                                                        const SizedBox(
+                                                            width: 10),
+                                                        const Icon(
                                                           Icons
                                                               .table_rows_rounded,
                                                           size: 18,
                                                         ),
-                                                        SizedBox(width: 10),
+                                                        const SizedBox(
+                                                            width: 10),
                                                         Text(
                                                           '${sectionList[index]['name']}',
                                                           style:
@@ -315,7 +317,8 @@ class _ScratchMenuScreenState extends State<ScratchMenuScreen>
                                                                 FontWeight.w400,
                                                           ),
                                                         ),
-                                                        SizedBox(width: 20),
+                                                        const SizedBox(
+                                                            width: 20),
                                                       ]),
                                                       Row(
                                                         children: [
@@ -380,7 +383,7 @@ class _ScratchMenuScreenState extends State<ScratchMenuScreen>
                         right: 0,
                         child: SlideTransition(
                           position: Tween<Offset>(
-                            begin: Offset(1.0, 0.0),
+                            begin: const Offset(1.0, 0.0),
                             end: Offset.zero,
                           ).animate(CurvedAnimation(
                             parent: _animationController!,

@@ -100,6 +100,8 @@ class LoginFieldEmail extends StatelessWidget {
 
 //loginFieldPassword
 class LoginFieldPassword extends StatefulWidget {
+  const LoginFieldPassword({super.key});
+
   @override
   _LoginFieldPasswordState createState() => _LoginFieldPasswordState();
 }

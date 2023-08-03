@@ -100,7 +100,7 @@ class _CardFeedbacksState extends State<CardFeedbacks>
                         MaterialStateProperty.all(AppColors.kPurpleColor),
                   ),
                   onPressed: () {},
-                  child: Text(
+                  child: const Text(
                     'Export',
                     style: TextStyle(color: AppColors.kwhiteColor),
                   ),

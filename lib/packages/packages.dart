@@ -60,7 +60,7 @@ part '../view/screens/feedbacks/feedbacks_screen.dart';
 
 //menu
 part '../view/screens/menu/menu_screen.dart';
-part '../view/screens/menu/scratch_menu.dart';
+part '../view/screens/menu/scratch_screen.dart';
 part '../view/screens/menu/menu_components.dart';
 
 //menuContainer

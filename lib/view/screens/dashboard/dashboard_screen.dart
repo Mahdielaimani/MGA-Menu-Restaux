@@ -55,6 +55,7 @@ class _DashboardScreenState extends State<DashboardScreen>
                       child: Align(
                         alignment: Alignment.centerLeft,
                         child: Text(
+                          // ignore: unnecessary_string_interpolations
                           "${DateFormat('EEEE, d MMMM HH:mm').format(DateTime.now())}",
                         ),
                       ),
@@ -63,8 +64,8 @@ class _DashboardScreenState extends State<DashboardScreen>
                     const SizedBox(
                       height: 20.0,
                     ),
-                    Padding(
-                      padding: const EdgeInsets.only(left: 20),
+                    const Padding(
+                      padding: EdgeInsets.only(left: 20),
                       child: Align(
                         alignment: Alignment.centerLeft,
                         child: Text(
@@ -74,7 +75,6 @@ class _DashboardScreenState extends State<DashboardScreen>
                         ),
                       ),
                     ),
-                    //let's set the filter section
 
                     const SizedBox(
                       height: 40.0,
@@ -87,12 +87,12 @@ class _DashboardScreenState extends State<DashboardScreen>
                         decoration: BoxDecoration(
                             color: AppColors.kwhiteColor,
                             borderRadius: BorderRadius.circular(20)),
-                        padding: EdgeInsets.all(20),
+                        padding: const EdgeInsets.all(20),
                         child: Column(children: [
                           Row(
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
-                              Text(
+                              const Text(
                                 "Today",
                                 style: TextStyle(
                                   fontSize: 16,
@@ -101,7 +101,7 @@ class _DashboardScreenState extends State<DashboardScreen>
                               TextButton(
                                 onPressed: () =>
                                     router.pushNamed('reportsScreen'),
-                                child: Text(
+                                child: const Text(
                                   "View Reports",
                                   style: TextStyle(
                                       fontWeight: FontWeight.bold,
@@ -228,12 +228,12 @@ class _DashboardScreenState extends State<DashboardScreen>
                                 DataColumn(label: Text("Total")),
                               ],
                               rows: []),
-                          SizedBox(height: 30),
-                          Align(
+                          const SizedBox(height: 30),
+                          const Align(
                             alignment: Alignment.center,
                             child: Column(children: [
                               Icon(Icons.store_outlined),
-                              Text('No Dat'),
+                              Text('No Data'),
                               SizedBox(height: 30),
                             ]),
                           )

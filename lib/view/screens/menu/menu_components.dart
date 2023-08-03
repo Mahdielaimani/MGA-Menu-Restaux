@@ -125,7 +125,7 @@ class _CardMenuManagementState extends State<CardMenuManagement>
                 ),
               ),
             ),
-            Container(
+            SizedBox(
               height: 500,
               child: TabBarView(controller: _tabController, children: [
                 ListMenu(),
@@ -160,7 +160,8 @@ class CardScratch extends StatelessWidget {
           color: Colors.white,
           width: context.width,
           height: 72,
-          child: Row(mainAxisAlignment: MainAxisAlignment.center, children: [
+          child:
+              const Row(mainAxisAlignment: MainAxisAlignment.center, children: [
             SizedBox(
               width: 20,
             ),
@@ -173,7 +174,7 @@ class CardScratch extends StatelessWidget {
               flex: 2,
             ),
             Icon(Icons.menu_book_outlined),
-            const SizedBox(
+            SizedBox(
               width: 7,
             ),
             Text(
@@ -237,14 +238,14 @@ class UpgradeCenter extends StatelessWidget {
                       ),
                     ),
                   ),
-                  Text(
+                  const Text(
                     " for more.",
                     style: TextStyle(),
                   ),
-                  SizedBox(
+                  const SizedBox(
                     width: 10,
                   ),
-                  Text(
+                  const Text(
                     "10 items left",
                     style: TextStyle(
                       color: AppColors.kPurpleColor,

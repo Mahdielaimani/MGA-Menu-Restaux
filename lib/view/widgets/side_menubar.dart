@@ -39,7 +39,7 @@ class SideMenuBar extends StatelessWidget {
                 ),
                 if (isCollapsed) const SizedBox(width: 10),
                 if (isCollapsed)
-                  Flexible(
+                  const Flexible(
                     child: Text(
                       'MGA',
                       maxLines: 1,
@@ -60,44 +60,43 @@ class SideMenuBar extends StatelessWidget {
       },
       theme: const SidebarXTheme(
         margin: EdgeInsets.zero,
-        decoration: const BoxDecoration(
+        decoration: BoxDecoration(
           color: AppColors.kwhiteColor,
         ),
-        textStyle: const TextStyle(color: AppColors.kblackColor),
+        textStyle: TextStyle(color: AppColors.kblackColor),
         selectedTextStyle: TextStyle(color: AppColors.kPurpleColor),
-        itemTextPadding: const EdgeInsets.only(left: 10),
-        selectedItemTextPadding: const EdgeInsets.only(left: 10),
+        itemTextPadding: EdgeInsets.only(left: 10),
+        selectedItemTextPadding: EdgeInsets.only(left: 10),
         itemMargin: EdgeInsets.zero,
         selectedItemMargin: EdgeInsets.zero,
         padding: EdgeInsets.zero,
-        itemPadding: const EdgeInsets.symmetric(
+        itemPadding: EdgeInsets.symmetric(
           vertical: 13,
           horizontal: 10,
         ),
-        selectedItemPadding: const EdgeInsets.symmetric(
+        selectedItemPadding: EdgeInsets.symmetric(
           vertical: 13,
           horizontal: 10,
         ),
-        itemDecoration: const BoxDecoration(),
+        itemDecoration: BoxDecoration(),
         selectedItemDecoration: BoxDecoration(
-          border: const Border(
+          border: Border(
             right: BorderSide(
               color: AppColors.kgreyColors,
               width: 3,
             ),
           ),
         ),
-        iconTheme: const IconThemeData(
+        iconTheme: IconThemeData(
           color: AppColors.kblackColor,
           size: 18,
         ),
-        selectedIconTheme: const IconThemeData(
+        selectedIconTheme: IconThemeData(
           color: AppColors.kPurpleColor,
           size: 18,
         ),
       ),
       extendedTheme: const SidebarXTheme(
-        // hoverColor: Colors.grey,
         width: 200,
         decoration: BoxDecoration(),
       ),

@@ -32,8 +32,8 @@ class _MenuScreenState extends State<MenuScreen> {
                 child: Ink(
                   color: AppColors.kwbackColor,
                   child: ListView(
-                    children: [
-                      const AppBarWelcome(),
+                    children: const [
+                      AppBarWelcome(),
                       TopCardIcons(),
                       ResponsiveVisibility(
                           visible: true,

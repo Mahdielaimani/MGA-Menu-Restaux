@@ -35,7 +35,7 @@ class AppBarWelcome extends StatelessWidget {
                       MaterialStateProperty.all(AppColors.kbSideColor),
                 ),
                 onPressed: () {},
-                child: Text(
+                child: const Text(
                   "UPGRADE",
                   style: TextStyle(color: AppColors.kwhiteColor, fontSize: 12),
                 )),
